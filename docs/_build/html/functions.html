@@ -1,0 +1,833 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>functions package &#8212; Budget and Expenses Tracker App Version 1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=c675a26e"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'functions';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="database package" href="database.html" />
+    <link rel="prev" title="maths package" href="maths.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Budget and Expenses Tracker App Version 1 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="modules.html">menu</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="menu.html">menu package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maths.html">maths package</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">functions package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html">database package</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/functions.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>functions package</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-functions.common_functions">functions.common_functions module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.common_functions.amount_check"><code class="docutils literal notranslate"><span class="pre">amount_check()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.common_functions.clear"><code class="docutils literal notranslate"><span class="pre">clear()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.common_functions.description_check"><code class="docutils literal notranslate"><span class="pre">description_check()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.common_functions.get_amount"><code class="docutils literal notranslate"><span class="pre">get_amount()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.common_functions.get_category_dict"><code class="docutils literal notranslate"><span class="pre">get_category_dict()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.common_functions.get_range_for_search"><code class="docutils literal notranslate"><span class="pre">get_range_for_search()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.common_functions.get_rows_from_dates"><code class="docutils literal notranslate"><span class="pre">get_rows_from_dates()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.common_functions.get_term"><code class="docutils literal notranslate"><span class="pre">get_term()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.common_functions.money_format"><code class="docutils literal notranslate"><span class="pre">money_format()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.common_functions.print_categories"><code class="docutils literal notranslate"><span class="pre">print_categories()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.common_functions.select_category"><code class="docutils literal notranslate"><span class="pre">select_category()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.common_functions.select_date_range"><code class="docutils literal notranslate"><span class="pre">select_date_range()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.common_functions.select_months"><code class="docutils literal notranslate"><span class="pre">select_months()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-functions.date_functions">functions.date_functions module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.get_dates"><code class="docutils literal notranslate"><span class="pre">get_dates()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.get_dates_for_goals"><code class="docutils literal notranslate"><span class="pre">get_dates_for_goals()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.get_dates_in_week"><code class="docutils literal notranslate"><span class="pre">get_dates_in_week()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.get_days_list"><code class="docutils literal notranslate"><span class="pre">get_days_list()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.get_month_dates"><code class="docutils literal notranslate"><span class="pre">get_month_dates()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.get_week_dates"><code class="docutils literal notranslate"><span class="pre">get_week_dates()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.get_year_dates"><code class="docutils literal notranslate"><span class="pre">get_year_dates()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.get_year_weeks"><code class="docutils literal notranslate"><span class="pre">get_year_weeks()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-functions">Module contents</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="functions-package">
+<h1>functions package<a class="headerlink" href="#functions-package" title="Link to this heading">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-functions.common_functions">
+<span id="functions-common-functions-module"></span><h2>functions.common_functions module<a class="headerlink" href="#module-functions.common_functions" title="Link to this heading">#</a></h2>
+<p>This module contains functions with logic which is commonly used
+across multiple modules: expenses.py, income.py, budget.py and goals.py.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.common_functions.amount_check">
+<span class="sig-prename descclassname"><span class="pre">functions.common_functions.</span></span><span class="sig-name descname"><span class="pre">amount_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_amount</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/functions/common_functions.html#amount_check"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.common_functions.amount_check" title="Link to this definition">#</a></dt>
+<dd><p>This function checks that a user input is valid for a monetary
+amount.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>new_amount</strong> – amount entered by user</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if valid or False if invalid</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.common_functions.clear">
+<span class="sig-prename descclassname"><span class="pre">functions.common_functions.</span></span><span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/functions/common_functions.html#clear"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.common_functions.clear" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.common_functions.description_check">
+<span class="sig-prename descclassname"><span class="pre">functions.common_functions.</span></span><span class="sig-name descname"><span class="pre">description_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_expense</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/functions/common_functions.html#description_check"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.common_functions.description_check" title="Link to this definition">#</a></dt>
+<dd><p>Checks validity of user input for a description for an expense
+or income.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>new_expense</strong> – str description</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if valid or False if invalid</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.common_functions.get_amount">
+<span class="sig-prename descclassname"><span class="pre">functions.common_functions.</span></span><span class="sig-name descname"><span class="pre">get_amount</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/functions/common_functions.html#get_amount"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.common_functions.get_amount" title="Link to this definition">#</a></dt>
+<dd><p>This function gets an amount from the user</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>new amount</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.common_functions.get_category_dict">
+<span class="sig-prename descclassname"><span class="pre">functions.common_functions.</span></span><span class="sig-name descname"><span class="pre">get_category_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">category_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/functions/common_functions.html#get_category_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.common_functions.get_category_dict" title="Link to this definition">#</a></dt>
+<dd><p>This function prints the existing categories for the user and
+returns a dictionary of number of category printed to user as
+values and the category primary key in ‘categories’ table as
+values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary to get category id number</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.common_functions.get_range_for_search">
+<span class="sig-prename descclassname"><span class="pre">functions.common_functions.</span></span><span class="sig-name descname"><span class="pre">get_range_for_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">selection</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/functions/common_functions.html#get_range_for_search"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.common_functions.get_range_for_search" title="Link to this definition">#</a></dt>
+<dd><p>This function gets a range of values user selection for a number
+of months to search</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>selection</strong> – ‘2’, ‘3’ or ‘4’</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>range to search</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>range</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.common_functions.get_rows_from_dates">
+<span class="sig-prename descclassname"><span class="pre">functions.common_functions.</span></span><span class="sig-name descname"><span class="pre">get_rows_from_dates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/functions/common_functions.html#get_rows_from_dates"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.common_functions.get_rows_from_dates" title="Link to this definition">#</a></dt>
+<dd><p>This function selects rows from a table which match the date
+range selected by user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>date_range</strong> – User selection: ‘1’, ‘2’, ‘3’, ‘4’ or ‘5’</p></li>
+<li><p><strong>table</strong> – str table name in database</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>rows from table which match date range</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of tuples</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.common_functions.get_term">
+<span class="sig-prename descclassname"><span class="pre">functions.common_functions.</span></span><span class="sig-name descname"><span class="pre">get_term</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/functions/common_functions.html#get_term"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.common_functions.get_term" title="Link to this definition">#</a></dt>
+<dd><p>This function returns a term from a user choice</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>string</strong> – ‘1’, ‘2’, ‘3’ or ‘0’</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>‘weekly’, ‘monthly’, ‘annual’ or None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.common_functions.money_format">
+<span class="sig-prename descclassname"><span class="pre">functions.common_functions.</span></span><span class="sig-name descname"><span class="pre">money_format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">some_amount</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/functions/common_functions.html#money_format"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.common_functions.money_format" title="Link to this definition">#</a></dt>
+<dd><p>This function convert an amount of money into a string with £
+sign and 2 decimal places.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>amount with £ and 2 dp</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.common_functions.print_categories">
+<span class="sig-prename descclassname"><span class="pre">functions.common_functions.</span></span><span class="sig-name descname"><span class="pre">print_categories</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">category_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/functions/common_functions.html#print_categories"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.common_functions.print_categories" title="Link to this definition">#</a></dt>
+<dd><p>This function prints expense categories or income sources</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>category_list</strong> – list of categories</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.common_functions.select_category">
+<span class="sig-prename descclassname"><span class="pre">functions.common_functions.</span></span><span class="sig-name descname"><span class="pre">select_category</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/functions/common_functions.html#select_category"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.common_functions.select_category" title="Link to this definition">#</a></dt>
+<dd><p>This function gets an id number from a table from its
+description.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>table</strong> – str table name in database</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>id number</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.common_functions.select_date_range">
+<span class="sig-prename descclassname"><span class="pre">functions.common_functions.</span></span><span class="sig-name descname"><span class="pre">select_date_range</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/functions/common_functions.html#select_date_range"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.common_functions.select_date_range" title="Link to this definition">#</a></dt>
+<dd><p>This function gets a date range selection from user</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>‘1’, ‘2’, ‘3’, ‘4’, ‘5’, or ‘0’</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.common_functions.select_months">
+<span class="sig-prename descclassname"><span class="pre">functions.common_functions.</span></span><span class="sig-name descname"><span class="pre">select_months</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_period</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/functions/common_functions.html#select_months"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.common_functions.select_months" title="Link to this definition">#</a></dt>
+<dd><p>This function gets the month and year in the format YYYY-MM for
+each month in the specified time period.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>time_period</strong> – integer range</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>previous months in specified range</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-functions.date_functions">
+<span id="functions-date-functions-module"></span><h2>functions.date_functions module<a class="headerlink" href="#module-functions.date_functions" title="Link to this heading">#</a></h2>
+<p>This module contains functions with the logic for finding date
+ranges from user input.</p>
+<p class="rubric">References</p>
+<p>[1] Tutorials Point (for function get_week_dates)
+<a class="reference external" href="https://www.tutorialspoint.com/How-to-find-only-Monday-s-date-with-Python#:~:text=the%20dateutil%20module.-,Use%20the%20today()%20function%20(gets%20the%20current%20local%20date,Print%20the%20last%20Monday%20date">https://www.tutorialspoint.com/How-to-find-only-Monday-s-date-with-Python#:~:text=the%20dateutil%20module.-,Use%20the%20today()%20function%20(gets%20the%20current%20local%20date,Print%20the%20last%20Monday%20date</a>.  # noqa</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.date_functions.get_dates">
+<span class="sig-prename descclassname"><span class="pre">functions.date_functions.</span></span><span class="sig-name descname"><span class="pre">get_dates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">first_day</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">days_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/functions/date_functions.html#get_dates"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.date_functions.get_dates" title="Link to this definition">#</a></dt>
+<dd><p>This function gets dates for days that have passed since a given
+day and appends them to a list of days</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>first_day</strong> – day in the past</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of days since first_day</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.date_functions.get_dates_for_goals">
+<span class="sig-prename descclassname"><span class="pre">functions.date_functions.</span></span><span class="sig-name descname"><span class="pre">get_dates_for_goals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/functions/date_functions.html#get_dates_for_goals"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.date_functions.get_dates_for_goals" title="Link to this definition">#</a></dt>
+<dd><p>This function gets user selection for term and calls relevant
+function</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.date_functions.get_dates_in_week">
+<span class="sig-prename descclassname"><span class="pre">functions.date_functions.</span></span><span class="sig-name descname"><span class="pre">get_dates_in_week</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/functions/date_functions.html#get_dates_in_week"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.date_functions.get_dates_in_week" title="Link to this definition">#</a></dt>
+<dd><p>This function takes in a date and returns that date plus the
+next six days</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>date</strong> – a date</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dates for week</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of dates</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.date_functions.get_days_list">
+<span class="sig-prename descclassname"><span class="pre">functions.date_functions.</span></span><span class="sig-name descname"><span class="pre">get_days_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">term</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/functions/date_functions.html#get_days_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.date_functions.get_days_list" title="Link to this definition">#</a></dt>
+<dd><p>This function gets a list of days over a given term</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>term</strong> – ‘weekly’, ‘monthly’ or ‘annual’</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of dates</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.date_functions.get_month_dates">
+<span class="sig-prename descclassname"><span class="pre">functions.date_functions.</span></span><span class="sig-name descname"><span class="pre">get_month_dates</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/functions/date_functions.html#get_month_dates"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.date_functions.get_month_dates" title="Link to this definition">#</a></dt>
+<dd><p>This function finds the first day of the current month, appends
+it to a list. It then returns function to get dates for previous
+months</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>returns function to get dates for previous months</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>func</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.date_functions.get_week_dates">
+<span class="sig-prename descclassname"><span class="pre">functions.date_functions.</span></span><span class="sig-name descname"><span class="pre">get_week_dates</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/functions/date_functions.html#get_week_dates"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.date_functions.get_week_dates" title="Link to this definition">#</a></dt>
+<dd><p>This function gets last Monday’s date, makes a new list and
+appends last Monday. It then calls function to get dates before
+last Monday</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>unction to get dates before last Monday</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>func</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.date_functions.get_year_dates">
+<span class="sig-prename descclassname"><span class="pre">functions.date_functions.</span></span><span class="sig-name descname"><span class="pre">get_year_dates</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/functions/date_functions.html#get_year_dates"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.date_functions.get_year_dates" title="Link to this definition">#</a></dt>
+<dd><p>This function gets the first day of this year and returns
+function to get days between then and now</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>function to get a list of days since start of year</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>func</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.date_functions.get_year_weeks">
+<span class="sig-prename descclassname"><span class="pre">functions.date_functions.</span></span><span class="sig-name descname"><span class="pre">get_year_weeks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/functions/date_functions.html#get_year_weeks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.date_functions.get_year_weeks" title="Link to this definition">#</a></dt>
+<dd><p>This function gets the first day of each week in the current
+year starting from 1st Jan up until today’s date.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of first day of week for this year</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-functions">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-functions" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="maths.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">maths package</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="database.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">database package</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-functions.common_functions">functions.common_functions module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.common_functions.amount_check"><code class="docutils literal notranslate"><span class="pre">amount_check()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.common_functions.clear"><code class="docutils literal notranslate"><span class="pre">clear()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.common_functions.description_check"><code class="docutils literal notranslate"><span class="pre">description_check()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.common_functions.get_amount"><code class="docutils literal notranslate"><span class="pre">get_amount()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.common_functions.get_category_dict"><code class="docutils literal notranslate"><span class="pre">get_category_dict()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.common_functions.get_range_for_search"><code class="docutils literal notranslate"><span class="pre">get_range_for_search()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.common_functions.get_rows_from_dates"><code class="docutils literal notranslate"><span class="pre">get_rows_from_dates()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.common_functions.get_term"><code class="docutils literal notranslate"><span class="pre">get_term()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.common_functions.money_format"><code class="docutils literal notranslate"><span class="pre">money_format()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.common_functions.print_categories"><code class="docutils literal notranslate"><span class="pre">print_categories()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.common_functions.select_category"><code class="docutils literal notranslate"><span class="pre">select_category()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.common_functions.select_date_range"><code class="docutils literal notranslate"><span class="pre">select_date_range()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.common_functions.select_months"><code class="docutils literal notranslate"><span class="pre">select_months()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-functions.date_functions">functions.date_functions module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.get_dates"><code class="docutils literal notranslate"><span class="pre">get_dates()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.get_dates_for_goals"><code class="docutils literal notranslate"><span class="pre">get_dates_for_goals()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.get_dates_in_week"><code class="docutils literal notranslate"><span class="pre">get_dates_in_week()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.get_days_list"><code class="docutils literal notranslate"><span class="pre">get_days_list()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.get_month_dates"><code class="docutils literal notranslate"><span class="pre">get_month_dates()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.get_week_dates"><code class="docutils literal notranslate"><span class="pre">get_week_dates()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.get_year_dates"><code class="docutils literal notranslate"><span class="pre">get_year_dates()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.get_year_weeks"><code class="docutils literal notranslate"><span class="pre">get_year_weeks()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-functions">Module contents</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Katherine Stewart
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, Katherine Stewart.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

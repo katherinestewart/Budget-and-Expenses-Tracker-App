@@ -1,0 +1,868 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index &#8212; Budget and Expenses Tracker App Version 1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=c675a26e"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
+    <link rel="index" title="Index" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Budget and Expenses Tracker App Version 1 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="modules.html">menu</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="menu.html">menu package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maths.html">maths package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html">functions package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html">database package</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
+ | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
+ | <a href="#G"><strong>G</strong></a>
+ | <a href="#I"><strong>I</strong></a>
+ | <a href="#M"><strong>M</strong></a>
+ | <a href="#O"><strong>O</strong></a>
+ | <a href="#P"><strong>P</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
+ | <a href="#V"><strong>V</strong></a>
+ 
+</div>
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="menu.html#menu.budget.Budget.amount">amount (menu.budget.Budget attribute)</a>
+
+      <ul>
+        <li><a href="menu.html#menu.expenses.Expense.amount">(menu.expenses.Expense attribute)</a>
+</li>
+        <li><a href="menu.html#menu.income.Income.amount">(menu.income.Income attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="functions.html#functions.common_functions.amount_check">amount_check() (in module functions.common_functions)</a>
+</li>
+      <li><a href="maths.html#maths.calcs.annual_from_monthly">annual_from_monthly() (in module maths.calcs)</a>
+</li>
+      <li><a href="maths.html#maths.calcs.annual_from_weekly">annual_from_weekly() (in module maths.calcs)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="B">B</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="menu.html#menu.budget.Budget">Budget (class in menu.budget)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="menu.html#menu.budget.budget_menu">budget_menu() (in module menu.budget)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="menu.html#menu.expenses.categories_menu">categories_menu() (in module menu.expenses)</a>
+</li>
+      <li><a href="menu.html#menu.expenses.Expense.category">category (menu.expenses.Expense attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="functions.html#functions.common_functions.clear">clear() (in module functions.common_functions)</a>
+</li>
+      <li><a href="database.html#database.database_commands.connect_db">connect_db() (in module database.database_commands)</a>
+</li>
+      <li><a href="database.html#database.database_commands.create_and_populate_tables">create_and_populate_tables() (in module database.database_commands)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    database
+
+      <ul>
+        <li><a href="database.html#module-database">module</a>
+</li>
+      </ul></li>
+      <li>
+    database.database_commands
+
+      <ul>
+        <li><a href="database.html#module-database.database_commands">module</a>
+</li>
+      </ul></li>
+      <li>
+    database.populate_finances_db
+
+      <ul>
+        <li><a href="database.html#module-database.populate_finances_db">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="menu.html#menu.expenses.Expense.date">date (menu.expenses.Expense attribute)</a>
+
+      <ul>
+        <li><a href="menu.html#menu.income.Income.date">(menu.income.Income attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="functions.html#functions.common_functions.description_check">description_check() (in module functions.common_functions)</a>
+</li>
+      <li><a href="maths.html#maths.calcs.difference">difference() (in module maths.calcs)</a>
+</li>
+      <li><a href="menu.html#menu.main_menu.display_message">display_message() (in module menu.main_menu)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="database.html#database.database_commands.enter_budget">enter_budget() (in module database.database_commands)</a>
+</li>
+      <li><a href="database.html#database.populate_finances_db.enter_budgets_goals">enter_budgets_goals() (in module database.populate_finances_db)</a>
+</li>
+      <li><a href="database.html#database.database_commands.enter_category">enter_category() (in module database.database_commands)</a>
+</li>
+      <li><a href="database.html#database.database_commands.enter_expense">enter_expense() (in module database.database_commands)</a>
+</li>
+      <li><a href="database.html#database.database_commands.enter_goal">enter_goal() (in module database.database_commands)</a>
+</li>
+      <li><a href="database.html#database.database_commands.enter_income">enter_income() (in module database.database_commands)</a>
+
+      <ul>
+        <li><a href="menu.html#menu.income.Income.enter_income">(menu.income.Income method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="menu.html#menu.expenses.Expense.enter_object">enter_object() (menu.expenses.Expense method)</a>
+</li>
+      <li><a href="menu.html#menu.expenses.Expense">Expense (class in menu.expenses)</a>
+</li>
+      <li><a href="menu.html#menu.expenses.Expense.expense">expense (menu.expenses.Expense attribute)</a>
+</li>
+      <li><a href="menu.html#menu.expenses.expense_menu">expense_menu() (in module menu.expenses)</a>
+</li>
+      <li><a href="menu.html#menu.expenses.expenses_by_category">expenses_by_category() (in module menu.expenses)</a>
+</li>
+      <li><a href="menu.html#menu.expenses.expenses_by_date">expenses_by_date() (in module menu.expenses)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    functions
+
+      <ul>
+        <li><a href="functions.html#module-functions">module</a>
+</li>
+      </ul></li>
+      <li>
+    functions.common_functions
+
+      <ul>
+        <li><a href="functions.html#module-functions.common_functions">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    functions.date_functions
+
+      <ul>
+        <li><a href="functions.html#module-functions.date_functions">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="G">G</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="menu.html#menu.budget.Budget.get_all_att">get_all_att() (menu.budget.Budget method)</a>
+
+      <ul>
+        <li><a href="menu.html#menu.expenses.Expense.get_all_att">(menu.expenses.Expense method)</a>
+</li>
+        <li><a href="menu.html#menu.income.Income.get_all_att">(menu.income.Income method)</a>
+</li>
+      </ul></li>
+      <li><a href="functions.html#functions.common_functions.get_amount">get_amount() (in module functions.common_functions)</a>
+</li>
+      <li><a href="menu.html#menu.goals.get_amount_from_rows">get_amount_from_rows() (in module menu.goals)</a>
+</li>
+      <li><a href="menu.html#menu.goals.get_annual">get_annual() (in module menu.goals)</a>
+</li>
+      <li><a href="maths.html#maths.calcs.get_average_amount">get_average_amount() (in module maths.calcs)</a>
+</li>
+      <li><a href="menu.html#menu.goals.get_budget_args">get_budget_args() (in module menu.goals)</a>
+</li>
+      <li><a href="menu.html#menu.budget.get_budgets">get_budgets() (in module menu.budget)</a>
+</li>
+      <li><a href="menu.html#menu.budget.get_budgets_by_term">get_budgets_by_term() (in module menu.budget)</a>
+</li>
+      <li><a href="functions.html#functions.common_functions.get_category_dict">get_category_dict() (in module functions.common_functions)</a>
+</li>
+      <li><a href="database.html#database.database_commands.get_category_from_budget">get_category_from_budget() (in module database.database_commands)</a>
+</li>
+      <li><a href="database.html#database.database_commands.get_category_from_id">get_category_from_id() (in module database.database_commands)</a>
+</li>
+      <li><a href="menu.html#menu.goals.get_common_args">get_common_args() (in module menu.goals)</a>
+</li>
+      <li><a href="functions.html#functions.date_functions.get_dates">get_dates() (in module functions.date_functions)</a>
+</li>
+      <li><a href="functions.html#functions.date_functions.get_dates_for_goals">get_dates_for_goals() (in module functions.date_functions)</a>
+</li>
+      <li><a href="functions.html#functions.date_functions.get_dates_in_week">get_dates_in_week() (in module functions.date_functions)</a>
+</li>
+      <li><a href="functions.html#functions.date_functions.get_days_list">get_days_list() (in module functions.date_functions)</a>
+</li>
+      <li><a href="menu.html#menu.budget.get_existing_gross">get_existing_gross() (in module menu.budget)</a>
+</li>
+      <li><a href="menu.html#menu.expenses.get_expense">get_expense() (in module menu.expenses)</a>
+</li>
+      <li><a href="database.html#database.database_commands.get_expenses_by_date">get_expenses_by_date() (in module database.database_commands)</a>
+
+      <ul>
+        <li><a href="menu.html#menu.budget.get_expenses_by_date">(in module menu.budget)</a>
+</li>
+      </ul></li>
+      <li><a href="database.html#database.database_commands.get_expenses_date_amount">get_expenses_date_amount() (in module database.database_commands)</a>
+</li>
+      <li><a href="database.html#database.database_commands.get_goal">get_goal() (in module database.database_commands)</a>
+</li>
+      <li><a href="menu.html#menu.goals.get_graph">get_graph() (in module menu.goals)</a>
+</li>
+      <li><a href="menu.html#menu.goals.get_gross_args">get_gross_args() (in module menu.goals)</a>
+</li>
+      <li><a href="menu.html#menu.goals.get_gross_or_net">get_gross_or_net() (in module menu.goals)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="menu.html#menu.income.get_income">get_income() (in module menu.income)</a>
+</li>
+      <li><a href="database.html#database.database_commands.get_income_by_date">get_income_by_date() (in module database.database_commands)</a>
+</li>
+      <li><a href="menu.html#menu.goals.get_income_for_week">get_income_for_week() (in module menu.goals)</a>
+</li>
+      <li><a href="database.html#database.database_commands.get_joined_rows">get_joined_rows() (in module database.database_commands)</a>
+</li>
+      <li><a href="menu.html#menu.goals.get_labels">get_labels() (in module menu.goals)</a>
+</li>
+      <li><a href="menu.html#menu.budget.get_list_expenses_in_dates">get_list_expenses_in_dates() (in module menu.budget)</a>
+</li>
+      <li><a href="database.html#database.database_commands.get_max_budget_id">get_max_budget_id() (in module database.database_commands)</a>
+</li>
+      <li><a href="maths.html#maths.calcs.get_mean">get_mean() (in module maths.calcs)</a>
+</li>
+      <li><a href="functions.html#functions.date_functions.get_month_dates">get_month_dates() (in module functions.date_functions)</a>
+</li>
+      <li><a href="maths.html#maths.calcs.get_month_from_year">get_month_from_year() (in module maths.calcs)</a>
+</li>
+      <li><a href="menu.html#menu.goals.get_net_args">get_net_args() (in module menu.goals)</a>
+</li>
+      <li><a href="menu.html#menu.expenses.get_new_category">get_new_category() (in module menu.expenses)</a>
+</li>
+      <li><a href="menu.html#menu.income.get_new_source">get_new_source() (in module menu.income)</a>
+</li>
+      <li><a href="menu.html#menu.goals.get_no_weeks">get_no_weeks() (in module menu.goals)</a>
+</li>
+      <li><a href="menu.html#menu.expenses.get_object">get_object() (in module menu.expenses)</a>
+
+      <ul>
+        <li><a href="menu.html#menu.income.get_object">(in module menu.income)</a>
+</li>
+      </ul></li>
+      <li><a href="functions.html#functions.common_functions.get_range_for_search">get_range_for_search() (in module functions.common_functions)</a>
+</li>
+      <li><a href="database.html#database.database_commands.get_row_list">get_row_list() (in module database.database_commands)</a>
+</li>
+      <li><a href="database.html#database.database_commands.get_rows">get_rows() (in module database.database_commands)</a>
+</li>
+      <li><a href="functions.html#functions.common_functions.get_rows_from_dates">get_rows_from_dates() (in module functions.common_functions)</a>
+</li>
+      <li><a href="menu.html#menu.goals.get_spending_for_week">get_spending_for_week() (in module menu.goals)</a>
+</li>
+      <li><a href="functions.html#functions.common_functions.get_term">get_term() (in module functions.common_functions)</a>
+</li>
+      <li><a href="functions.html#functions.date_functions.get_week_dates">get_week_dates() (in module functions.date_functions)</a>
+</li>
+      <li><a href="maths.html#maths.calcs.get_week_from_year">get_week_from_year() (in module maths.calcs)</a>
+</li>
+      <li><a href="menu.html#menu.goals.get_x_coords">get_x_coords() (in module menu.goals)</a>
+</li>
+      <li><a href="functions.html#functions.date_functions.get_year_dates">get_year_dates() (in module functions.date_functions)</a>
+</li>
+      <li><a href="functions.html#functions.date_functions.get_year_weeks">get_year_weeks() (in module functions.date_functions)</a>
+</li>
+      <li><a href="menu.html#menu.goals.goals_menu">goals_menu() (in module menu.goals)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="menu.html#menu.income.Income">Income (class in menu.income)</a>
+</li>
+      <li><a href="menu.html#menu.income.income_by_date">income_by_date() (in module menu.income)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="menu.html#menu.income.income_by_source">income_by_source() (in module menu.income)</a>
+</li>
+      <li><a href="menu.html#menu.income.income_menu">income_menu() (in module menu.income)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="menu.html#menu.main_menu.main_menu">main_menu() (in module menu.main_menu)</a>
+</li>
+      <li><a href="maths.html#maths.graphs.make_plot">make_plot() (in module maths.graphs)</a>
+</li>
+      <li>
+    maths
+
+      <ul>
+        <li><a href="maths.html#module-maths">module</a>
+</li>
+      </ul></li>
+      <li>
+    maths.calcs
+
+      <ul>
+        <li><a href="maths.html#module-maths.calcs">module</a>
+</li>
+      </ul></li>
+      <li>
+    maths.graphs
+
+      <ul>
+        <li><a href="maths.html#module-maths.graphs">module</a>
+</li>
+      </ul></li>
+      <li>
+    menu
+
+      <ul>
+        <li><a href="menu.html#module-menu">module</a>
+</li>
+      </ul></li>
+      <li>
+    menu.budget
+
+      <ul>
+        <li><a href="menu.html#module-menu.budget">module</a>
+</li>
+      </ul></li>
+      <li>
+    menu.expenses
+
+      <ul>
+        <li><a href="menu.html#module-menu.expenses">module</a>
+</li>
+      </ul></li>
+      <li>
+    menu.goals
+
+      <ul>
+        <li><a href="menu.html#module-menu.goals">module</a>
+</li>
+      </ul></li>
+      <li>
+    menu.income
+
+      <ul>
+        <li><a href="menu.html#module-menu.income">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    menu.main_menu
+
+      <ul>
+        <li><a href="menu.html#module-menu.main_menu">module</a>
+</li>
+      </ul></li>
+      <li>
+    module
+
+      <ul>
+        <li><a href="database.html#module-database">database</a>
+</li>
+        <li><a href="database.html#module-database.database_commands">database.database_commands</a>
+</li>
+        <li><a href="database.html#module-database.populate_finances_db">database.populate_finances_db</a>
+</li>
+        <li><a href="functions.html#module-functions">functions</a>
+</li>
+        <li><a href="functions.html#module-functions.common_functions">functions.common_functions</a>
+</li>
+        <li><a href="functions.html#module-functions.date_functions">functions.date_functions</a>
+</li>
+        <li><a href="maths.html#module-maths">maths</a>
+</li>
+        <li><a href="maths.html#module-maths.calcs">maths.calcs</a>
+</li>
+        <li><a href="maths.html#module-maths.graphs">maths.graphs</a>
+</li>
+        <li><a href="menu.html#module-menu">menu</a>
+</li>
+        <li><a href="menu.html#module-menu.budget">menu.budget</a>
+</li>
+        <li><a href="menu.html#module-menu.expenses">menu.expenses</a>
+</li>
+        <li><a href="menu.html#module-menu.goals">menu.goals</a>
+</li>
+        <li><a href="menu.html#module-menu.income">menu.income</a>
+</li>
+        <li><a href="menu.html#module-menu.main_menu">menu.main_menu</a>
+</li>
+      </ul></li>
+      <li><a href="functions.html#functions.common_functions.money_format">money_format() (in module functions.common_functions)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="O">O</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="menu.html#menu.budget.overall_progress">overall_progress() (in module menu.budget)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="database.html#database.populate_finances_db.populate_tables">populate_tables() (in module database.populate_finances_db)</a>
+</li>
+      <li><a href="menu.html#menu.budget.print_budgets">print_budgets() (in module menu.budget)</a>
+</li>
+      <li><a href="functions.html#functions.common_functions.print_categories">print_categories() (in module functions.common_functions)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="menu.html#menu.budget.print_overall">print_overall() (in module menu.budget)</a>
+</li>
+      <li><a href="menu.html#menu.budget.print_progress">print_progress() (in module menu.budget)</a>
+</li>
+      <li><a href="menu.html#menu.expenses.print_row_list">print_row_list() (in module menu.expenses)</a>
+
+      <ul>
+        <li><a href="menu.html#menu.income.print_row_list">(in module menu.income)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="functions.html#functions.common_functions.select_category">select_category() (in module functions.common_functions)</a>
+</li>
+      <li><a href="functions.html#functions.common_functions.select_date_range">select_date_range() (in module functions.common_functions)</a>
+</li>
+      <li><a href="functions.html#functions.common_functions.select_months">select_months() (in module functions.common_functions)</a>
+</li>
+      <li><a href="menu.html#menu.budget.set_budget">set_budget() (in module menu.budget)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="menu.html#menu.budget.set_budget_by_category">set_budget_by_category() (in module menu.budget)</a>
+</li>
+      <li><a href="menu.html#menu.goals.set_financial_goals">set_financial_goals() (in module menu.goals)</a>
+</li>
+      <li><a href="menu.html#menu.income.Income.source">source (menu.income.Income attribute)</a>
+</li>
+      <li><a href="menu.html#menu.income.sources_menu">sources_menu() (in module menu.income)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="menu.html#menu.budget.Budget.table">table (menu.budget.Budget attribute)</a>
+
+      <ul>
+        <li><a href="menu.html#menu.income.Income.table">(menu.income.Income attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="menu.html#menu.budget.Budget.term">term (menu.budget.Budget attribute)</a>
+</li>
+      <li><a href="maths.html#maths.calcs.total_spending">total_spending() (in module maths.calcs)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="database.html#database.database_commands.update_category">update_category() (in module database.database_commands)</a>
+</li>
+      <li><a href="menu.html#menu.goals.update_gross_income">update_gross_income() (in module menu.goals)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="menu.html#menu.goals.update_net_income">update_net_income() (in module menu.goals)</a>
+</li>
+      <li><a href="menu.html#menu.budget.update_overall_budgets">update_overall_budgets() (in module menu.budget)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="V">V</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="menu.html#menu.budget.view_budgets">view_budgets() (in module menu.budget)</a>
+</li>
+      <li><a href="menu.html#menu.expenses.view_categories">view_categories() (in module menu.expenses)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="menu.html#menu.goals.view_progress">view_progress() (in module menu.goals)</a>
+</li>
+      <li><a href="menu.html#menu.budget.view_progress_by_term">view_progress_by_term() (in module menu.budget)</a>
+</li>
+      <li><a href="menu.html#menu.income.view_sources">view_sources() (in module menu.income)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Katherine Stewart
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, Katherine Stewart.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,687 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>menu.expenses &#8212; Budget and Expenses Tracker App Version 1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=c675a26e"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/menu/expenses';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Budget and Expenses Tracker App Version 1 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">menu</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../menu.html">menu package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maths.html">maths package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../functions.html">functions package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../database.html">database package</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for menu.expenses</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;This module contains the expenses menu. It gets user choice to add</span>
+<span class="sd">expense, view expenses by category; over a selected term, manage</span>
+<span class="sd">categories or return to main menu. It also contains all relevant</span>
+<span class="sd">functions to get the required returns for each selection.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">database</span><span class="w"> </span><span class="kn">import</span> <span class="n">database_commands</span> <span class="k">as</span> <span class="n">dc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">functions</span><span class="w"> </span><span class="kn">import</span> <span class="n">common_functions</span> <span class="k">as</span> <span class="n">cf</span>
+
+<span class="n">CAT_DESCRIBE</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Enter new category description: &quot;</span>
+<span class="n">CATEGORIES</span> <span class="o">=</span> <span class="s2">&quot;categories&quot;</span>
+<span class="n">COLUMNS</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span><span class="si">{</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1m_</span><span class="se">\033</span><span class="s2">[0m&quot;</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">70</span><span class="si">}</span><span class="se">\033</span><span class="s2">[1m</span><span class="se">\n\n</span><span class="s2">Date</span><span class="se">\t\t</span><span class="s2">Expense</span><span class="se">\t\t\t\</span>
+<span class="s2">Amount</span><span class="se">\t\t</span><span class="s2">Category</span><span class="se">\033</span><span class="s2">[0m</span><span class="se">\n</span><span class="si">{</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1m_</span><span class="se">\033</span><span class="s2">[0m&quot;</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">70</span><span class="si">}</span><span class="se">\</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">END_</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">cf</span><span class="o">.</span><span class="n">END_</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">SEL</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[36m</span><span class="se">\033</span><span class="s2">[1m -------- </span><span class="se">\033</span><span class="s2">[0m</span><span class="se">\033</span><span class="s2">[1m&quot;</span>
+<span class="n">END</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[36m</span><span class="se">\033</span><span class="s2">[1m --------</span><span class="se">\033</span><span class="s2">[0m&quot;</span>
+<span class="n">MENU_TITLE</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\U0001f4b8</span><span class="si">{</span><span class="n">SEL</span><span class="si">}</span><span class="s2">EXPENSES</span><span class="si">{</span><span class="n">END</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">EXPENSES_MENU</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span><span class="si">{</span><span class="n">MENU_TITLE</span><span class="si">}</span>
+<span class="se">\n</span><span class="s2">Please choose from the following options:</span>
+<span class="se">\n</span><span class="s2">1.  Add expense</span>
+<span class="s2">2.  View expenses</span>
+<span class="s2">3.  View expenses by category</span>
+<span class="s2">4.  Manage categories</span>
+<span class="s2">0.  Return to main menu</span>
+<span class="se">\n</span><span class="s2">Enter your selection: </span><span class="se">\</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">SEL_</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">cf</span><span class="o">.</span><span class="n">SEL_</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">SELECT_1</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">SEL_</span><span class="si">}</span><span class="s2">Add Expense</span><span class="si">{</span><span class="n">END_</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">SELECT_2</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">SEL_</span><span class="si">}</span><span class="s2">View expenses</span><span class="si">{</span><span class="n">END_</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">SELECT_3</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">SEL_</span><span class="si">}</span><span class="s2">View expenses by category</span><span class="si">{</span><span class="n">END_</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">SELECT_4</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">SEL_</span><span class="si">}</span><span class="s2">Manage categories</span><span class="si">{</span><span class="n">END_</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">CATEGORIES_MENU</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span><span class="si">{</span><span class="n">SELECT_4</span><span class="si">}</span>
+<span class="se">\n</span><span class="s2">Please choose from the following options:</span>
+<span class="se">\n</span><span class="s2">1.  View categories</span>
+<span class="s2">2.  Edit category</span>
+<span class="s2">3.  Add category</span>
+<span class="s2">0.  Cancel</span>
+<span class="se">\n</span><span class="s2">Enter your selection: </span><span class="se">\</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">SEARCH_MORE_EXPENSES</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span><span class="se">\n</span><span class="s2">Enter &#39;r&#39; to return to main menu,</span>
+<span class="s2">or anything else to continue viewing expenses: &quot;&quot;&quot;</span>
+<span class="n">TABLE</span> <span class="o">=</span> <span class="s2">&quot;expenses&quot;</span>
+<span class="n">VIEW_SHORT</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\t\t\t</span><span class="si">{}</span><span class="se">\t\t</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[90m_</span><span class="se">\033</span><span class="s2">[0m&quot;</span> <span class="o">*</span> <span class="mi">70</span>
+<span class="n">VIEW_SHORT_</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\t\t\t</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[90m_</span><span class="se">\033</span><span class="s2">[0m&quot;</span> <span class="o">*</span> <span class="mi">70</span>
+<span class="n">VIEW_LONG</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\t\t</span><span class="si">{}</span><span class="se">\t\t</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[90m_</span><span class="se">\033</span><span class="s2">[0m&quot;</span> <span class="o">*</span> <span class="mi">70</span>
+<span class="n">VIEW_LONG_</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\t\t</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[90m_</span><span class="se">\033</span><span class="s2">[0m&quot;</span> <span class="o">*</span> <span class="mi">70</span>
+<span class="n">VIEW_LONG_X</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\t\t</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[90m_</span><span class="se">\033</span><span class="s2">[0m&quot;</span> <span class="o">*</span> <span class="mi">70</span>
+<span class="n">VIEW_LONG_X_</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[90m_</span><span class="se">\033</span><span class="s2">[0m&quot;</span> <span class="o">*</span> <span class="mi">70</span>
+
+
+<div class="viewcode-block" id="Expense">
+<a class="viewcode-back" href="../../menu.html#menu.expenses.Expense">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Expense</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This class represents an expense.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    date : str</span>
+<span class="sd">        date expense was entered</span>
+<span class="sd">    expense : str</span>
+<span class="sd">        description of expense</span>
+<span class="sd">    amount : float</span>
+<span class="sd">        amount the expense cost</span>
+<span class="sd">    category : str</span>
+<span class="sd">        category of expense</span>
+
+<span class="sd">    Methods</span>
+<span class="sd">    ----------</span>
+<span class="sd">    get_all_att:</span>
+<span class="sd">        returns attributes of expense</span>
+<span class="sd">    enter_new_expense:</span>
+<span class="sd">        enters new expense into expenses table</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">expense</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="n">category</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Constructs attributes for an expense.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="n">date</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">expense</span> <span class="o">=</span> <span class="n">expense</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">amount</span> <span class="o">=</span> <span class="n">amount</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">category</span> <span class="o">=</span> <span class="n">category</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Constructs a string in readable format.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">amount</span> <span class="o">=</span> <span class="n">cf</span><span class="o">.</span><span class="n">money_format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">amount</span><span class="p">)</span>
+
+        <span class="c1"># Adjust tabs according to string length so columns are aligned</span>
+        <span class="c1"># on printing expenses.</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expense</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">7</span><span class="p">:</span>
+            <span class="n">exp_print</span> <span class="o">=</span> <span class="n">VIEW_LONG</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">get_all_att</span><span class="p">())</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">amount</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">7</span><span class="p">:</span>
+                <span class="n">exp_print</span> <span class="o">=</span> <span class="n">VIEW_LONG_</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">get_all_att</span><span class="p">())</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expense</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">15</span><span class="p">:</span>
+                <span class="n">exp_print</span> <span class="o">=</span> <span class="n">VIEW_LONG_X</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">get_all_att</span><span class="p">())</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">amount</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">7</span><span class="p">:</span>
+                    <span class="n">exp_print</span> <span class="o">=</span> <span class="n">VIEW_LONG_X_</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">get_all_att</span><span class="p">())</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">exp_print</span> <span class="o">=</span> <span class="n">VIEW_SHORT</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">get_all_att</span><span class="p">())</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">amount</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">7</span><span class="p">:</span>
+                <span class="n">exp_print</span> <span class="o">=</span> <span class="n">VIEW_SHORT_</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">get_all_att</span><span class="p">())</span>
+
+        <span class="k">return</span> <span class="n">exp_print</span>
+
+<div class="viewcode-block" id="Expense.get_all_att">
+<a class="viewcode-back" href="../../menu.html#menu.expenses.Expense.get_all_att">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_all_att</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This method returns the attributes of an Expense object.</span>
+
+<span class="sd">        :param self: Expense object</span>
+<span class="sd">        :return: Tuple containing Expense attributes</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">expense</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">amount</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">category</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Expense.enter_object">
+<a class="viewcode-back" href="../../menu.html#menu.expenses.Expense.enter_object">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">enter_object</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This method enters a new expense into the &#39;expenses&#39; table.</span>
+
+<span class="sd">        :param self: Expense object</span>
+<span class="sd">        :return: None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">dc</span><span class="o">.</span><span class="n">enter_expense</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_all_att</span><span class="p">())</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="get_expense">
+<a class="viewcode-back" href="../../menu.html#menu.expenses.get_expense">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_expense</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function gets a new expense from the user.</span>
+
+<span class="sd">    :return: today&#39;s date, expense, amount and category ID number</span>
+<span class="sd">    :rtype: tuple</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+    <span class="n">new_expense</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Enter expense description: &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">cf</span><span class="o">.</span><span class="n">description_check</span><span class="p">(</span><span class="n">new_expense</span><span class="p">):</span>
+        <span class="n">new_expense</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Enter expense description: &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+    <span class="n">new_amount</span> <span class="o">=</span> <span class="n">cf</span><span class="o">.</span><span class="n">get_amount</span><span class="p">()</span>
+    <span class="n">cat_choice_id</span> <span class="o">=</span> <span class="n">cf</span><span class="o">.</span><span class="n">select_category</span><span class="p">(</span><span class="s2">&quot;categories&quot;</span><span class="p">)</span>
+    <span class="n">exp_obj</span> <span class="o">=</span> <span class="n">Expense</span><span class="p">(</span><span class="n">today</span><span class="p">,</span> <span class="n">new_expense</span><span class="p">,</span> <span class="n">new_amount</span><span class="p">,</span> <span class="n">cat_choice_id</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">exp_obj</span></div>
+
+
+
+<div class="viewcode-block" id="get_object">
+<a class="viewcode-back" href="../../menu.html#menu.expenses.get_object">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_object</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function gets an Expense object from a row from the</span>
+<span class="sd">    expenses table.</span>
+
+<span class="sd">    :param row: row from expenses table</span>
+<span class="sd">    :return: Expense object</span>
+<span class="sd">    :rtype: obj</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">expense_object</span> <span class="o">=</span> <span class="n">Expense</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">expense_object</span></div>
+
+
+
+<div class="viewcode-block" id="print_row_list">
+<a class="viewcode-back" href="../../menu.html#menu.expenses.print_row_list">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">print_row_list</span><span class="p">(</span><span class="n">list_of_rows</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function prints a list of rows from the expenses table</span>
+
+<span class="sd">    :param list_of_rows: list of rows from expenses table</span>
+<span class="sd">    :return: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">list_of_rows</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">COLUMNS</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">list_of_rows</span><span class="p">:</span>
+            <span class="n">item</span> <span class="o">=</span> <span class="n">get_object</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">cf</span><span class="o">.</span><span class="n">NO_RESULTS</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="expenses_by_date">
+<a class="viewcode-back" href="../../menu.html#menu.expenses.expenses_by_date">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">expenses_by_date</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function gets rows from expenses table in a selected date</span>
+<span class="sd">    range</span>
+
+<span class="sd">    :return: rows from expenses table</span>
+<span class="sd">    :rtype: list of tuples</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">date_range</span> <span class="o">=</span> <span class="n">cf</span><span class="o">.</span><span class="n">select_date_range</span><span class="p">()</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">cf</span><span class="o">.</span><span class="n">get_rows_from_dates</span><span class="p">(</span><span class="n">date_range</span><span class="p">,</span> <span class="n">TABLE</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">rows</span></div>
+
+
+
+<div class="viewcode-block" id="expenses_by_category">
+<a class="viewcode-back" href="../../menu.html#menu.expenses.expenses_by_category">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">expenses_by_category</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function prints a list of expenses in a selected category</span>
+
+<span class="sd">    :return: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">cat_choice_id</span> <span class="o">=</span> <span class="n">cf</span><span class="o">.</span><span class="n">select_category</span><span class="p">(</span><span class="n">CATEGORIES</span><span class="p">)</span>
+    <span class="n">cf</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+    <span class="n">expense_rows</span> <span class="o">=</span> <span class="n">expenses_by_date</span><span class="p">()</span>
+    <span class="n">expenses_in_category</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># If expense matches category selection, append to new list</span>
+    <span class="k">for</span> <span class="n">expense</span> <span class="ow">in</span> <span class="n">expense_rows</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">expense</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">==</span> <span class="n">cat_choice_id</span><span class="p">:</span>
+            <span class="n">expenses_in_category</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">expense</span><span class="p">)</span>
+
+    <span class="n">cf</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">print_row_list</span><span class="p">(</span><span class="n">expenses_in_category</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="get_new_category">
+<a class="viewcode-back" href="../../menu.html#menu.expenses.get_new_category">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_new_category</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function gets a new category description from the user</span>
+
+<span class="sd">    :return: category description</span>
+<span class="sd">    :rtype: str</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">cat</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">CAT_DESCRIBE</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">cf</span><span class="o">.</span><span class="n">description_check</span><span class="p">(</span><span class="n">cat</span><span class="p">):</span>
+        <span class="n">cat</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">CAT_DESCRIBE</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">cat</span></div>
+
+
+
+<div class="viewcode-block" id="view_categories">
+<a class="viewcode-back" href="../../menu.html#menu.expenses.view_categories">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">view_categories</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function prints all categories for the user to select from</span>
+
+<span class="sd">    :return: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">category_list</span> <span class="o">=</span> <span class="n">dc</span><span class="o">.</span><span class="n">get_row_list</span><span class="p">(</span><span class="n">CATEGORIES</span><span class="p">)</span>
+    <span class="n">cf</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">cf</span><span class="o">.</span><span class="n">print_categories</span><span class="p">(</span><span class="n">category_list</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="categories_menu">
+<a class="viewcode-back" href="../../menu.html#menu.expenses.categories_menu">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">categories_menu</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function presents the user with options to manage expense</span>
+<span class="sd">    categories and calls relevant functions according to user selection</span>
+
+<span class="sd">    :return: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">cat_menu</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">CATEGORIES_MENU</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+        <span class="c1"># ****** View categories ******</span>
+        <span class="k">if</span> <span class="n">cat_menu</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+            <span class="n">cf</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+            <span class="n">view_categories</span><span class="p">()</span>
+
+        <span class="c1"># ****** Edit category ******</span>
+        <span class="k">elif</span> <span class="n">cat_menu</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
+            <span class="n">cf</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+            <span class="n">cat_id</span> <span class="o">=</span> <span class="n">cf</span><span class="o">.</span><span class="n">select_category</span><span class="p">(</span><span class="n">CATEGORIES</span><span class="p">)</span>
+            <span class="n">cat_update</span> <span class="o">=</span> <span class="n">get_new_category</span><span class="p">()</span>
+            <span class="n">dc</span><span class="o">.</span><span class="n">update_category</span><span class="p">(</span><span class="n">CATEGORIES</span><span class="p">,</span> <span class="n">cat_id</span><span class="p">,</span> <span class="n">cat_update</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Category has been updated </span><span class="se">\U00002705</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">cf</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+        <span class="c1"># ****** Add category ******</span>
+        <span class="k">elif</span> <span class="n">cat_menu</span> <span class="o">==</span> <span class="s2">&quot;3&quot;</span><span class="p">:</span>
+            <span class="n">new_cat</span> <span class="o">=</span> <span class="n">get_new_category</span><span class="p">()</span>
+            <span class="n">dc</span><span class="o">.</span><span class="n">enter_category</span><span class="p">(</span><span class="n">new_cat</span><span class="p">,</span> <span class="n">CATEGORIES</span><span class="p">)</span>
+            <span class="n">view_categories</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Category added </span><span class="se">\U00002705</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">cf</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+        <span class="c1"># ****** Return to main menu ******</span>
+        <span class="k">elif</span> <span class="n">cat_menu</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span><span class="p">:</span>
+            <span class="n">cf</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+            <span class="k">break</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">cf</span><span class="o">.</span><span class="n">INVALID_INPUT</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="expense_menu">
+<a class="viewcode-back" href="../../menu.html#menu.expenses.expense_menu">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">expense_menu</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function manages the user selection from the expense menu</span>
+<span class="sd">    calls the relevant functions according to the menu selection</span>
+
+<span class="sd">    :return: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">menu</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">EXPENSES_MENU</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+        <span class="c1"># ****** Add expense ******</span>
+        <span class="k">if</span> <span class="n">menu</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+            <span class="n">cf</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">SELECT_1</span><span class="p">)</span>
+
+            <span class="n">new_expense</span> <span class="o">=</span> <span class="n">get_expense</span><span class="p">()</span>
+            <span class="n">new_expense</span><span class="o">.</span><span class="n">enter_object</span><span class="p">()</span>
+            <span class="n">cf</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="n">COLUMNS</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">new_expense</span><span class="p">)</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Expense has been added </span><span class="se">\U00002705\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span>
+
+        <span class="c1"># ****** View expenses ******</span>
+        <span class="k">elif</span> <span class="n">menu</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
+            <span class="n">cf</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">SELECT_2</span><span class="p">)</span>
+            <span class="n">expenses_list</span> <span class="o">=</span> <span class="n">expenses_by_date</span><span class="p">()</span>
+            <span class="n">cf</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+            <span class="n">print_row_list</span><span class="p">(</span><span class="n">expenses_list</span><span class="p">)</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span>
+
+        <span class="c1"># ****** View expenses by category ******</span>
+        <span class="k">elif</span> <span class="n">menu</span> <span class="o">==</span> <span class="s2">&quot;3&quot;</span><span class="p">:</span>
+            <span class="n">cf</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">SELECT_3</span><span class="p">)</span>
+            <span class="n">expenses_by_category</span><span class="p">()</span>
+
+        <span class="c1"># ****** Manage Categories ******</span>
+        <span class="k">elif</span> <span class="n">menu</span> <span class="o">==</span> <span class="s2">&quot;4&quot;</span><span class="p">:</span>
+            <span class="n">cf</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+            <span class="n">categories_menu</span><span class="p">()</span>
+
+        <span class="c1"># ****** Return to main menu ******</span>
+        <span class="k">elif</span> <span class="n">menu</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span><span class="p">:</span>
+            <span class="n">cf</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+            <span class="k">break</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cf</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">cf</span><span class="o">.</span><span class="n">INVALID_INPUT</span><span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Katherine Stewart
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, Katherine Stewart.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,812 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>database package &#8212; Budget and Expenses Tracker App Version 1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=c675a26e"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'database';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="functions package" href="functions.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Budget and Expenses Tracker App Version 1 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="modules.html">menu</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="menu.html">menu package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maths.html">maths package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html">functions package</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">database package</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/database.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>database package</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-database.database_commands">database.database_commands module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.connect_db"><code class="docutils literal notranslate"><span class="pre">connect_db()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.create_and_populate_tables"><code class="docutils literal notranslate"><span class="pre">create_and_populate_tables()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.enter_budget"><code class="docutils literal notranslate"><span class="pre">enter_budget()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.enter_category"><code class="docutils literal notranslate"><span class="pre">enter_category()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.enter_expense"><code class="docutils literal notranslate"><span class="pre">enter_expense()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.enter_goal"><code class="docutils literal notranslate"><span class="pre">enter_goal()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.enter_income"><code class="docutils literal notranslate"><span class="pre">enter_income()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.get_category_from_budget"><code class="docutils literal notranslate"><span class="pre">get_category_from_budget()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.get_category_from_id"><code class="docutils literal notranslate"><span class="pre">get_category_from_id()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.get_expenses_by_date"><code class="docutils literal notranslate"><span class="pre">get_expenses_by_date()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.get_expenses_date_amount"><code class="docutils literal notranslate"><span class="pre">get_expenses_date_amount()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.get_goal"><code class="docutils literal notranslate"><span class="pre">get_goal()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.get_income_by_date"><code class="docutils literal notranslate"><span class="pre">get_income_by_date()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.get_joined_rows"><code class="docutils literal notranslate"><span class="pre">get_joined_rows()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.get_max_budget_id"><code class="docutils literal notranslate"><span class="pre">get_max_budget_id()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.get_row_list"><code class="docutils literal notranslate"><span class="pre">get_row_list()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.get_rows"><code class="docutils literal notranslate"><span class="pre">get_rows()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.update_category"><code class="docutils literal notranslate"><span class="pre">update_category()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-database.populate_finances_db">database.populate_finances_db module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.populate_finances_db.enter_budgets_goals"><code class="docutils literal notranslate"><span class="pre">enter_budgets_goals()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.populate_finances_db.populate_tables"><code class="docutils literal notranslate"><span class="pre">populate_tables()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-database">Module contents</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="database-package">
+<h1>database package<a class="headerlink" href="#database-package" title="Link to this heading">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-database.database_commands">
+<span id="database-database-commands-module"></span><h2>database.database_commands module<a class="headerlink" href="#module-database.database_commands" title="Link to this heading">#</a></h2>
+<p>This module contains all functions with logic to interact with the
+database finances.db. This is the only module which accesses the
+database. There are six tables; expenses, income, categories, sources,
+budget and goals.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="database.database_commands.connect_db">
+<span class="sig-prename descclassname"><span class="pre">database.database_commands.</span></span><span class="sig-name descname"><span class="pre">connect_db</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/database/database_commands.html#connect_db"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.database_commands.connect_db" title="Link to this definition">#</a></dt>
+<dd><p>Establishes a connection to the SQLite database and returns the
+connection and cursor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>connection and cursor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.database_commands.create_and_populate_tables">
+<span class="sig-prename descclassname"><span class="pre">database.database_commands.</span></span><span class="sig-name descname"><span class="pre">create_and_populate_tables</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/database/database_commands.html#create_and_populate_tables"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.database_commands.create_and_populate_tables" title="Link to this definition">#</a></dt>
+<dd><p>This function creates all tables in the database if they don’t
+exist.  If it is the first time they have been created, then it
+populates the table with dummy data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.database_commands.enter_budget">
+<span class="sig-prename descclassname"><span class="pre">database.database_commands.</span></span><span class="sig-name descname"><span class="pre">enter_budget</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cat_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">term</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database/database_commands.html#enter_budget"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.database_commands.enter_budget" title="Link to this definition">#</a></dt>
+<dd><p>This function enters a new budget assigned to a category</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cat_id</strong> – primary key in categories table</p></li>
+<li><p><strong>amount</strong> – new budget amount</p></li>
+<li><p><strong>term</strong> – “weekly”, “monthly”, or “annual”</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.database_commands.enter_category">
+<span class="sig-prename descclassname"><span class="pre">database.database_commands.</span></span><span class="sig-name descname"><span class="pre">enter_category</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_cat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database/database_commands.html#enter_category"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.database_commands.enter_category" title="Link to this definition">#</a></dt>
+<dd><p>This function enters a new category in a table</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>new_cat</strong> – new expense category or income source</p></li>
+<li><p><strong>table</strong> – expenses or sources table in database</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.database_commands.enter_expense">
+<span class="sig-prename descclassname"><span class="pre">database.database_commands.</span></span><span class="sig-name descname"><span class="pre">enter_expense</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expense_tuple</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database/database_commands.html#enter_expense"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.database_commands.enter_expense" title="Link to this definition">#</a></dt>
+<dd><p>This function enters an expense into the expenses table.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>expense_tuple</strong> – tuple with date, expense, amount, categoryID</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.database_commands.enter_goal">
+<span class="sig-prename descclassname"><span class="pre">database.database_commands.</span></span><span class="sig-name descname"><span class="pre">enter_goal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">goal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">term</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database/database_commands.html#enter_goal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.database_commands.enter_goal" title="Link to this definition">#</a></dt>
+<dd><p>This function enters a new goal into the goals table</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>goal</strong> – ‘budget’, ‘net income’ or ‘gross income’</p></li>
+<li><p><strong>amount</strong> – amount of money in goal</p></li>
+<li><p><strong>term</strong> – ‘weekly’, ‘monthly’ or ‘annual’</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.database_commands.enter_income">
+<span class="sig-prename descclassname"><span class="pre">database.database_commands.</span></span><span class="sig-name descname"><span class="pre">enter_income</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">income_tuple</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database/database_commands.html#enter_income"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.database_commands.enter_income" title="Link to this definition">#</a></dt>
+<dd><p>This function enters an income into the income table.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>income_tuple</strong> – tuple with date, source, amount</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.database_commands.get_category_from_budget">
+<span class="sig-prename descclassname"><span class="pre">database.database_commands.</span></span><span class="sig-name descname"><span class="pre">get_category_from_budget</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">budget_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database/database_commands.html#get_category_from_budget"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.database_commands.get_category_from_budget" title="Link to this definition">#</a></dt>
+<dd><p>This function gets the category description, for a budget set by
+category, from its budget id number</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>budget_id</strong> – budget primary key, category foreign key</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>category description or None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.database_commands.get_category_from_id">
+<span class="sig-prename descclassname"><span class="pre">database.database_commands.</span></span><span class="sig-name descname"><span class="pre">get_category_from_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">category_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database/database_commands.html#get_category_from_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.database_commands.get_category_from_id" title="Link to this definition">#</a></dt>
+<dd><p>This function gets the description of an expenses category or
+income source from its id number</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>category_id</strong> – primary key in table</p></li>
+<li><p><strong>table</strong> – ‘categories’ or ‘sources’</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>category</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.database_commands.get_expenses_by_date">
+<span class="sig-prename descclassname"><span class="pre">database.database_commands.</span></span><span class="sig-name descname"><span class="pre">get_expenses_by_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">days_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database/database_commands.html#get_expenses_by_date"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.database_commands.get_expenses_by_date" title="Link to this definition">#</a></dt>
+<dd><p>This function gets expenses for each day in a list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>days_list</strong> – list of days</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of rows from expenses table</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of tuples</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.database_commands.get_expenses_date_amount">
+<span class="sig-prename descclassname"><span class="pre">database.database_commands.</span></span><span class="sig-name descname"><span class="pre">get_expenses_date_amount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cat_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database/database_commands.html#get_expenses_date_amount"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.database_commands.get_expenses_date_amount" title="Link to this definition">#</a></dt>
+<dd><p>This function gets the date and amount of expenses from a chosen
+category</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cat_id</strong> – foreign key in expenses table, primary in categories</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>date and amount of expenses</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of tuples</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.database_commands.get_goal">
+<span class="sig-prename descclassname"><span class="pre">database.database_commands.</span></span><span class="sig-name descname"><span class="pre">get_goal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">goal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">term</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database/database_commands.html#get_goal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.database_commands.get_goal" title="Link to this definition">#</a></dt>
+<dd><p>This function gets a goal amount from the goals table from its
+description and term</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>goal</strong> – ‘budget’, ‘net income’ or ‘gross income’</p></li>
+<li><p><strong>term</strong> – ‘weekly’, ‘monthly’ or ‘annual’</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>goal amount or None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.database_commands.get_income_by_date">
+<span class="sig-prename descclassname"><span class="pre">database.database_commands.</span></span><span class="sig-name descname"><span class="pre">get_income_by_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">days_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database/database_commands.html#get_income_by_date"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.database_commands.get_income_by_date" title="Link to this definition">#</a></dt>
+<dd><p>This function gets income for each day in a list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>days_list</strong> – list of days</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of rows from income table</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of tuples</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.database_commands.get_joined_rows">
+<span class="sig-prename descclassname"><span class="pre">database.database_commands.</span></span><span class="sig-name descname"><span class="pre">get_joined_rows</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database/database_commands.html#get_joined_rows"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.database_commands.get_joined_rows" title="Link to this definition">#</a></dt>
+<dd><p>This function gets all rows from a joined table.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>table</strong> – table name</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>all rows from table</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of tuples</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.database_commands.get_max_budget_id">
+<span class="sig-prename descclassname"><span class="pre">database.database_commands.</span></span><span class="sig-name descname"><span class="pre">get_max_budget_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/database/database_commands.html#get_max_budget_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.database_commands.get_max_budget_id" title="Link to this definition">#</a></dt>
+<dd><p>This function gets the maximum value for primary key in budget
+table</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>max_id</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.database_commands.get_row_list">
+<span class="sig-prename descclassname"><span class="pre">database.database_commands.</span></span><span class="sig-name descname"><span class="pre">get_row_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database/database_commands.html#get_row_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.database_commands.get_row_list" title="Link to this definition">#</a></dt>
+<dd><p>This function gets a list of all the rows in a table</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>table</strong> – table in database</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>all rows</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.database_commands.get_rows">
+<span class="sig-prename descclassname"><span class="pre">database.database_commands.</span></span><span class="sig-name descname"><span class="pre">get_rows</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year_month</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database/database_commands.html#get_rows"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.database_commands.get_rows" title="Link to this definition">#</a></dt>
+<dd><p>This function gets all rows from a table, appends all rows to a
+list where the date they were entered matches a selected month.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>year_month</strong> – YYYY-MM</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>all rows which match year_month from table</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of tuples</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.database_commands.update_category">
+<span class="sig-prename descclassname"><span class="pre">database.database_commands.</span></span><span class="sig-name descname"><span class="pre">update_category</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cat_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database/database_commands.html#update_category"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.database_commands.update_category" title="Link to this definition">#</a></dt>
+<dd><p>This function updates a description for an expense category or
+an income source</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>table</strong> – ‘categories’ or ‘sources’</p></li>
+<li><p><strong>cat_id</strong> – primary key id number</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-database.populate_finances_db">
+<span id="database-populate-finances-db-module"></span><h2>database.populate_finances_db module<a class="headerlink" href="#module-database.populate_finances_db" title="Link to this heading">#</a></h2>
+<p>This module adds dummy data to the tables in finances.db database
+for testing purposes.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="database.populate_finances_db.enter_budgets_goals">
+<span class="sig-prename descclassname"><span class="pre">database.populate_finances_db.</span></span><span class="sig-name descname"><span class="pre">enter_budgets_goals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/database/populate_finances_db.html#enter_budgets_goals"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.populate_finances_db.enter_budgets_goals" title="Link to this definition">#</a></dt>
+<dd><p>This function enters goals and budgets dummy data into tables in
+database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.populate_finances_db.populate_tables">
+<span class="sig-prename descclassname"><span class="pre">database.populate_finances_db.</span></span><span class="sig-name descname"><span class="pre">populate_tables</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/database/populate_finances_db.html#populate_tables"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.populate_finances_db.populate_tables" title="Link to this definition">#</a></dt>
+<dd><p>This function populates tables in database with dummy data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-database">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-database" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="functions.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">functions package</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-database.database_commands">database.database_commands module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.connect_db"><code class="docutils literal notranslate"><span class="pre">connect_db()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.create_and_populate_tables"><code class="docutils literal notranslate"><span class="pre">create_and_populate_tables()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.enter_budget"><code class="docutils literal notranslate"><span class="pre">enter_budget()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.enter_category"><code class="docutils literal notranslate"><span class="pre">enter_category()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.enter_expense"><code class="docutils literal notranslate"><span class="pre">enter_expense()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.enter_goal"><code class="docutils literal notranslate"><span class="pre">enter_goal()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.enter_income"><code class="docutils literal notranslate"><span class="pre">enter_income()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.get_category_from_budget"><code class="docutils literal notranslate"><span class="pre">get_category_from_budget()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.get_category_from_id"><code class="docutils literal notranslate"><span class="pre">get_category_from_id()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.get_expenses_by_date"><code class="docutils literal notranslate"><span class="pre">get_expenses_by_date()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.get_expenses_date_amount"><code class="docutils literal notranslate"><span class="pre">get_expenses_date_amount()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.get_goal"><code class="docutils literal notranslate"><span class="pre">get_goal()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.get_income_by_date"><code class="docutils literal notranslate"><span class="pre">get_income_by_date()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.get_joined_rows"><code class="docutils literal notranslate"><span class="pre">get_joined_rows()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.get_max_budget_id"><code class="docutils literal notranslate"><span class="pre">get_max_budget_id()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.get_row_list"><code class="docutils literal notranslate"><span class="pre">get_row_list()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.get_rows"><code class="docutils literal notranslate"><span class="pre">get_rows()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.database_commands.update_category"><code class="docutils literal notranslate"><span class="pre">update_category()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-database.populate_finances_db">database.populate_finances_db module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.populate_finances_db.enter_budgets_goals"><code class="docutils literal notranslate"><span class="pre">enter_budgets_goals()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database.populate_finances_db.populate_tables"><code class="docutils literal notranslate"><span class="pre">populate_tables()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-database">Module contents</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Katherine Stewart
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, Katherine Stewart.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
