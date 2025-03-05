@@ -16,7 +16,7 @@ menu choice 'Financial Goals' allows user to set gross or net income
 goals or to view progress towards financial goals.  The latter will
 display a graph with their progress for each week in the current year.
 
-### Overview
+## Overview
 
 * main.py: entry point of programme
 * main_menu.py: main menu options
@@ -31,12 +31,7 @@ display a graph with their progress for each week in the current year.
 * calcs.py: all calculations
 * graphs.py: makes graphs
 
-#### Getting Started
-
-The main.py file is the main entry point for the programme. It calls
-the main_menu function to display the main menu to the user.
-
-##### Imported libraries
+## Imported libraries
 
 * datetime
 * dateutil
