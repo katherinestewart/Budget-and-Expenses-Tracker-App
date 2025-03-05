@@ -1,0 +1,584 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>menu &#8212; Budget and Expenses Tracker App Version 1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=c675a26e"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'modules';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="menu package" href="menu.html" />
+    <link rel="prev" title="Budget and Expenses Tracker App documentation" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Budget and Expenses Tracker App Version 1 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">menu</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="menu.html">menu package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maths.html">maths package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html">functions package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html">database package</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/modules.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>menu</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="menu">
+<h1>menu<a class="headerlink" href="#menu" title="Link to this heading">#</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="menu.html">menu package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="menu.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="menu.html#module-menu.budget">menu.budget module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.budget.Budget"><code class="docutils literal notranslate"><span class="pre">Budget</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="menu.html#menu.budget.Budget.amount"><code class="docutils literal notranslate"><span class="pre">Budget.amount</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="menu.html#menu.budget.Budget.term"><code class="docutils literal notranslate"><span class="pre">Budget.term</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="menu.html#menu.budget.Budget.get_all_att"><code class="docutils literal notranslate"><span class="pre">Budget.get_all_att()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="menu.html#menu.budget.Budget.table"><code class="docutils literal notranslate"><span class="pre">Budget.table</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.budget.budget_menu"><code class="docutils literal notranslate"><span class="pre">budget_menu()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.budget.get_budgets"><code class="docutils literal notranslate"><span class="pre">get_budgets()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.budget.get_budgets_by_term"><code class="docutils literal notranslate"><span class="pre">get_budgets_by_term()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.budget.get_existing_gross"><code class="docutils literal notranslate"><span class="pre">get_existing_gross()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.budget.get_expenses_by_date"><code class="docutils literal notranslate"><span class="pre">get_expenses_by_date()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.budget.get_list_expenses_in_dates"><code class="docutils literal notranslate"><span class="pre">get_list_expenses_in_dates()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.budget.overall_progress"><code class="docutils literal notranslate"><span class="pre">overall_progress()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.budget.print_budgets"><code class="docutils literal notranslate"><span class="pre">print_budgets()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.budget.print_overall"><code class="docutils literal notranslate"><span class="pre">print_overall()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.budget.print_progress"><code class="docutils literal notranslate"><span class="pre">print_progress()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.budget.set_budget"><code class="docutils literal notranslate"><span class="pre">set_budget()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.budget.set_budget_by_category"><code class="docutils literal notranslate"><span class="pre">set_budget_by_category()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.budget.update_overall_budgets"><code class="docutils literal notranslate"><span class="pre">update_overall_budgets()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.budget.view_budgets"><code class="docutils literal notranslate"><span class="pre">view_budgets()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.budget.view_progress_by_term"><code class="docutils literal notranslate"><span class="pre">view_progress_by_term()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="menu.html#module-menu.expenses">menu.expenses module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.expenses.Expense"><code class="docutils literal notranslate"><span class="pre">Expense</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="menu.html#menu.expenses.Expense.date"><code class="docutils literal notranslate"><span class="pre">Expense.date</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="menu.html#menu.expenses.Expense.expense"><code class="docutils literal notranslate"><span class="pre">Expense.expense</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="menu.html#menu.expenses.Expense.amount"><code class="docutils literal notranslate"><span class="pre">Expense.amount</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="menu.html#menu.expenses.Expense.category"><code class="docutils literal notranslate"><span class="pre">Expense.category</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="menu.html#menu.expenses.Expense.enter_object"><code class="docutils literal notranslate"><span class="pre">Expense.enter_object()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="menu.html#menu.expenses.Expense.get_all_att"><code class="docutils literal notranslate"><span class="pre">Expense.get_all_att()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.expenses.categories_menu"><code class="docutils literal notranslate"><span class="pre">categories_menu()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.expenses.expense_menu"><code class="docutils literal notranslate"><span class="pre">expense_menu()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.expenses.expenses_by_category"><code class="docutils literal notranslate"><span class="pre">expenses_by_category()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.expenses.expenses_by_date"><code class="docutils literal notranslate"><span class="pre">expenses_by_date()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.expenses.get_expense"><code class="docutils literal notranslate"><span class="pre">get_expense()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.expenses.get_new_category"><code class="docutils literal notranslate"><span class="pre">get_new_category()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.expenses.get_object"><code class="docutils literal notranslate"><span class="pre">get_object()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.expenses.print_row_list"><code class="docutils literal notranslate"><span class="pre">print_row_list()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.expenses.view_categories"><code class="docutils literal notranslate"><span class="pre">view_categories()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="menu.html#module-menu.goals">menu.goals module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.goals.get_amount_from_rows"><code class="docutils literal notranslate"><span class="pre">get_amount_from_rows()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.goals.get_annual"><code class="docutils literal notranslate"><span class="pre">get_annual()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.goals.get_budget_args"><code class="docutils literal notranslate"><span class="pre">get_budget_args()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.goals.get_common_args"><code class="docutils literal notranslate"><span class="pre">get_common_args()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.goals.get_graph"><code class="docutils literal notranslate"><span class="pre">get_graph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.goals.get_gross_args"><code class="docutils literal notranslate"><span class="pre">get_gross_args()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.goals.get_gross_or_net"><code class="docutils literal notranslate"><span class="pre">get_gross_or_net()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.goals.get_income_for_week"><code class="docutils literal notranslate"><span class="pre">get_income_for_week()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.goals.get_labels"><code class="docutils literal notranslate"><span class="pre">get_labels()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.goals.get_net_args"><code class="docutils literal notranslate"><span class="pre">get_net_args()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.goals.get_no_weeks"><code class="docutils literal notranslate"><span class="pre">get_no_weeks()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.goals.get_spending_for_week"><code class="docutils literal notranslate"><span class="pre">get_spending_for_week()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.goals.get_x_coords"><code class="docutils literal notranslate"><span class="pre">get_x_coords()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.goals.goals_menu"><code class="docutils literal notranslate"><span class="pre">goals_menu()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.goals.set_financial_goals"><code class="docutils literal notranslate"><span class="pre">set_financial_goals()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.goals.update_gross_income"><code class="docutils literal notranslate"><span class="pre">update_gross_income()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.goals.update_net_income"><code class="docutils literal notranslate"><span class="pre">update_net_income()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.goals.view_progress"><code class="docutils literal notranslate"><span class="pre">view_progress()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="menu.html#module-menu.income">menu.income module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.income.Income"><code class="docutils literal notranslate"><span class="pre">Income</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="menu.html#menu.income.Income.date"><code class="docutils literal notranslate"><span class="pre">Income.date</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="menu.html#menu.income.Income.source"><code class="docutils literal notranslate"><span class="pre">Income.source</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="menu.html#menu.income.Income.amount"><code class="docutils literal notranslate"><span class="pre">Income.amount</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="menu.html#menu.income.Income.enter_income"><code class="docutils literal notranslate"><span class="pre">Income.enter_income()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="menu.html#menu.income.Income.get_all_att"><code class="docutils literal notranslate"><span class="pre">Income.get_all_att()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="menu.html#menu.income.Income.table"><code class="docutils literal notranslate"><span class="pre">Income.table</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.income.get_income"><code class="docutils literal notranslate"><span class="pre">get_income()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.income.get_new_source"><code class="docutils literal notranslate"><span class="pre">get_new_source()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.income.get_object"><code class="docutils literal notranslate"><span class="pre">get_object()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.income.income_by_date"><code class="docutils literal notranslate"><span class="pre">income_by_date()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.income.income_by_source"><code class="docutils literal notranslate"><span class="pre">income_by_source()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.income.income_menu"><code class="docutils literal notranslate"><span class="pre">income_menu()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.income.print_row_list"><code class="docutils literal notranslate"><span class="pre">print_row_list()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.income.sources_menu"><code class="docutils literal notranslate"><span class="pre">sources_menu()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.income.view_sources"><code class="docutils literal notranslate"><span class="pre">view_sources()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="menu.html#module-menu.main_menu">menu.main_menu module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.main_menu.display_message"><code class="docutils literal notranslate"><span class="pre">display_message()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="menu.html#menu.main_menu.main_menu"><code class="docutils literal notranslate"><span class="pre">main_menu()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="menu.html#module-menu">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="maths.html">maths package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="maths.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maths.html#module-maths.calcs">maths.calcs module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="maths.html#maths.calcs.annual_from_monthly"><code class="docutils literal notranslate"><span class="pre">annual_from_monthly()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="maths.html#maths.calcs.annual_from_weekly"><code class="docutils literal notranslate"><span class="pre">annual_from_weekly()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="maths.html#maths.calcs.difference"><code class="docutils literal notranslate"><span class="pre">difference()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="maths.html#maths.calcs.get_average_amount"><code class="docutils literal notranslate"><span class="pre">get_average_amount()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="maths.html#maths.calcs.get_mean"><code class="docutils literal notranslate"><span class="pre">get_mean()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="maths.html#maths.calcs.get_month_from_year"><code class="docutils literal notranslate"><span class="pre">get_month_from_year()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="maths.html#maths.calcs.get_week_from_year"><code class="docutils literal notranslate"><span class="pre">get_week_from_year()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="maths.html#maths.calcs.total_spending"><code class="docutils literal notranslate"><span class="pre">total_spending()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="maths.html#module-maths.graphs">maths.graphs module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="maths.html#maths.graphs.make_plot"><code class="docutils literal notranslate"><span class="pre">make_plot()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="maths.html#module-maths">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">functions package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="functions.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html#module-functions.common_functions">functions.common_functions module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="functions.html#functions.common_functions.amount_check"><code class="docutils literal notranslate"><span class="pre">amount_check()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions.html#functions.common_functions.clear"><code class="docutils literal notranslate"><span class="pre">clear()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions.html#functions.common_functions.description_check"><code class="docutils literal notranslate"><span class="pre">description_check()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions.html#functions.common_functions.get_amount"><code class="docutils literal notranslate"><span class="pre">get_amount()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions.html#functions.common_functions.get_category_dict"><code class="docutils literal notranslate"><span class="pre">get_category_dict()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions.html#functions.common_functions.get_range_for_search"><code class="docutils literal notranslate"><span class="pre">get_range_for_search()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions.html#functions.common_functions.get_rows_from_dates"><code class="docutils literal notranslate"><span class="pre">get_rows_from_dates()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions.html#functions.common_functions.get_term"><code class="docutils literal notranslate"><span class="pre">get_term()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions.html#functions.common_functions.money_format"><code class="docutils literal notranslate"><span class="pre">money_format()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions.html#functions.common_functions.print_categories"><code class="docutils literal notranslate"><span class="pre">print_categories()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions.html#functions.common_functions.select_category"><code class="docutils literal notranslate"><span class="pre">select_category()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions.html#functions.common_functions.select_date_range"><code class="docutils literal notranslate"><span class="pre">select_date_range()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions.html#functions.common_functions.select_months"><code class="docutils literal notranslate"><span class="pre">select_months()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html#module-functions.date_functions">functions.date_functions module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="functions.html#functions.date_functions.get_dates"><code class="docutils literal notranslate"><span class="pre">get_dates()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions.html#functions.date_functions.get_dates_for_goals"><code class="docutils literal notranslate"><span class="pre">get_dates_for_goals()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions.html#functions.date_functions.get_dates_in_week"><code class="docutils literal notranslate"><span class="pre">get_dates_in_week()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions.html#functions.date_functions.get_days_list"><code class="docutils literal notranslate"><span class="pre">get_days_list()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions.html#functions.date_functions.get_month_dates"><code class="docutils literal notranslate"><span class="pre">get_month_dates()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions.html#functions.date_functions.get_week_dates"><code class="docutils literal notranslate"><span class="pre">get_week_dates()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions.html#functions.date_functions.get_year_dates"><code class="docutils literal notranslate"><span class="pre">get_year_dates()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions.html#functions.date_functions.get_year_weeks"><code class="docutils literal notranslate"><span class="pre">get_year_weeks()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html#module-functions">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="database.html">database package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="database.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html#module-database.database_commands">database.database_commands module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.connect_db"><code class="docutils literal notranslate"><span class="pre">connect_db()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.create_and_populate_tables"><code class="docutils literal notranslate"><span class="pre">create_and_populate_tables()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.enter_budget"><code class="docutils literal notranslate"><span class="pre">enter_budget()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.enter_category"><code class="docutils literal notranslate"><span class="pre">enter_category()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.enter_expense"><code class="docutils literal notranslate"><span class="pre">enter_expense()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.enter_goal"><code class="docutils literal notranslate"><span class="pre">enter_goal()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.enter_income"><code class="docutils literal notranslate"><span class="pre">enter_income()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.get_category_from_budget"><code class="docutils literal notranslate"><span class="pre">get_category_from_budget()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.get_category_from_id"><code class="docutils literal notranslate"><span class="pre">get_category_from_id()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.get_expenses_by_date"><code class="docutils literal notranslate"><span class="pre">get_expenses_by_date()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.get_expenses_date_amount"><code class="docutils literal notranslate"><span class="pre">get_expenses_date_amount()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.get_goal"><code class="docutils literal notranslate"><span class="pre">get_goal()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.get_income_by_date"><code class="docutils literal notranslate"><span class="pre">get_income_by_date()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.get_joined_rows"><code class="docutils literal notranslate"><span class="pre">get_joined_rows()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.get_max_budget_id"><code class="docutils literal notranslate"><span class="pre">get_max_budget_id()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.get_row_list"><code class="docutils literal notranslate"><span class="pre">get_row_list()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.get_rows"><code class="docutils literal notranslate"><span class="pre">get_rows()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.update_category"><code class="docutils literal notranslate"><span class="pre">update_category()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="database.html#module-database.populate_finances_db">database.populate_finances_db module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.populate_finances_db.enter_budgets_goals"><code class="docutils literal notranslate"><span class="pre">enter_budgets_goals()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.populate_finances_db.populate_tables"><code class="docutils literal notranslate"><span class="pre">populate_tables()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="database.html#module-database">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Budget and Expenses Tracker App documentation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="menu.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">menu package</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Katherine Stewart
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, Katherine Stewart.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

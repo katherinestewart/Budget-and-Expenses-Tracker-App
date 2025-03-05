@@ -1,0 +1,807 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>menu.goals &#8212; Budget and Expenses Tracker App Version 1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=c675a26e"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/menu/goals';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Budget and Expenses Tracker App Version 1 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">menu</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../menu.html">menu package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maths.html">maths package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../functions.html">functions package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../database.html">database package</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for menu.goals</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;This module contains the goals menu. It gets user choice to set</span>
+<span class="sd">financial goals; by net or gross income, weekly, monthly or annually,</span>
+<span class="sd">view progress towards financial goals; for gross income, net income or</span>
+<span class="sd">budget and cancel; return to main menu. It also contains all relevant</span>
+<span class="sd">functions to get the required returns for each selection.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">functions</span><span class="w"> </span><span class="kn">import</span> <span class="n">common_functions</span> <span class="k">as</span> <span class="n">cf</span><span class="p">,</span> <span class="n">date_functions</span> <span class="k">as</span> <span class="n">df</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">database</span><span class="w"> </span><span class="kn">import</span> <span class="n">database_commands</span> <span class="k">as</span> <span class="n">dc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">maths</span><span class="w"> </span><span class="kn">import</span> <span class="n">calcs</span><span class="p">,</span> <span class="n">graphs</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">menu</span><span class="w"> </span><span class="kn">import</span> <span class="n">budget</span>
+
+<span class="n">SET_GOAL_MENU</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span><span class="se">\n\U000026bd</span><span class="s2"> Please choose from the following options:</span>
+<span class="se">\n</span><span class="s2">1.  Set gross income goal</span>
+<span class="s2">2.  Set net income goal</span>
+<span class="s2">0.  Cancel set goal</span>
+<span class="se">\n</span><span class="s2">Enter you selection: </span><span class="se">\</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">DATE_MENU</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span><span class="se">\U0001f4c5</span><span class="s2"> Please choose from the following options:</span>
+<span class="se">\n</span><span class="s2">1.  Weekly amount</span>
+<span class="s2">2.  Monthly amount</span>
+<span class="s2">3.  Annual amount</span>
+<span class="s2">0.  Cancel set amount</span>
+<span class="se">\n</span><span class="s2">Enter you selection: </span><span class="se">\</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">SEL</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[36m</span><span class="se">\033</span><span class="s2">[1m -------- </span><span class="se">\033</span><span class="s2">[0m</span><span class="se">\033</span><span class="s2">[1m&quot;</span>
+<span class="n">END</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[36m</span><span class="se">\033</span><span class="s2">[1m --------</span><span class="se">\033</span><span class="s2">[0m&quot;</span>
+<span class="n">MENU_TITLE</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\U0001f90c</span><span class="s2"> </span><span class="si">{</span><span class="n">SEL</span><span class="si">}</span><span class="s2">FINANCIAL GOALS</span><span class="si">{</span><span class="n">END</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">GOALS_MENU</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span><span class="si">{</span><span class="n">MENU_TITLE</span><span class="si">}</span>
+<span class="se">\n</span><span class="s2">Please choose from the following options:</span>
+<span class="se">\n</span><span class="s2">1.  Set financial goals</span>
+<span class="s2">2.  View progress towards financial goals</span>
+<span class="s2">0.  Cancel</span>
+<span class="se">\n</span><span class="s2">Enter you selection: </span><span class="se">\</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">PROGRESS_MENU</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span><span class="se">\U0001f945</span><span class="s2"> View progress for:</span>
+<span class="se">\n</span><span class="s2">1.  Gross Income</span>
+<span class="s2">2.  Net Income</span>
+<span class="s2">3.  Budget</span>
+<span class="s2">0.  Cancel</span>
+<span class="se">\n</span><span class="s2">Enter you selection: </span><span class="se">\</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">INVALID_INPUT</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">You entered an invalid input.  Please try again.&quot;</span>
+<span class="n">SEL_</span> <span class="o">=</span> <span class="n">cf</span><span class="o">.</span><span class="n">SEL_</span>
+<span class="n">END_</span> <span class="o">=</span> <span class="n">cf</span><span class="o">.</span><span class="n">END_</span>
+<span class="n">SELECT_1</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">SEL_</span><span class="si">}</span><span class="s2">Set Financial Goals</span><span class="si">{</span><span class="n">END_</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">SELECT_2</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">SEL_</span><span class="si">}</span><span class="s2">View Progress</span><span class="si">{</span><span class="n">END_</span><span class="si">}</span><span class="s2">&quot;</span>
+
+
+<div class="viewcode-block" id="set_financial_goals">
+<a class="viewcode-back" href="../../menu.html#menu.goals.set_financial_goals">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_financial_goals</span><span class="p">(</span><span class="n">gross_or_net</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function sets a financial goal for gross or net income for</span>
+<span class="sd">    user&#39;s selected term.</span>
+
+<span class="sd">    :param gross_or_net: str &#39;gross income&#39; or &#39;net income&#39;</span>
+<span class="sd">    :return: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">term</span> <span class="o">=</span> <span class="n">cf</span><span class="o">.</span><span class="n">get_term</span><span class="p">(</span><span class="n">DATE_MENU</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">term</span><span class="p">:</span>
+        <span class="n">amount</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">cf</span><span class="o">.</span><span class="n">get_amount</span><span class="p">())</span>
+        <span class="k">if</span> <span class="n">term</span> <span class="o">==</span> <span class="s2">&quot;weekly&quot;</span><span class="p">:</span>
+            <span class="n">amount</span> <span class="o">=</span> <span class="n">calcs</span><span class="o">.</span><span class="n">annual_from_weekly</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">term</span> <span class="o">==</span> <span class="s2">&quot;monthly&quot;</span><span class="p">:</span>
+            <span class="n">amount</span> <span class="o">=</span> <span class="n">calcs</span><span class="o">.</span><span class="n">annual_from_monthly</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span>
+
+        <span class="c1"># User selected gross income goal</span>
+        <span class="k">if</span> <span class="n">gross_or_net</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+            <span class="n">update_gross_income</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span>
+
+        <span class="c1"># User selected net income goal</span>
+        <span class="k">if</span> <span class="n">gross_or_net</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
+            <span class="n">update_net_income</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="update_gross_income">
+<a class="viewcode-back" href="../../menu.html#menu.goals.update_gross_income">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">update_gross_income</span><span class="p">(</span><span class="n">new_gross</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function updates values in budget table for a new gross</span>
+<span class="sd">    income</span>
+
+<span class="sd">    :param new_gross: amount for new gross income</span>
+<span class="sd">    :return: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">current_budget</span> <span class="o">=</span> <span class="n">get_annual</span><span class="p">(</span><span class="s2">&quot;budget&quot;</span><span class="p">)</span>
+    <span class="n">new_net</span> <span class="o">=</span> <span class="n">calcs</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">current_budget</span><span class="p">,</span> <span class="n">new_gross</span><span class="p">)</span>
+    <span class="n">dc</span><span class="o">.</span><span class="n">enter_goal</span><span class="p">(</span><span class="s2">&quot;gross income&quot;</span><span class="p">,</span> <span class="n">new_gross</span><span class="p">,</span> <span class="s2">&quot;annual&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">new_net</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">dc</span><span class="o">.</span><span class="n">enter_goal</span><span class="p">(</span><span class="s2">&quot;net income&quot;</span><span class="p">,</span> <span class="n">new_net</span><span class="p">,</span> <span class="s2">&quot;annual&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Net income cannot be negative. Adjust gross income goal.</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">dc</span><span class="o">.</span><span class="n">enter_goal</span><span class="p">(</span><span class="s2">&quot;net income&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;annual&quot;</span><span class="p">)</span>
+        <span class="n">budget</span><span class="o">.</span><span class="n">update_overall_budgets</span><span class="p">(</span><span class="s2">&quot;annual&quot;</span><span class="p">,</span> <span class="n">new_gross</span><span class="p">)</span>
+
+    <span class="n">cf</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Goal has been added </span><span class="se">\U00002705\n</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="update_net_income">
+<a class="viewcode-back" href="../../menu.html#menu.goals.update_net_income">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">update_net_income</span><span class="p">(</span><span class="n">new_net</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function updates values in budget table for a new net</span>
+<span class="sd">    income</span>
+
+<span class="sd">    :param new_net: amount for new net income</span>
+<span class="sd">    :return: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">current_gross</span> <span class="o">=</span> <span class="n">get_annual</span><span class="p">(</span><span class="s2">&quot;gross income&quot;</span><span class="p">)</span>
+    <span class="n">new_budg</span> <span class="o">=</span> <span class="n">current_gross</span> <span class="o">-</span> <span class="n">new_net</span>
+    <span class="n">dc</span><span class="o">.</span><span class="n">enter_goal</span><span class="p">(</span><span class="s2">&quot;net income&quot;</span><span class="p">,</span> <span class="n">new_net</span><span class="p">,</span> <span class="s2">&quot;annual&quot;</span><span class="p">)</span>
+
+    <span class="c1">#  Gross income cannot be less than net.  Adjust gross.</span>
+    <span class="k">if</span> <span class="n">new_net</span> <span class="o">&gt;=</span> <span class="n">current_gross</span><span class="p">:</span>
+        <span class="n">dc</span><span class="o">.</span><span class="n">enter_goal</span><span class="p">(</span><span class="s2">&quot;gross income&quot;</span><span class="p">,</span> <span class="n">new_net</span><span class="p">,</span> <span class="s2">&quot;annual&quot;</span><span class="p">)</span>
+
+    <span class="n">budget</span><span class="o">.</span><span class="n">update_overall_budgets</span><span class="p">(</span><span class="s2">&quot;annual&quot;</span><span class="p">,</span> <span class="n">new_budg</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Goal has been added </span><span class="se">\U00002705\n</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="get_gross_or_net">
+<a class="viewcode-back" href="../../menu.html#menu.goals.get_gross_or_net">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_gross_or_net</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function gets user choice for setting a financial goal</span>
+
+<span class="sd">    :return: &#39;gross income&#39; or &#39;net income&#39;</span>
+<span class="sd">    :rtype: str</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">gross_or_net</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">SET_GOAL_MENU</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">gross_or_net</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">gross_or_net</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="n">cf</span><span class="o">.</span><span class="n">INVALID_INPUT</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="get_annual">
+<a class="viewcode-back" href="../../menu.html#menu.goals.get_annual">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_annual</span><span class="p">(</span><span class="n">goal</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function gets annual goal</span>
+
+<span class="sd">    :param goal: &#39;gross income&#39; or &#39;net income&#39;</span>
+<span class="sd">    :return: amount of money or None</span>
+<span class="sd">    :rtype: float or None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">goals_list</span> <span class="o">=</span> <span class="n">dc</span><span class="o">.</span><span class="n">get_row_list</span><span class="p">(</span><span class="s2">&quot;goals&quot;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">goals_list</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">goal</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="k">return</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="get_spending_for_week">
+<a class="viewcode-back" href="../../menu.html#menu.goals.get_spending_for_week">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_spending_for_week</span><span class="p">(</span><span class="n">dates_list</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function gets the total spending for each week in a list</span>
+
+<span class="sd">    :param dates_list: list of dates of start of each week this year</span>
+<span class="sd">    :return: list of total spend for each week</span>
+<span class="sd">    :rtype: list of floats</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">spending</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">date</span> <span class="ow">in</span> <span class="n">dates_list</span><span class="p">:</span>
+        <span class="n">dates_in_week</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">get_dates_in_week</span><span class="p">(</span><span class="n">date</span><span class="p">)</span>
+        <span class="n">spending_wk</span> <span class="o">=</span> <span class="n">dc</span><span class="o">.</span><span class="n">get_expenses_by_date</span><span class="p">(</span><span class="n">dates_in_week</span><span class="p">)</span>
+        <span class="n">amounts</span> <span class="o">=</span> <span class="n">get_amount_from_rows</span><span class="p">(</span><span class="n">spending_wk</span><span class="p">)</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="n">calcs</span><span class="o">.</span><span class="n">total_spending</span><span class="p">(</span><span class="n">amounts</span><span class="p">)</span>
+        <span class="n">spending</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">spending</span></div>
+
+
+
+<div class="viewcode-block" id="get_income_for_week">
+<a class="viewcode-back" href="../../menu.html#menu.goals.get_income_for_week">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_income_for_week</span><span class="p">(</span><span class="n">dates_list</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function gets the total income for each week in a list</span>
+
+<span class="sd">    :param dates_list: list of dates of start of each week this year</span>
+<span class="sd">    :return: list of total income for each week</span>
+<span class="sd">    :rtype: list of floats</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">income</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">date</span> <span class="ow">in</span> <span class="n">dates_list</span><span class="p">:</span>
+        <span class="n">dates_in_week</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">get_dates_in_week</span><span class="p">(</span><span class="n">date</span><span class="p">)</span>
+        <span class="n">income_wk</span> <span class="o">=</span> <span class="n">dc</span><span class="o">.</span><span class="n">get_income_by_date</span><span class="p">(</span><span class="n">dates_in_week</span><span class="p">)</span>
+        <span class="n">amounts</span> <span class="o">=</span> <span class="n">get_amount_from_rows</span><span class="p">(</span><span class="n">income_wk</span><span class="p">)</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="n">calcs</span><span class="o">.</span><span class="n">total_spending</span><span class="p">(</span><span class="n">amounts</span><span class="p">)</span>
+        <span class="n">income</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">income</span></div>
+
+
+
+<div class="viewcode-block" id="get_amount_from_rows">
+<a class="viewcode-back" href="../../menu.html#menu.goals.get_amount_from_rows">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_amount_from_rows</span><span class="p">(</span><span class="n">amount_list</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function takes in a list of rows from expenses or income</span>
+<span class="sd">    tables and returns a list of their amounts</span>
+
+<span class="sd">    :param expenses_list: list of rows from expenses table</span>
+<span class="sd">    :return: list of amounts</span>
+<span class="sd">    :rtype: list of floats</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">amounts</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">amount_list</span><span class="p">:</span>
+        <span class="n">amounts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="n">amounts</span></div>
+
+
+
+<div class="viewcode-block" id="get_x_coords">
+<a class="viewcode-back" href="../../menu.html#menu.goals.get_x_coords">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_x_coords</span><span class="p">(</span><span class="n">dates_list</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function takes in a list of dates and returns a list</span>
+<span class="sd">    with a week number for each date</span>
+
+<span class="sd">    :param dates_list: list of dates</span>
+<span class="sd">    :return: list of numbers for each week in year so far</span>
+<span class="sd">    :rtype: list of int</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">x_coords</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dates_list</span><span class="p">):</span>
+        <span class="n">x_coords</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x_coords</span></div>
+
+
+
+<div class="viewcode-block" id="view_progress">
+<a class="viewcode-back" href="../../menu.html#menu.goals.view_progress">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">view_progress</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function handles the progress menu and calls the relevant</span>
+<span class="sd">    functions from user choice</span>
+
+<span class="sd">    :return: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">menu_sel</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">PROGRESS_MENU</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="n">dates_list</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">get_year_weeks</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">menu_sel</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+            <span class="n">goal</span> <span class="o">=</span> <span class="s2">&quot;gross income&quot;</span>
+            <span class="n">goal_args</span> <span class="o">=</span> <span class="n">get_gross_args</span><span class="p">(</span><span class="n">dates_list</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">menu_sel</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
+            <span class="n">goal</span> <span class="o">=</span> <span class="s2">&quot;net income&quot;</span>
+            <span class="n">goal_args</span> <span class="o">=</span> <span class="n">get_net_args</span><span class="p">(</span><span class="n">dates_list</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">menu_sel</span> <span class="o">==</span> <span class="s2">&quot;3&quot;</span><span class="p">:</span>
+            <span class="n">goal</span> <span class="o">=</span> <span class="s2">&quot;budget&quot;</span>
+            <span class="n">goal_args</span> <span class="o">=</span> <span class="n">get_budget_args</span><span class="p">(</span><span class="n">dates_list</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">menu_sel</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">cf</span><span class="o">.</span><span class="n">INVALID_INPUT</span><span class="p">)</span>
+
+        <span class="n">get_graph</span><span class="p">(</span><span class="n">goal</span><span class="p">,</span> <span class="n">dates_list</span><span class="p">,</span> <span class="n">goal_args</span><span class="p">)</span>
+    <span class="n">cf</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="get_labels">
+<a class="viewcode-back" href="../../menu.html#menu.goals.get_labels">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_labels</span><span class="p">(</span><span class="n">goal</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function gets the labels to plot graph according to goal</span>
+
+<span class="sd">    :param goal: &#39;net income&#39;, &#39;gross income&#39;, &#39;budget</span>
+<span class="sd">    :return: labels</span>
+<span class="sd">    :rtype: tuple of str</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">goal</span> <span class="o">==</span> <span class="s2">&quot;gross income&quot;</span><span class="p">:</span>
+        <span class="n">goal</span> <span class="o">=</span> <span class="s2">&quot;Gross Income&quot;</span>
+        <span class="n">l1</span> <span class="o">=</span> <span class="s2">&quot;income&quot;</span>
+        <span class="n">l2</span> <span class="o">=</span> <span class="s2">&quot;Target&quot;</span>
+    <span class="k">elif</span> <span class="n">goal</span> <span class="o">==</span> <span class="s2">&quot;net income&quot;</span><span class="p">:</span>
+        <span class="n">goal</span> <span class="o">=</span> <span class="s2">&quot;Net Income&quot;</span>
+        <span class="n">l1</span> <span class="o">=</span> <span class="s2">&quot;net income&quot;</span>
+        <span class="n">l2</span> <span class="o">=</span> <span class="s2">&quot;Target&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">goal</span> <span class="o">=</span> <span class="s2">&quot;Budget&quot;</span>
+        <span class="n">l1</span> <span class="o">=</span> <span class="s2">&quot;expenditure&quot;</span>
+        <span class="n">l2</span> <span class="o">=</span> <span class="s2">&quot;Budget&quot;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">goal</span><span class="p">,</span> <span class="n">l1</span><span class="p">,</span> <span class="n">l2</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="get_budget_args">
+<a class="viewcode-back" href="../../menu.html#menu.goals.get_budget_args">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_budget_args</span><span class="p">(</span><span class="n">dates_list</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function gets the arguments to plot a graph to view</span>
+<span class="sd">    progress for a budget goal</span>
+
+<span class="sd">    :param dates_list: list of dates</span>
+<span class="sd">    :return: target = target, y_coords, average for each coordinate</span>
+<span class="sd">    :rtype: float, list, list</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Get spending for each week starting on date in date list</span>
+    <span class="n">y_coords</span> <span class="o">=</span> <span class="n">get_spending_for_week</span><span class="p">(</span><span class="n">dates_list</span><span class="p">)</span>
+
+    <span class="c1"># Get mean average weekly spend so far for each week</span>
+    <span class="n">average_y</span> <span class="o">=</span> <span class="n">calcs</span><span class="o">.</span><span class="n">get_average_amount</span><span class="p">(</span><span class="n">y_coords</span><span class="p">)</span>
+
+    <span class="c1"># Get annual budget amount</span>
+    <span class="n">goals_list</span> <span class="o">=</span> <span class="n">dc</span><span class="o">.</span><span class="n">get_row_list</span><span class="p">(</span><span class="s2">&quot;goals&quot;</span><span class="p">)</span>
+    <span class="n">annual_amount</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">goals_list</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;budget&quot;</span> <span class="ow">and</span> <span class="n">row</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;annual&quot;</span><span class="p">:</span>
+            <span class="n">annual_amount</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+    <span class="n">target</span> <span class="o">=</span> <span class="n">calcs</span><span class="o">.</span><span class="n">get_week_from_year</span><span class="p">(</span><span class="n">annual_amount</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">target</span><span class="p">,</span> <span class="n">y_coords</span><span class="p">,</span> <span class="n">average_y</span></div>
+
+
+
+<div class="viewcode-block" id="get_gross_args">
+<a class="viewcode-back" href="../../menu.html#menu.goals.get_gross_args">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_gross_args</span><span class="p">(</span><span class="n">dates_list</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function gets the arguments to plot a graph to view</span>
+<span class="sd">    progress for a gross income goal</span>
+
+<span class="sd">    :param dates_list: list of dates</span>
+<span class="sd">    :return: target = target and net income, average income for each week</span>
+<span class="sd">    :rtype: float, list, list</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Get income for each week starting on date in date list</span>
+    <span class="n">y_coords</span> <span class="o">=</span> <span class="n">get_income_for_week</span><span class="p">(</span><span class="n">dates_list</span><span class="p">)</span>
+
+    <span class="c1"># Get average weekly spend so far for each week</span>
+    <span class="n">average_y</span> <span class="o">=</span> <span class="n">calcs</span><span class="o">.</span><span class="n">get_average_amount</span><span class="p">(</span><span class="n">y_coords</span><span class="p">)</span>
+
+    <span class="c1"># Get annual goal amount</span>
+    <span class="n">goals_list</span> <span class="o">=</span> <span class="n">dc</span><span class="o">.</span><span class="n">get_row_list</span><span class="p">(</span><span class="s2">&quot;goals&quot;</span><span class="p">)</span>
+    <span class="n">annual_amount</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">goals_list</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;gross income&quot;</span><span class="p">:</span>
+            <span class="n">annual_amount</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+    <span class="n">target</span> <span class="o">=</span> <span class="n">calcs</span><span class="o">.</span><span class="n">get_week_from_year</span><span class="p">(</span><span class="n">annual_amount</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">target</span><span class="p">,</span> <span class="n">y_coords</span><span class="p">,</span> <span class="n">average_y</span></div>
+
+
+
+<div class="viewcode-block" id="get_net_args">
+<a class="viewcode-back" href="../../menu.html#menu.goals.get_net_args">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_net_args</span><span class="p">(</span><span class="n">dates_list</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function gets the arguments to plot a graph to view</span>
+<span class="sd">    progress for a net income goal</span>
+
+<span class="sd">    :param dates_list: list of dates</span>
+<span class="sd">    :return: target and net income, average income for each week</span>
+<span class="sd">    :rtype: float, list, list</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">gross_targ</span><span class="p">,</span> <span class="n">gross_y_coords</span><span class="p">,</span> <span class="n">gross_av_y</span> <span class="o">=</span> <span class="n">get_gross_args</span><span class="p">(</span><span class="n">dates_list</span><span class="p">)</span>
+    <span class="n">budg_targ</span><span class="p">,</span> <span class="n">budg_y_coords</span><span class="p">,</span> <span class="n">budg_av_y</span> <span class="o">=</span> <span class="n">get_budget_args</span><span class="p">(</span><span class="n">dates_list</span><span class="p">)</span>
+    <span class="n">target</span> <span class="o">=</span> <span class="n">calcs</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">budg_targ</span><span class="p">,</span> <span class="n">gross_targ</span><span class="p">)</span>
+
+    <span class="c1"># Get net income for each week</span>
+    <span class="n">y_coords</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">gross_y_coords</span><span class="p">):</span>
+        <span class="n">amount</span> <span class="o">=</span> <span class="n">calcs</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">budg_y_coords</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">gross_y_coords</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">y_coords</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span>
+
+    <span class="c1"># Get average income for year so far for each week</span>
+    <span class="n">average_y</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">budg_av_y</span><span class="p">):</span>
+        <span class="n">average</span> <span class="o">=</span> <span class="n">calcs</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">budg_av_y</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">gross_av_y</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">average_y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">average</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">target</span><span class="p">,</span> <span class="n">y_coords</span><span class="p">,</span> <span class="n">average_y</span></div>
+
+
+
+<div class="viewcode-block" id="get_graph">
+<a class="viewcode-back" href="../../menu.html#menu.goals.get_graph">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_graph</span><span class="p">(</span><span class="n">goal</span><span class="p">,</span> <span class="n">dates_list</span><span class="p">,</span> <span class="n">goal_args</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function gets all arguments calls function to plot graph to</span>
+<span class="sd">    view progress for a financial goal</span>
+
+<span class="sd">    :param goal: &#39;budget&#39;, &#39;net income&#39; or &#39;gross income&#39;</span>
+<span class="sd">    :param dates_list: list of dates</span>
+<span class="sd">    :param goal_args: target, ycoords list, list of average for coord</span>
+<span class="sd">    :return: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="n">get_labels</span><span class="p">(</span><span class="n">goal</span><span class="p">)</span>
+    <span class="n">common_args</span> <span class="o">=</span> <span class="n">get_common_args</span><span class="p">(</span><span class="n">dates_list</span><span class="p">)</span>
+    <span class="n">graphs</span><span class="o">.</span><span class="n">make_plot</span><span class="p">(</span><span class="n">common_args</span><span class="p">,</span> <span class="n">goal_args</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="get_common_args">
+<a class="viewcode-back" href="../../menu.html#menu.goals.get_common_args">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_common_args</span><span class="p">(</span><span class="n">dates_list</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function gets the graph for the relevant goal</span>
+
+<span class="sd">    :param goal: &#39;net income&#39;, &#39;gross income&#39; or &#39;budget&#39;</span>
+<span class="sd">    :return: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">year</span> <span class="o">=</span> <span class="n">dates_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">year</span> <span class="o">=</span> <span class="n">year</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)[:</span><span class="mi">4</span><span class="p">]</span>
+
+    <span class="c1"># Get list of integers for each date in dates_list</span>
+    <span class="n">x_coords</span> <span class="o">=</span> <span class="n">get_x_coords</span><span class="p">(</span><span class="n">dates_list</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">year</span><span class="p">,</span> <span class="n">x_coords</span></div>
+
+
+
+<div class="viewcode-block" id="get_no_weeks">
+<a class="viewcode-back" href="../../menu.html#menu.goals.get_no_weeks">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_no_weeks</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function gets a list of integers corresponding to the</span>
+<span class="sd">    length of a list of dates.  This is for the x-coordinates for</span>
+<span class="sd">    plotting graph.</span>
+
+<span class="sd">    :return: list of integers</span>
+<span class="sd">    :rtype: list of int</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Get a list of first date in each week</span>
+    <span class="n">dates_list</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">get_year_weeks</span><span class="p">()</span>
+    <span class="n">no_weeks</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dates_list</span><span class="p">):</span>
+        <span class="n">no_weeks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">no_weeks</span></div>
+
+
+
+<div class="viewcode-block" id="goals_menu">
+<a class="viewcode-back" href="../../menu.html#menu.goals.goals_menu">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">goals_menu</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function gets user selection for the financial goals menu</span>
+<span class="sd">    and calls relevant functions according to user choice</span>
+
+<span class="sd">    :return: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">menu</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">GOALS_MENU</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">()</span>
+
+        <span class="c1"># ****** Set financial goals ******</span>
+        <span class="k">if</span> <span class="n">menu</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+            <span class="n">cf</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">SELECT_1</span><span class="p">)</span>
+            <span class="n">gross_or_net</span> <span class="o">=</span> <span class="n">get_gross_or_net</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="n">gross_or_net</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">):</span>
+                <span class="n">cf</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+                <span class="n">set_financial_goals</span><span class="p">(</span><span class="n">gross_or_net</span><span class="p">)</span>
+
+        <span class="c1"># ****** View progress towards financial goals ******</span>
+        <span class="k">elif</span> <span class="n">menu</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
+            <span class="n">cf</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">SELECT_2</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">()</span>
+            <span class="n">view_progress</span><span class="p">()</span>
+
+        <span class="c1"># ****** Return to main menu ******</span>
+        <span class="k">elif</span> <span class="n">menu</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span><span class="p">:</span>
+            <span class="n">cf</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+            <span class="k">break</span>
+
+        <span class="c1"># ****** Add expense ******</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">cf</span><span class="o">.</span><span class="n">INVALID_INPUT</span><span class="p">)</span>
+    <span class="n">cf</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span></div>
+
+</pre></div>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Katherine Stewart
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, Katherine Stewart.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

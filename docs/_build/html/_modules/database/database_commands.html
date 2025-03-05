@@ -1,0 +1,773 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>database.database_commands &#8212; Budget and Expenses Tracker App Version 1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=c675a26e"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/database/database_commands';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Budget and Expenses Tracker App Version 1 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">menu</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../menu.html">menu package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maths.html">maths package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../functions.html">functions package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../database.html">database package</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for database.database_commands</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;This module contains all functions with logic to interact with the</span>
+<span class="sd">database finances.db. This is the only module which accesses the</span>
+<span class="sd">database. There are six tables; expenses, income, categories, sources,</span>
+<span class="sd">budget and goals.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">sqlite3</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">database</span><span class="w"> </span><span class="kn">import</span> <span class="n">populate_finances_db</span>
+
+<span class="n">CREATE_EXPENSES_TABLE</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;CREATE TABLE IF NOT EXISTS expenses</span>
+<span class="s2">(id INTEGER PRIMARY KEY AUTOINCREMENT, date TEXT, expense TEXT,</span>
+<span class="s2">amount FLOAT, categoryID INTEGER, FOREIGN KEY(categoryID)</span>
+<span class="s2">REFERENCES categories(id))&quot;&quot;&quot;</span>
+<span class="n">CREATE_INCOME_TABLE</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;CREATE TABLE IF NOT EXISTS income</span>
+<span class="s2">(id INTEGER PRIMARY KEY AUTOINCREMENT, date TEXT, sourceID INT,</span>
+<span class="s2">amount FLOAT, FOREIGN KEY(sourceID) REFERENCES income_sources(id))&quot;&quot;&quot;</span>
+<span class="n">CREATE_CATEGORY_TABLE</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;CREATE TABLE IF NOT EXISTS categories</span>
+<span class="s2">(id INTEGER PRIMARY KEY AUTOINCREMENT, category TEXT, budgetID TEXT,</span>
+<span class="s2">FOREIGN KEY(budgetID) REFERENCES budget(id))&quot;&quot;&quot;</span>
+<span class="n">CREATE_BUDGET_TABLE</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;CREATE TABLE IF NOT EXISTS budget</span>
+<span class="s2">(id INTEGER PRIMARY KEY AUTOINCREMENT, amount FLOAT, term TEXT)&quot;&quot;&quot;</span>
+<span class="n">CREATE_GOALS_TABLE</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;CREATE TABLE IF NOT EXISTS goals</span>
+<span class="s2">(id INTEGER PRIMARY KEY AUTOINCREMENT, goal TEXT, amount FLOAT, term TEXT)&quot;&quot;&quot;</span>
+<span class="n">CREATE_INCOME_SOURCE_TABLE</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;CREATE TABLE IF NOT EXISTS sources</span>
+<span class="s2">(id INTEGER PRIMARY KEY AUTOINCREMENT, source TEXT)&quot;&quot;&quot;</span>
+<span class="n">ENTER_EXPENSE</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;INSERT INTO expenses(date, expense, amount, categoryID)</span>
+<span class="s2">VALUES(?,?,?,?)&quot;&quot;&quot;</span>
+<span class="n">SELECT_CATEGORIES</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;SELECT * FROM categories INNER JOIN budget ON</span>
+<span class="s2">categories.budgetID=budget.id&quot;&quot;&quot;</span>
+<span class="n">SELECT_EXPENSES</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;SELECT * FROM expenses INNER JOIN categories ON</span>
+<span class="s2">expenses.categoryID=categories.id ORDER BY id DESC&quot;&quot;&quot;</span>
+<span class="n">SELECT_INCOME</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;SELECT * FROM income INNER JOIN sources ON</span>
+<span class="s2">income.sourceID=sources.id ORDER BY id DESC&quot;&quot;&quot;</span>
+<span class="n">CAT_UPDATE</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;UPDATE categories SET category = ? WHERE id = ?&quot;&quot;&quot;</span>
+<span class="n">DELETE_BUDGET</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;DELETE FROM budget WHERE id = ?&quot;&quot;&quot;</span>
+<span class="n">DEL_GOAL</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;DELETE FROM goals WHERE id = ?&quot;&quot;&quot;</span>
+<span class="n">DELETE_GOAL</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;DELETE FROM goals WHERE goal = ? AND term = ?&quot;&quot;&quot;</span>
+<span class="n">ENTER_BUDGET</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;INSERT INTO budget(amount, term) VALUES(?,?)&quot;&quot;&quot;</span>
+<span class="n">ENTER_CAT</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;INSERT INTO categories(category) VALUES(?)&quot;&quot;&quot;</span>
+<span class="n">ENTER_GOAL</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;INSERT INTO goals(goal, amount, term) VALUES(?,?,?)&quot;&quot;&quot;</span>
+<span class="n">ENTER_INCOME</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;INSERT INTO income(date, sourceID, amount) VALUES(?,?,?)&quot;&quot;&quot;</span>
+<span class="n">ENTER_SRC</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;INSERT INTO sources(source) VALUES(?)&quot;&quot;&quot;</span>
+<span class="n">MAX_BUDGET_ID</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;SELECT MAX(id) FROM budget&quot;&quot;&quot;</span>
+<span class="n">SEL_CAT_FROM_BUDG</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;SELECT category FROM categories WHERE budgetID = ?&quot;&quot;&quot;</span>
+<span class="n">SELECT_DATE_AMOUNT</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;SELECT date, amount FROM expenses WHERE catID = ?&quot;&quot;&quot;</span>
+<span class="n">SELECT_GOAL</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;SELECT * FROM goals WHERE goal = ? AND term = ?&quot;&quot;&quot;</span>
+<span class="n">SELECT_ROWS</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;SELECT * FROM </span><span class="si">{}</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="n">SELECT_EXPS_BY_DATE</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;SELECT * FROM expenses WHERE date = ?&quot;&quot;&quot;</span>
+<span class="n">SELECT_INC_BY_DATE</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;SELECT * FROM income WHERE date = ?&quot;&quot;&quot;</span>
+<span class="n">SELECT_CATEGORY</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;SELECT category FROM categories WHERE id = ?&quot;&quot;&quot;</span>
+<span class="n">SELECT_INC_CAT</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;SELECT source FROM sources WHERE id = ?&quot;&quot;&quot;</span>
+<span class="n">SRC_UPDATE</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;UPDATE sources SET source = ? WHERE id = ?&quot;&quot;&quot;</span>
+<span class="n">TABLE_EXISTS</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;SELECT name FROM sqlite_master WHERE type=&#39;table&#39;&quot;&quot;&quot;</span>
+<span class="n">UPDATE_CAT_BUDGET</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;UPDATE categories SET budgetID = ? WHERE id = ?&quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="connect_db">
+<a class="viewcode-back" href="../../database.html#database.database_commands.connect_db">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">connect_db</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Establishes a connection to the SQLite database and returns the</span>
+<span class="sd">    connection and cursor.</span>
+
+<span class="sd">    :return: connection and cursor</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;finances.db&quot;</span><span class="p">)</span>
+        <span class="n">cursor_</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">conn</span><span class="p">,</span> <span class="n">cursor_</span>
+    <span class="k">except</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">Error</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error connecting to database: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="create_and_populate_tables">
+<a class="viewcode-back" href="../../database.html#database.database_commands.create_and_populate_tables">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_and_populate_tables</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function creates all tables in the database if they don&#39;t</span>
+<span class="sd">    exist.  If it is the first time they have been created, then it</span>
+<span class="sd">    populates the table with dummy data.</span>
+
+<span class="sd">    :return: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">db</span><span class="p">,</span> <span class="n">cursor</span> <span class="o">=</span> <span class="n">connect_db</span><span class="p">()</span>
+    <span class="c1"># Check if any tables exist in the database</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">TABLE_EXISTS</span><span class="p">)</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
+
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">CREATE_EXPENSES_TABLE</span><span class="p">)</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">CREATE_CATEGORY_TABLE</span><span class="p">)</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">CREATE_INCOME_TABLE</span><span class="p">)</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">CREATE_INCOME_SOURCE_TABLE</span><span class="p">)</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">CREATE_BUDGET_TABLE</span><span class="p">)</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">CREATE_GOALS_TABLE</span><span class="p">)</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+
+    <span class="c1"># If no tables existed in the database at start up, then populate</span>
+    <span class="c1"># tables with dummy data.</span>
+    <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">populate_finances_db</span><span class="o">.</span><span class="n">populate_tables</span><span class="p">()</span>
+        <span class="n">populate_finances_db</span><span class="o">.</span><span class="n">enter_budgets_goals</span><span class="p">()</span>
+
+    <span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="enter_expense">
+<a class="viewcode-back" href="../../database.html#database.database_commands.enter_expense">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">enter_expense</span><span class="p">(</span><span class="n">expense_tuple</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function enters an expense into the expenses table.</span>
+
+<span class="sd">    :param expense_tuple: tuple with date, expense, amount, categoryID</span>
+<span class="sd">    :return: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">db</span><span class="p">,</span> <span class="n">cursor</span> <span class="o">=</span> <span class="n">connect_db</span><span class="p">()</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">ENTER_EXPENSE</span><span class="p">,</span> <span class="p">(</span><span class="o">*</span><span class="n">expense_tuple</span><span class="p">,))</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="enter_income">
+<a class="viewcode-back" href="../../database.html#database.database_commands.enter_income">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">enter_income</span><span class="p">(</span><span class="n">income_tuple</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function enters an income into the income table.</span>
+
+<span class="sd">    :param income_tuple: tuple with date, source, amount</span>
+<span class="sd">    :return: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">db</span><span class="p">,</span> <span class="n">cursor</span> <span class="o">=</span> <span class="n">connect_db</span><span class="p">()</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">ENTER_INCOME</span><span class="p">,</span> <span class="p">(</span><span class="o">*</span><span class="n">income_tuple</span><span class="p">,))</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="enter_category">
+<a class="viewcode-back" href="../../database.html#database.database_commands.enter_category">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">enter_category</span><span class="p">(</span><span class="n">new_cat</span><span class="p">,</span> <span class="n">table</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function enters a new category in a table</span>
+
+<span class="sd">    :param new_cat: new expense category or income source</span>
+<span class="sd">    :param table: expenses or sources table in database</span>
+<span class="sd">    :return: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">db</span><span class="p">,</span> <span class="n">cursor</span> <span class="o">=</span> <span class="n">connect_db</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">table</span> <span class="o">==</span> <span class="s2">&quot;categories&quot;</span><span class="p">:</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">ENTER_CAT</span><span class="p">,</span> <span class="p">(</span><span class="n">new_cat</span><span class="p">,))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">ENTER_SRC</span><span class="p">,</span> <span class="p">(</span><span class="n">new_cat</span><span class="p">,))</span>
+
+    <span class="n">db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="get_row_list">
+<a class="viewcode-back" href="../../database.html#database.database_commands.get_row_list">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_row_list</span><span class="p">(</span><span class="n">table</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function gets a list of all the rows in a table</span>
+
+<span class="sd">    :param table: table in database</span>
+<span class="sd">    :return: all rows</span>
+<span class="sd">    :rtype: list</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">db</span><span class="p">,</span> <span class="n">cursor</span> <span class="o">=</span> <span class="n">connect_db</span><span class="p">()</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">SELECT_ROWS</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">table</span><span class="p">))</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">rows</span></div>
+
+
+
+<div class="viewcode-block" id="get_rows">
+<a class="viewcode-back" href="../../database.html#database.database_commands.get_rows">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_rows</span><span class="p">(</span><span class="n">year_month</span><span class="p">,</span> <span class="n">table</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function gets all rows from a table, appends all rows to a</span>
+<span class="sd">    list where the date they were entered matches a selected month.</span>
+
+<span class="sd">    :param year_month: YYYY-MM</span>
+<span class="sd">    :return: all rows which match year_month from table</span>
+<span class="sd">    :rtype: list of tuples</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">rows_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">get_joined_rows</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">][:</span><span class="mi">7</span><span class="p">]</span> <span class="o">==</span> <span class="n">year_month</span><span class="p">:</span>
+            <span class="n">rows_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">rows_list</span></div>
+
+
+
+<div class="viewcode-block" id="get_joined_rows">
+<a class="viewcode-back" href="../../database.html#database.database_commands.get_joined_rows">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_joined_rows</span><span class="p">(</span><span class="n">table</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function gets all rows from a joined table.</span>
+
+<span class="sd">    :param table: table name</span>
+<span class="sd">    :return: all rows from table</span>
+<span class="sd">    :rtype: list of tuples</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">db</span><span class="p">,</span> <span class="n">cursor</span> <span class="o">=</span> <span class="n">connect_db</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">table</span> <span class="o">==</span> <span class="s2">&quot;expenses&quot;</span><span class="p">:</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">SELECT_EXPENSES</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">table</span> <span class="o">==</span> <span class="s2">&quot;income&quot;</span><span class="p">:</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">SELECT_INCOME</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">table</span> <span class="o">==</span> <span class="s2">&quot;categories&quot;</span><span class="p">:</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">SELECT_CATEGORIES</span><span class="p">)</span>
+
+    <span class="n">rows_list</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">rows_list</span></div>
+
+
+
+<div class="viewcode-block" id="get_category_from_id">
+<a class="viewcode-back" href="../../database.html#database.database_commands.get_category_from_id">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_category_from_id</span><span class="p">(</span><span class="n">category_id</span><span class="p">,</span> <span class="n">table</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function gets the description of an expenses category or</span>
+<span class="sd">    income source from its id number</span>
+
+<span class="sd">    :param category_id: primary key in table</span>
+<span class="sd">    :param table: &#39;categories&#39; or &#39;sources&#39;</span>
+<span class="sd">    :return: category</span>
+<span class="sd">    :rtype: str</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">db</span><span class="p">,</span> <span class="n">cursor</span> <span class="o">=</span> <span class="n">connect_db</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">table</span> <span class="o">==</span> <span class="s2">&quot;categories&quot;</span><span class="p">:</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">SELECT_CATEGORY</span><span class="p">,</span> <span class="p">(</span><span class="n">category_id</span><span class="p">,))</span>
+    <span class="k">if</span> <span class="n">table</span> <span class="o">==</span> <span class="s2">&quot;sources&quot;</span><span class="p">:</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">SELECT_INC_CAT</span><span class="p">,</span> <span class="p">(</span><span class="n">category_id</span><span class="p">,))</span>
+
+    <span class="n">category</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">category</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="get_category_from_budget">
+<a class="viewcode-back" href="../../database.html#database.database_commands.get_category_from_budget">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_category_from_budget</span><span class="p">(</span><span class="n">budget_id</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function gets the category description, for a budget set by</span>
+<span class="sd">    category, from its budget id number</span>
+
+<span class="sd">    :param budget_id: budget primary key, category foreign key</span>
+<span class="sd">    :return: category description or None</span>
+<span class="sd">    :rtype: str or None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">db</span><span class="p">,</span> <span class="n">cursor</span> <span class="o">=</span> <span class="n">connect_db</span><span class="p">()</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">SEL_CAT_FROM_BUDG</span><span class="p">,</span> <span class="p">(</span><span class="n">budget_id</span><span class="p">,))</span>
+    <span class="n">category</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">category</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">category</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="get_max_budget_id">
+<a class="viewcode-back" href="../../database.html#database.database_commands.get_max_budget_id">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_max_budget_id</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function gets the maximum value for primary key in budget</span>
+<span class="sd">    table</span>
+
+<span class="sd">    :return: max_id</span>
+<span class="sd">    :rtype: int</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">db</span><span class="p">,</span> <span class="n">cursor</span> <span class="o">=</span> <span class="n">connect_db</span><span class="p">()</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">MAX_BUDGET_ID</span><span class="p">)</span>
+    <span class="n">max_id</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">max_id</span></div>
+
+
+
+<div class="viewcode-block" id="update_category">
+<a class="viewcode-back" href="../../database.html#database.database_commands.update_category">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">update_category</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">cat_id</span><span class="p">,</span> <span class="n">update</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function updates a description for an expense category or</span>
+<span class="sd">    an income source</span>
+
+<span class="sd">    :param table: &#39;categories&#39; or &#39;sources&#39;</span>
+<span class="sd">    :param cat_id: primary key id number</span>
+<span class="sd">    :return: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">db</span><span class="p">,</span> <span class="n">cursor</span> <span class="o">=</span> <span class="n">connect_db</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">table</span> <span class="o">==</span> <span class="s2">&quot;categories&quot;</span><span class="p">:</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">CAT_UPDATE</span><span class="p">,</span> <span class="p">(</span><span class="n">update</span><span class="p">,</span> <span class="n">cat_id</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">table</span> <span class="o">==</span> <span class="s2">&quot;sources&quot;</span><span class="p">:</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">SRC_UPDATE</span><span class="p">,</span> <span class="p">(</span><span class="n">update</span><span class="p">,</span> <span class="n">cat_id</span><span class="p">))</span>
+
+    <span class="n">db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="enter_budget">
+<a class="viewcode-back" href="../../database.html#database.database_commands.enter_budget">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">enter_budget</span><span class="p">(</span><span class="n">cat_id</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="n">term</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function enters a new budget assigned to a category</span>
+
+<span class="sd">    :param cat_id: primary key in categories table</span>
+<span class="sd">    :param amount: new budget amount</span>
+<span class="sd">    :param term: &quot;weekly&quot;, &quot;monthly&quot;, or &quot;annual&quot;</span>
+<span class="sd">    :return: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">db</span><span class="p">,</span> <span class="n">cursor</span> <span class="o">=</span> <span class="n">connect_db</span><span class="p">()</span>
+    <span class="n">cat_rows</span> <span class="o">=</span> <span class="n">get_row_list</span><span class="p">(</span><span class="s2">&quot;categories&quot;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">cat_rows</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">cat_id</span><span class="p">:</span>
+            <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">DELETE_BUDGET</span><span class="p">,</span> <span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">],))</span>
+
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">ENTER_BUDGET</span><span class="p">,</span> <span class="p">(</span><span class="n">amount</span><span class="p">,</span> <span class="n">term</span><span class="p">))</span>
+    <span class="n">budget_id</span> <span class="o">=</span> <span class="n">get_max_budget_id</span><span class="p">()</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">UPDATE_CAT_BUDGET</span><span class="p">,</span> <span class="p">(</span><span class="o">*</span><span class="n">budget_id</span><span class="p">,</span> <span class="n">cat_id</span><span class="p">))</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="get_expenses_date_amount">
+<a class="viewcode-back" href="../../database.html#database.database_commands.get_expenses_date_amount">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_expenses_date_amount</span><span class="p">(</span><span class="n">cat_id</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function gets the date and amount of expenses from a chosen</span>
+<span class="sd">    category</span>
+
+<span class="sd">    :param cat_id: foreign key in expenses table, primary in categories</span>
+<span class="sd">    :return: date and amount of expenses</span>
+<span class="sd">    :rtype: list of tuples</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">db</span><span class="p">,</span> <span class="n">cursor</span> <span class="o">=</span> <span class="n">connect_db</span><span class="p">()</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">SELECT_DATE_AMOUNT</span><span class="p">,</span> <span class="p">(</span><span class="n">cat_id</span><span class="p">,))</span>
+    <span class="n">date_amount</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">date_amount</span></div>
+
+
+
+<div class="viewcode-block" id="get_expenses_by_date">
+<a class="viewcode-back" href="../../database.html#database.database_commands.get_expenses_by_date">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_expenses_by_date</span><span class="p">(</span><span class="n">days_list</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function gets expenses for each day in a list</span>
+
+<span class="sd">    :param days_list: list of days</span>
+<span class="sd">    :return: list of rows from expenses table</span>
+<span class="sd">    :rtype: list of tuples</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">db</span><span class="p">,</span> <span class="n">cursor</span> <span class="o">=</span> <span class="n">connect_db</span><span class="p">()</span>
+    <span class="n">expenses_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">days_list</span><span class="p">:</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">SELECT_EXPS_BY_DATE</span><span class="p">,</span> <span class="p">(</span><span class="n">day</span><span class="p">,))</span>
+        <span class="n">rows</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">:</span>
+            <span class="n">expenses_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+
+    <span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">expenses_list</span></div>
+
+
+
+<div class="viewcode-block" id="get_income_by_date">
+<a class="viewcode-back" href="../../database.html#database.database_commands.get_income_by_date">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_income_by_date</span><span class="p">(</span><span class="n">days_list</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function gets income for each day in a list</span>
+
+<span class="sd">    :param days_list: list of days</span>
+<span class="sd">    :return: list of rows from income table</span>
+<span class="sd">    :rtype: list of tuples</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">db</span><span class="p">,</span> <span class="n">cursor</span> <span class="o">=</span> <span class="n">connect_db</span><span class="p">()</span>
+    <span class="n">income_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">days_list</span><span class="p">:</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">SELECT_INC_BY_DATE</span><span class="p">,</span> <span class="p">(</span><span class="n">day</span><span class="p">,))</span>
+        <span class="n">rows</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">:</span>
+            <span class="n">income_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+
+    <span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">income_list</span></div>
+
+
+
+<div class="viewcode-block" id="enter_goal">
+<a class="viewcode-back" href="../../database.html#database.database_commands.enter_goal">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">enter_goal</span><span class="p">(</span><span class="n">goal</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="n">term</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function enters a new goal into the goals table</span>
+
+<span class="sd">    :param goal: &#39;budget&#39;, &#39;net income&#39; or &#39;gross income&#39;</span>
+<span class="sd">    :param amount: amount of money in goal</span>
+<span class="sd">    :param term: &#39;weekly&#39;, &#39;monthly&#39; or &#39;annual&#39;</span>
+<span class="sd">    :return: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">db</span><span class="p">,</span> <span class="n">cursor</span> <span class="o">=</span> <span class="n">connect_db</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">goal</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;net income&quot;</span><span class="p">,</span> <span class="s2">&quot;gross income&quot;</span><span class="p">):</span>
+        <span class="n">goals_list</span> <span class="o">=</span> <span class="n">get_row_list</span><span class="p">(</span><span class="s2">&quot;goals&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">goals_list</span><span class="p">:</span>
+
+            <span class="c1"># Delete goal if one already exists</span>
+            <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">goal</span><span class="p">:</span>
+                <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">DEL_GOAL</span><span class="p">,</span> <span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">],))</span>
+
+    <span class="c1"># Delete goal if one already exists</span>
+    <span class="k">if</span> <span class="n">goal</span> <span class="o">==</span> <span class="s2">&quot;budget&quot;</span><span class="p">:</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">DELETE_GOAL</span><span class="p">,</span> <span class="p">(</span><span class="n">goal</span><span class="p">,</span> <span class="n">term</span><span class="p">))</span>
+
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">ENTER_GOAL</span><span class="p">,</span> <span class="p">(</span><span class="n">goal</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="n">term</span><span class="p">))</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="get_goal">
+<a class="viewcode-back" href="../../database.html#database.database_commands.get_goal">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_goal</span><span class="p">(</span><span class="n">goal</span><span class="p">,</span> <span class="n">term</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function gets a goal amount from the goals table from its</span>
+<span class="sd">    description and term</span>
+
+<span class="sd">    :param goal: &#39;budget&#39;, &#39;net income&#39; or &#39;gross income&#39;</span>
+<span class="sd">    :param term: &#39;weekly&#39;, &#39;monthly&#39; or &#39;annual&#39;</span>
+<span class="sd">    :return: goal amount or None</span>
+<span class="sd">    :rtype: float or None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">db</span><span class="p">,</span> <span class="n">cursor</span> <span class="o">=</span> <span class="n">connect_db</span><span class="p">()</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">SELECT_GOAL</span><span class="p">,</span> <span class="p">(</span><span class="n">goal</span><span class="p">,</span> <span class="n">term</span><span class="p">))</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">row</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+    <span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="kc">None</span></div>
+
+</pre></div>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Katherine Stewart
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, Katherine Stewart.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
