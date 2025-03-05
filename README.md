@@ -18,18 +18,18 @@ display a graph with their progress for each week in the current year.
 
 ### Overview
 
-main.py: entry point of programme
-main_menu.py: main menu options
-expenses.py: all logic for 'Expenses' menu
-income.py: all logic for 'Income' menu
-budget.py: all logic for 'Budget' menu
-goals.py: all logic for 'Goals' menu
-common_functions.py: functions used across multiple menu options
-date_functions.py: functions to get dates in specified ranges
-database_commands.py: all logic to interact with database
-populate_finances.py: adds dummy data for testing
-calcs.py: all calculations
-graphs.py: makes graphs
+* main.py: entry point of programme
+* main_menu.py: main menu options
+* expenses.py: all logic for 'Expenses' menu
+* income.py: all logic for 'Income' menu
+* budget.py: all logic for 'Budget' menu
+* goals.py: all logic for 'Goals' menu
+* common_functions.py: functions used across multiple menu options
+* date_functions.py: functions to get dates in specified ranges
+* database_commands.py: all logic to interact with database
+* populate_finances.py: adds dummy data for testing
+* calcs.py: all calculations
+* graphs.py: makes graphs
 
 #### Getting Started
 
