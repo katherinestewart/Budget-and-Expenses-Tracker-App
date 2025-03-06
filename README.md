@@ -16,16 +16,6 @@ menu choice 'Financial Goals' allows user to set gross or net income
 goals or to view progress towards financial goals.  The latter will
 display a graph with their progress for each week in the current year.
 
-## Imports
-
-* datetime
-* dateutil
-* matplotlib
-* numpy
-* os
-* sqlite3
-* time
-
 ## Overview
 
 * main.py: entry point of programme
@@ -40,3 +30,13 @@ display a graph with their progress for each week in the current year.
 * populate_finances.py: adds dummy data for testing
 * calcs.py: all calculations
 * graphs.py: makes graphs
+
+## Imports
+
+* datetime
+* dateutil
+* matplotlib
+* numpy
+* os
+* sqlite3
+* time
