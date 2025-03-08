@@ -35,7 +35,6 @@ INSERT_GOAL = """INSERT INTO goals(goal, amount, term) VALUES(?,?,?)"""
 INSERT_SOURCE = """INSERT INTO sources(source) VALUES(?)"""
 UPDATE_CATEGORY = """UPDATE categories SET budgetID = ? WHERE id = ?"""
 LAST_INSERTED_ID = """SELECT last_insert_rowid()"""
-
 SELECT_CATEGORIES = """SELECT * FROM categories INNER JOIN budget ON
 categories.budgetID=budget.id"""
 SELECT_EXPENSES = """SELECT * FROM expenses INNER JOIN categories ON
