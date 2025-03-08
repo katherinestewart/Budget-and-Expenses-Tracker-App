@@ -24,6 +24,10 @@ SELECT_2 = f"{SEL_}Set Budget by Category{END_}"
 
 
 def clear():
+    """Clears terminal
+
+    :return: None
+    """
     os.system("cls||clear")
 
 

@@ -67,8 +67,8 @@ class Income:
     ----------
     get_all_att:
         returns attributes of Income object
-    enter_print:
-        enters new income into Income table
+    insert_income:
+        inserts new income into Income table
     """
 
     table = "income"

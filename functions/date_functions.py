@@ -41,7 +41,7 @@ def get_week_dates():
     appends last Monday. It then calls function to get dates before
     last Monday
 
-    :return: unction to get dates before last Monday
+    :return: function to get dates before last Monday
     :rtype: func
     """
     day = datetime.date.today()

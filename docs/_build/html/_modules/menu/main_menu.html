@@ -151,9 +151,9 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">menu</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../menu.html">menu package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../maths.html">maths package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../functions.html">functions package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../database.html">database package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../functions.html">functions package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maths.html">maths package</a></li>
 </ul>
 </details></li>
 </ul>
@@ -275,7 +275,7 @@ document.write(`
 
 <span class="n">INVALID_INPUT</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">You entered an invalid input.  Please try again.&quot;</span>
 <span class="n">MAIN_MENU</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span><span class="se">\U0001f3e0</span><span class="s2"> </span><span class="se">\033</span><span class="s2">[1m</span><span class="se">\033</span><span class="s2">[96m============ </span><span class="se">\033</span><span class="s2">[0m</span><span class="se">\033</span><span class="s2">[1m</span><span class="se">\</span>
-<span class="s2">MAIN MENU</span><span class="se">\033</span><span class="s2">[36m ============</span><span class="se">\033</span><span class="s2">[0m</span><span class="se">\033</span><span class="s2">[0m</span>
+<span class="s2">MAIN MENU</span><span class="se">\033</span><span class="s2">[36m ============</span><span class="se">\033</span><span class="s2">[0m</span>
 <span class="se">\n</span><span class="s2">Please choose from the following options:</span>
 <span class="se">\n</span><span class="s2">1.  Expenses</span>
 <span class="s2">2.  Income</span>
@@ -295,12 +295,8 @@ document.write(`
 
 <span class="sd">    :return: None</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">dc</span><span class="o">.</span><span class="n">create_tables</span><span class="p">()</span>
 
-    <span class="c1"># Create tables in database if they don&#39;t exist and, if it is the</span>
-    <span class="c1"># first time they have been created, populate tables for testing.</span>
-    <span class="n">dc</span><span class="o">.</span><span class="n">create_and_populate_tables</span><span class="p">()</span>
-
-    <span class="c1"># Print a welcome message</span>
     <span class="n">display_message</span><span class="p">(</span><span class="n">WELCOME</span><span class="p">)</span>
 
     <span class="c1"># ********* Menu Selection *********</span>

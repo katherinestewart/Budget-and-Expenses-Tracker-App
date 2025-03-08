@@ -151,9 +151,9 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">menu</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../menu.html">menu package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../maths.html">maths package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../functions.html">functions package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../database.html">database package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../functions.html">functions package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maths.html">maths package</a></li>
 </ul>
 </details></li>
 </ul>
@@ -306,9 +306,10 @@ document.write(`
 <span class="n">INVALID_INPUT</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">You entered an invalid input.  Please try again.&quot;</span>
 <span class="n">SRC_DESCRIBE</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Enter new income source: &quot;</span>
 <span class="n">TABLE</span> <span class="o">=</span> <span class="s2">&quot;income&quot;</span>
-<span class="n">VIEW_INCOME</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\t\t\t</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[90m_</span><span class="se">\033</span><span class="s2">[0m&quot;</span> <span class="o">*</span> <span class="mi">60</span>
-<span class="n">VIEW_INCOME_L</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\t\t</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[90m_</span><span class="se">\033</span><span class="s2">[0m&quot;</span> <span class="o">*</span> <span class="mi">60</span>
-<span class="n">VIEW_INCOME_XL</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[90m_</span><span class="se">\033</span><span class="s2">[0m&quot;</span> <span class="o">*</span> <span class="mi">60</span>
+<span class="n">PRINT_LINE</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[90m_</span><span class="se">\033</span><span class="s2">[0m&quot;</span> <span class="o">*</span> <span class="mi">60</span>
+<span class="n">VIEW_INCOME</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\t\t\t</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">PRINT_LINE</span>
+<span class="n">VIEW_INCOME_L</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\t\t</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">PRINT_LINE</span>
+<span class="n">VIEW_INCOME_XL</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">PRINT_LINE</span>
 
 
 <div class="viewcode-block" id="Income">
@@ -329,8 +330,8 @@ document.write(`
 <span class="sd">    ----------</span>
 <span class="sd">    get_all_att:</span>
 <span class="sd">        returns attributes of Income object</span>
-<span class="sd">    enter_print:</span>
-<span class="sd">        enters new income into Income table</span>
+<span class="sd">    insert_income:</span>
+<span class="sd">        inserts new income into Income table</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">table</span> <span class="o">=</span> <span class="s2">&quot;income&quot;</span>
@@ -366,15 +367,15 @@ document.write(`
         <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">source</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">amount</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="Income.enter_income">
-<a class="viewcode-back" href="../../menu.html#menu.income.Income.enter_income">[docs]</a>
-    <span class="k">def</span><span class="w"> </span><span class="nf">enter_income</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Income.insert_income">
+<a class="viewcode-back" href="../../menu.html#menu.income.Income.insert_income">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">insert_income</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;This method enters a new income into the &#39;income&#39; table.</span>
 
 <span class="sd">        :param self: Income object</span>
 <span class="sd">        :return: None</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">dc</span><span class="o">.</span><span class="n">enter_income</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_all_att</span><span class="p">())</span></div>
+        <span class="n">dc</span><span class="o">.</span><span class="n">insert_data</span><span class="p">(</span><span class="n">dc</span><span class="o">.</span><span class="n">INSERT_INCOME</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_all_att</span><span class="p">())</span></div>
 </div>
 
 
@@ -561,7 +562,7 @@ document.write(`
             <span class="c1"># Get income object</span>
             <span class="n">new_income</span> <span class="o">=</span> <span class="n">get_income</span><span class="p">()</span>
 
-            <span class="n">new_income</span><span class="o">.</span><span class="n">enter_income</span><span class="p">()</span>
+            <span class="n">new_income</span><span class="o">.</span><span class="n">insert_income</span><span class="p">()</span>
             <span class="n">cf</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
             <span class="nb">print</span><span class="p">(</span><span class="n">COLUMNS_INCOME</span><span class="p">)</span>
             <span class="n">n</span> <span class="o">=</span> <span class="n">new_income</span>

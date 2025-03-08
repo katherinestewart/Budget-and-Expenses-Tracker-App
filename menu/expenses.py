@@ -70,7 +70,7 @@ class Expense:
     ----------
     get_all_att:
         returns attributes of expense
-    enter_new_expense:
+    insert_expense:
         enters new expense into expenses table
     """
 

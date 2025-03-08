@@ -151,9 +151,9 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">menu</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../menu.html">menu package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../maths.html">maths package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../functions.html">functions package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../database.html">database package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../functions.html">functions package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maths.html">maths package</a></li>
 </ul>
 </details></li>
 </ul>
@@ -259,20 +259,12 @@ document.write(`
                 <article class="bd-article">
                   
   <h1>Source code for database.populate_finances_db</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;This module adds dummy data to the tables in finances.db database</span>
-<span class="sd">for testing purposes.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">&quot;&quot;&quot;This module adds dummy data to the tables in the database for</span>
+<span class="sd">testing purposes.&quot;&quot;&quot;</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">sqlite3</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">database</span><span class="w"> </span><span class="kn">import</span> <span class="n">database_commands</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">database</span><span class="w"> </span><span class="kn">import</span> <span class="n">database_commands</span> <span class="k">as</span> <span class="n">dc</span>
 
-<span class="n">INSERT_CATEGORY</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;INSERT INTO categories(category) VALUES(?)&quot;&quot;&quot;</span>
-<span class="n">INSERT_EXPENSE</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;INSERT INTO expenses(date, expense, amount, categoryID)</span>
-<span class="s2">VALUES(?,?,?,?)&quot;&quot;&quot;</span>
-<span class="n">INSERT_INCOME</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;INSERT INTO income(date, sourceID, amount) VALUES(?,?,?)&quot;&quot;&quot;</span>
-<span class="n">INSERT_SOURCE</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;INSERT INTO sources(source) VALUES(?)&quot;&quot;&quot;</span>
-
-<span class="n">new_expenses</span> <span class="o">=</span> <span class="p">(</span>
+<span class="n">expenses</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">(</span><span class="s2">&quot;2024-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;Home Insurance&quot;</span><span class="p">,</span> <span class="mf">180.55</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">&quot;2024-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;Mortgage&quot;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">&quot;2024-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;Internet&quot;</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
@@ -534,7 +526,7 @@ document.write(`
     <span class="p">(</span><span class="s2">&quot;2025-01-07&quot;</span><span class="p">,</span> <span class="s2">&quot;Sainsbury&#39;s&quot;</span><span class="p">,</span> <span class="mf">62.17</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">&quot;2025-01-10&quot;</span><span class="p">,</span> <span class="s2">&quot;Fuel&quot;</span><span class="p">,</span> <span class="mf">56.74</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">&quot;2025-01-11&quot;</span><span class="p">,</span> <span class="s2">&quot;Asda&quot;</span><span class="p">,</span> <span class="mf">20.24</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">&quot;2025-01-15&quot;</span><span class="p">,</span> <span class="s2">&quot;Car Insurance&quot;</span><span class="p">,</span> <span class="mf">483.00</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;2025-01-15&quot;</span><span class="p">,</span> <span class="s2">&quot;Car Insurance&quot;</span><span class="p">,</span> <span class="mf">483.00</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">&quot;2025-01-18&quot;</span><span class="p">,</span> <span class="s2">&quot;Aldi&quot;</span><span class="p">,</span> <span class="mf">20.01</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">&quot;2025-01-25&quot;</span><span class="p">,</span> <span class="s2">&quot;Sainsbury&#39;s&quot;</span><span class="p">,</span> <span class="mf">85.40</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">&quot;2025-01-30&quot;</span><span class="p">,</span> <span class="s2">&quot;Asda&quot;</span><span class="p">,</span> <span class="mf">59.30</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
@@ -568,8 +560,8 @@ document.write(`
     <span class="p">(</span><span class="s2">&quot;2025-03-02&quot;</span><span class="p">,</span> <span class="s2">&quot;Pub&quot;</span><span class="p">,</span> <span class="mf">32.40</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">&quot;2025-03-02&quot;</span><span class="p">,</span> <span class="s2">&quot;Weekend break&quot;</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">&quot;2025-03-03&quot;</span><span class="p">,</span> <span class="s2">&quot;Tesco&quot;</span><span class="p">,</span> <span class="mf">15.20</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
-<span class="p">)</span>
-<span class="n">new_income</span> <span class="o">=</span> <span class="p">(</span>
+<span class="p">]</span>
+<span class="n">incomes</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">(</span><span class="s2">&quot;2024-01-03&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">&quot;2024-01-12&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">60</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">&quot;2024-01-21&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">120</span><span class="p">),</span>
@@ -644,79 +636,61 @@ document.write(`
     <span class="p">(</span><span class="s2">&quot;2025-01-28&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3000</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">&quot;2025-02-03&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">&quot;2025-02-12&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">60</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;2025-02-15&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">420</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">&quot;2025-02-28&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">196</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">&quot;2025-02-28&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">&quot;2025-02-21&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">120</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">&quot;2025-02-26&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">&quot;2025-02-28&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3000</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">&quot;2025-03-24&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">60</span><span class="p">),</span>
-<span class="p">)</span>
-<span class="n">new_categories</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="s2">&quot;Bills&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Groceries&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Insurance&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Leisure&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Mortgage&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Other&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Travel&quot;</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="n">goals</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="p">(</span><span class="s2">&quot;budget&quot;</span><span class="p">,</span> <span class="mi">624</span><span class="p">,</span> <span class="s2">&quot;weekly&quot;</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">&quot;budget&quot;</span><span class="p">,</span> <span class="mi">2704</span><span class="p">,</span> <span class="s2">&quot;monthly&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;2025-03-05&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">550</span><span class="p">),</span>
+<span class="p">]</span>
+<span class="n">categories</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">&quot;Bills&quot;</span><span class="p">,),</span>
+    <span class="p">(</span><span class="s2">&quot;Groceries&quot;</span><span class="p">,),</span>
+    <span class="p">(</span><span class="s2">&quot;Insurance&quot;</span><span class="p">,),</span>
+    <span class="p">(</span><span class="s2">&quot;Leisure&quot;</span><span class="p">,),</span>
+    <span class="p">(</span><span class="s2">&quot;Mortgage&quot;</span><span class="p">,),</span>
+    <span class="p">(</span><span class="s2">&quot;Other&quot;</span><span class="p">,),</span>
+    <span class="p">(</span><span class="s2">&quot;Travel&quot;</span><span class="p">,),</span>
+<span class="p">]</span>
+<span class="n">goals</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">&quot;budget&quot;</span><span class="p">,</span> <span class="mi">780</span><span class="p">,</span> <span class="s2">&quot;weekly&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;budget&quot;</span><span class="p">,</span> <span class="mi">3380</span><span class="p">,</span> <span class="s2">&quot;monthly&quot;</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">&quot;budget&quot;</span><span class="p">,</span> <span class="mi">32448</span><span class="p">,</span> <span class="s2">&quot;annual&quot;</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">&quot;net income&quot;</span><span class="p">,</span> <span class="mi">20000</span><span class="p">,</span> <span class="s2">&quot;annual&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;net income&quot;</span><span class="p">,</span> <span class="mi">40560</span><span class="p">,</span> <span class="s2">&quot;annual&quot;</span><span class="p">),</span>
     <span class="p">(</span><span class="s2">&quot;gross income&quot;</span><span class="p">,</span> <span class="mi">50000</span><span class="p">,</span> <span class="s2">&quot;annual&quot;</span><span class="p">),</span>
-<span class="p">)</span>
-<span class="n">budgets</span> <span class="o">=</span> <span class="p">(</span>
+<span class="p">]</span>
+<span class="n">budgets</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="s2">&quot;monthly&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="s2">&quot;monthly&quot;</span><span class="p">),</span>
     <span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="s2">&quot;monthly&quot;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="s2">&quot;weekly&quot;</span><span class="p">),</span>
-    <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="s2">&quot;monthly&quot;</span><span class="p">)</span>
-<span class="p">)</span>
-<span class="n">sources</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Salary&quot;</span><span class="p">,</span> <span class="s2">&quot;Freelance&quot;</span><span class="p">,</span> <span class="s2">&quot;Teaching&quot;</span><span class="p">,</span> <span class="s2">&quot;Refund&quot;</span><span class="p">)</span>
-<span class="n">cat_ids</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+    <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="s2">&quot;weekly&quot;</span><span class="p">)</span>
+<span class="p">]</span>
+<span class="n">budget_category_ids</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="n">sources</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;Salary&quot;</span><span class="p">,),</span> <span class="p">(</span><span class="s2">&quot;Freelance&quot;</span><span class="p">,),</span> <span class="p">(</span><span class="s2">&quot;Teaching&quot;</span><span class="p">,),</span> <span class="p">(</span><span class="s2">&quot;Refund&quot;</span><span class="p">,)]</span>
 
 
 <div class="viewcode-block" id="populate_tables">
 <a class="viewcode-back" href="../../database.html#database.populate_finances_db.populate_tables">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">populate_tables</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function populates tables in database with dummy data</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function populates tables in database with dummy data.</span>
 
 <span class="sd">    :return: None</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">db</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;finances.db&quot;</span><span class="p">)</span>
-    <span class="n">cursor</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+    <span class="n">commands</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="n">dc</span><span class="o">.</span><span class="n">INSERT_EXPENSE</span><span class="p">,</span> <span class="n">expenses</span><span class="p">),</span>
+        <span class="p">(</span><span class="n">dc</span><span class="o">.</span><span class="n">INSERT_CATEGORY</span><span class="p">,</span> <span class="n">categories</span><span class="p">),</span>
+        <span class="p">(</span><span class="n">dc</span><span class="o">.</span><span class="n">INSERT_INCOME</span><span class="p">,</span> <span class="n">incomes</span><span class="p">),</span>
+        <span class="p">(</span><span class="n">dc</span><span class="o">.</span><span class="n">INSERT_SOURCE</span><span class="p">,</span> <span class="n">sources</span><span class="p">),</span>
+        <span class="p">(</span><span class="n">dc</span><span class="o">.</span><span class="n">INSERT_GOAL</span><span class="p">,</span> <span class="n">goals</span><span class="p">),</span>
+    <span class="p">]</span>
 
-    <span class="k">try</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">category</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">new_categories</span><span class="p">):</span>
-            <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">INSERT_CATEGORY</span><span class="p">,</span> <span class="p">(</span><span class="n">category</span><span class="p">,))</span>
-        <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">expense</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">new_expenses</span><span class="p">):</span>
-            <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">INSERT_EXPENSE</span><span class="p">,</span> <span class="p">(</span><span class="o">*</span><span class="n">expense</span><span class="p">,))</span>
-        <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">income</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">new_income</span><span class="p">):</span>
-            <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">INSERT_INCOME</span><span class="p">,</span> <span class="p">(</span><span class="o">*</span><span class="n">income</span><span class="p">,))</span>
-        <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">source</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sources</span><span class="p">):</span>
-            <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">INSERT_SOURCE</span><span class="p">,</span> <span class="p">(</span><span class="n">source</span><span class="p">,))</span>
-        <span class="n">db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
-    <span class="k">except</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">OperationalError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="n">db</span><span class="o">.</span><span class="n">rollback</span><span class="p">()</span>
-        <span class="k">raise</span> <span class="n">e</span>
-    <span class="k">finally</span><span class="p">:</span>
-        <span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+    <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">command</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">commands</span><span class="p">):</span>
+        <span class="n">dc</span><span class="o">.</span><span class="n">insert_many</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
 
-
-
-<div class="viewcode-block" id="enter_budgets_goals">
-<a class="viewcode-back" href="../../database.html#database.populate_finances_db.enter_budgets_goals">[docs]</a>
-<span class="k">def</span><span class="w"> </span><span class="nf">enter_budgets_goals</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function enters goals and budgets dummy data into tables in</span>
-<span class="sd">    database</span>
-
-<span class="sd">    :return: None</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">for</span> <span class="n">b</span><span class="p">,</span> <span class="n">budget</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">budgets</span><span class="p">):</span>
-        <span class="n">database_commands</span><span class="o">.</span><span class="n">enter_budget</span><span class="p">(</span><span class="n">cat_ids</span><span class="p">[</span><span class="n">b</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="o">*</span><span class="n">budget</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">goal</span> <span class="ow">in</span> <span class="n">goals</span><span class="p">:</span>
-        <span class="n">database_commands</span><span class="o">.</span><span class="n">enter_goal</span><span class="p">(</span><span class="o">*</span><span class="n">goal</span><span class="p">)</span></div>
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">budget</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">budgets</span><span class="p">):</span>
+        <span class="n">dc</span><span class="o">.</span><span class="n">insert_budget</span><span class="p">(</span><span class="n">budget_category_ids</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">budget</span><span class="p">)</span></div>
 
 </pre></div>
 

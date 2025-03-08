@@ -1,21 +1,23 @@
 menu
-====
+========
 
 .. toctree::
    :maxdepth: 4
 
+   main
    menu
-   maths
-   functions
-   database
-   budget
-   create_graph
+   main_menu
    expenses
    income
-   main_menu
-   calculations
-   graphs
-   common_functions
-   date_functions
+   budget
+   goals
+   create_graph
+   database
    database_commands
    populate_finances
+   functions
+   common_functions
+   date_functions
+   maths
+   calculations
+   graphs
