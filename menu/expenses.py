@@ -109,13 +109,28 @@ class Expense:
         """
         return (self.date, self.expense, self.amount, self.category)
 
-    def enter_object(self):
+    def insert_expense(self):
         """This method enters a new expense into the 'expenses' table.
 
         :param self: Expense object
         :return: None
         """
-        dc.enter_expense(self.get_all_att())
+        dc.insert_data(dc.INSERT_EXPENSE, self.get_all_att())
+
+
+def get_expense_description():
+    """This function gets a description of a new expense.
+
+    :return: new expense description
+    :rtype: str
+    """
+    while True:
+        new_expense = input("\nEnter expense description: ").strip()
+
+        if cf.description_check(new_expense):
+            return new_expense
+
+        print(cf.INVALID_INPUT)
 
 
 def get_expense():
@@ -125,11 +140,7 @@ def get_expense():
     :rtype: tuple
     """
     today = datetime.date.today()
-    new_expense = input("\nEnter expense description: ").strip()
-
-    while not cf.description_check(new_expense):
-        new_expense = input("\nEnter expense description: ").strip()
-
+    new_expense = get_expense_description()
     new_amount = cf.get_amount()
     cat_choice_id = cf.select_category("categories")
     exp_obj = Expense(today, new_expense, new_amount, cat_choice_id)
@@ -266,6 +277,23 @@ def categories_menu():
             print(cf.INVALID_INPUT)
 
 
+def add_expense():
+    """This function calls functions to insert expense into table and
+    prints a message to user.
+
+    :return: None
+    """
+    new_expense = get_expense()
+    new_expense.insert_expense()
+    cf.clear()
+
+    print(COLUMNS)
+    print(new_expense)
+    time.sleep(0.6)
+    print("\nExpense has been added \U00002705\n")
+    time.sleep(0.6)
+
+
 def expense_menu():
     """This function manages the user selection from the expense menu
     calls the relevant functions according to the menu selection
@@ -280,16 +308,7 @@ def expense_menu():
         if menu == "1":
             cf.clear()
             print(SELECT_1)
-
-            new_expense = get_expense()
-            new_expense.enter_object()
-            cf.clear()
-
-            print(COLUMNS)
-            print(new_expense)
-            time.sleep(0.6)
-            print("\nExpense has been added \U00002705\n")
-            time.sleep(0.6)
+            add_expense()
 
         # ****** View expenses ******
         elif menu == "2":

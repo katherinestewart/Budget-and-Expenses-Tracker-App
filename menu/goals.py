@@ -7,8 +7,9 @@ functions to get the required returns for each selection.
 
 from functions import common_functions as cf, date_functions as df
 from database import database_commands as dc
-from maths import calcs, graphs
+from maths import calculations as calc
 from menu import budget
+from menu import create_graph as cg
 
 SET_GOAL_MENU = """\n\U000026bd Please choose from the following options:
 \n1.  Set gross income goal
@@ -59,9 +60,9 @@ def set_financial_goals(gross_or_net):
     if term:
         amount = float(cf.get_amount())
         if term == "weekly":
-            amount = calcs.annual_from_weekly(amount)
+            amount = calc.annual_from_weekly(amount)
         if term == "monthly":
-            amount = calcs.annual_from_monthly(amount)
+            amount = calc.annual_from_monthly(amount)
 
         # User selected gross income goal
         if gross_or_net == "1":
@@ -80,7 +81,7 @@ def update_gross_income(new_gross):
     :return: None
     """
     current_budget = get_annual("budget")
-    new_net = calcs.difference(current_budget, new_gross)
+    new_net = calc.difference(current_budget, new_gross)
     dc.enter_goal("gross income", new_gross, "annual")
 
     if new_net >= 0:
@@ -144,72 +145,6 @@ def get_annual(goal):
     return None
 
 
-def get_spending_for_week(dates_list):
-    """This function gets the total spending for each week in a list
-
-    :param dates_list: list of dates of start of each week this year
-    :return: list of total spend for each week
-    :rtype: list of floats
-    """
-    spending = []
-
-    for date in dates_list:
-        dates_in_week = df.get_dates_in_week(date)
-        spending_wk = dc.get_expenses_by_date(dates_in_week)
-        amounts = get_amount_from_rows(spending_wk)
-        total = calcs.total_spending(amounts)
-        spending.append(total)
-
-    return spending
-
-
-def get_income_for_week(dates_list):
-    """This function gets the total income for each week in a list
-
-    :param dates_list: list of dates of start of each week this year
-    :return: list of total income for each week
-    :rtype: list of floats
-    """
-    income = []
-
-    for date in dates_list:
-        dates_in_week = df.get_dates_in_week(date)
-        income_wk = dc.get_income_by_date(dates_in_week)
-        amounts = get_amount_from_rows(income_wk)
-        total = calcs.total_spending(amounts)
-        income.append(total)
-
-    return income
-
-
-def get_amount_from_rows(amount_list):
-    """This function takes in a list of rows from expenses or income
-    tables and returns a list of their amounts
-
-    :param expenses_list: list of rows from expenses table
-    :return: list of amounts
-    :rtype: list of floats
-    """
-    amounts = []
-    for row in amount_list:
-        amounts.append(float(row[3]))
-    return amounts
-
-
-def get_x_coords(dates_list):
-    """This function takes in a list of dates and returns a list
-    with a week number for each date
-
-    :param dates_list: list of dates
-    :return: list of numbers for each week in year so far
-    :rtype: list of int
-    """
-    x_coords = []
-    for i, _ in enumerate(dates_list):
-        x_coords.append(i + 1)
-    return x_coords
-
-
 def view_progress():
     """This function handles the progress menu and calls the relevant
     functions from user choice
@@ -218,154 +153,19 @@ def view_progress():
     """
     while True:
         menu_sel = input(PROGRESS_MENU).strip().replace(".", "")
-        dates_list = df.get_year_weeks()
 
         if menu_sel == "1":
-            goal = "gross income"
-            goal_args = get_gross_args(dates_list)
+            cg.create_gross_income_graph()
         elif menu_sel == "2":
-            goal = "net income"
-            goal_args = get_net_args(dates_list)
+            cg.create_net_income_graph()
         elif menu_sel == "3":
-            goal = "budget"
-            goal_args = get_budget_args(dates_list)
+            cg.create_budget_graph()
         elif menu_sel == "0":
             break
         else:
             print(cf.INVALID_INPUT)
 
-        get_graph(goal, dates_list, goal_args)
     cf.clear()
-
-
-def get_labels(goal):
-    """This function gets the labels to plot graph according to goal
-
-    :param goal: 'net income', 'gross income', 'budget
-    :return: labels
-    :rtype: tuple of str
-    """
-    if goal == "gross income":
-        goal = "Gross Income"
-        l1 = "income"
-        l2 = "Target"
-    elif goal == "net income":
-        goal = "Net Income"
-        l1 = "net income"
-        l2 = "Target"
-    else:
-        goal = "Budget"
-        l1 = "expenditure"
-        l2 = "Budget"
-    return (goal, l1, l2)
-
-
-def get_budget_args(dates_list):
-    """This function gets the arguments to plot a graph to view
-    progress for a budget goal
-
-    :param dates_list: list of dates
-    :return: target = target, y_coords, average for each coordinate
-    :rtype: float, list, list
-    """
-    # Get spending for each week starting on date in date list
-    y_coords = get_spending_for_week(dates_list)
-
-    # Get mean average weekly spend so far for each week
-    average_y = calcs.get_average_amount(y_coords)
-
-    # Get annual budget amount
-    goals_list = dc.get_row_list("goals")
-    annual_amount = None
-
-    for row in goals_list:
-        if row[1] == "budget" and row[3] == "annual":
-            annual_amount = row[2]
-
-    target = calcs.get_week_from_year(annual_amount)
-
-    return target, y_coords, average_y
-
-
-def get_gross_args(dates_list):
-    """This function gets the arguments to plot a graph to view
-    progress for a gross income goal
-
-    :param dates_list: list of dates
-    :return: target = target and net income, average income for each week
-    :rtype: float, list, list
-    """
-    # Get income for each week starting on date in date list
-    y_coords = get_income_for_week(dates_list)
-
-    # Get average weekly spend so far for each week
-    average_y = calcs.get_average_amount(y_coords)
-
-    # Get annual goal amount
-    goals_list = dc.get_row_list("goals")
-    annual_amount = None
-    for row in goals_list:
-        if row[1] == "gross income":
-            annual_amount = row[2]
-
-    target = calcs.get_week_from_year(annual_amount)
-
-    return target, y_coords, average_y
-
-
-def get_net_args(dates_list):
-    """This function gets the arguments to plot a graph to view
-    progress for a net income goal
-
-    :param dates_list: list of dates
-    :return: target and net income, average income for each week
-    :rtype: float, list, list
-    """
-    gross_targ, gross_y_coords, gross_av_y = get_gross_args(dates_list)
-    budg_targ, budg_y_coords, budg_av_y = get_budget_args(dates_list)
-    target = calcs.difference(budg_targ, gross_targ)
-
-    # Get net income for each week
-    y_coords = []
-    for i, _ in enumerate(gross_y_coords):
-        amount = calcs.difference(budg_y_coords[i], gross_y_coords[i])
-        y_coords.append(amount)
-
-    # Get average income for year so far for each week
-    average_y = []
-    for i, _ in enumerate(budg_av_y):
-        average = calcs.difference(budg_av_y[i], gross_av_y[i])
-        average_y.append(average)
-
-    return target, y_coords, average_y
-
-
-def get_graph(goal, dates_list, goal_args):
-    """This function gets all arguments calls function to plot graph to
-    view progress for a financial goal
-
-    :param goal: 'budget', 'net income' or 'gross income'
-    :param dates_list: list of dates
-    :param goal_args: target, ycoords list, list of average for coord
-    :return: None
-    """
-    labels = get_labels(goal)
-    common_args = get_common_args(dates_list)
-    graphs.make_plot(common_args, goal_args, labels)
-
-
-def get_common_args(dates_list):
-    """This function gets the graph for the relevant goal
-
-    :param goal: 'net income', 'gross income' or 'budget'
-    :return: None
-    """
-    year = dates_list[-1]
-    year = year.strftime("%Y-%m-%d")[:4]
-
-    # Get list of integers for each date in dates_list
-    x_coords = get_x_coords(dates_list)
-    return year, x_coords
 
 
 def get_no_weeks():
@@ -377,7 +177,7 @@ def get_no_weeks():
     :rtype: list of int
     """
     # Get a list of first date in each week
-    dates_list = df.get_year_weeks()
+    dates_list = df.get_date_of_first_day_each_week_this_year()
     no_weeks = []
 
     for i, _ in enumerate(dates_list):

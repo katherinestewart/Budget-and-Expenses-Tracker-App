@@ -8,7 +8,7 @@ import time
 from functions import common_functions as cf, date_functions as df
 from database import database_commands
 from menu import expenses
-from maths import calcs
+from maths import calculations
 
 SEL = "\033[36m\033[1m -------- \033[0m\033[1m"
 END = "\033[36m\033[1m --------\033[0m"
@@ -68,8 +68,6 @@ class Budget:
     get_all_att:
         returns attributes of Budget object
     """
-
-    table = "income"
 
     def __init__(self, category, term, amount):
         """Constructs attributes for a budget."""
@@ -144,17 +142,17 @@ def update_overall_budgets(term, amount):
 
     # Get annual amount from term
     if term == "weekly":
-        new_annual_budg = calcs.annual_from_weekly(amount)
+        new_annual_budg = calculations.annual_from_weekly(amount)
     elif term == "monthly":
-        new_annual_budg = calcs.annual_from_monthly(amount)
+        new_annual_budg = calculations.annual_from_monthly(amount)
     else:
         new_annual_budg = amount
 
     # Calculate weekly and monthly budgets and net income from new
     # annual budget
-    new_week_budg = calcs.get_week_from_year(new_annual_budg)
-    new_month_budg = calcs.get_month_from_year(new_annual_budg)
-    new_net_inc = calcs.difference(new_annual_budg, existing_gross)
+    new_week_budg = calculations.get_week_from_year(new_annual_budg)
+    new_month_budg = calculations.get_month_from_year(new_annual_budg)
+    new_net_inc = calculations.difference(new_annual_budg, existing_gross)
 
     # Update table with new budget amounts
     database_commands.enter_goal("budget", new_annual_budg, "annual")
@@ -296,8 +294,8 @@ def view_progress_by_term(term):
                 # Get amount, category, total and money remaining in budget
                 amount = float(row[4])
                 category = row[1]
-                total = calcs.total_spending(expense_list)
-                remain = calcs.difference(total, amount)
+                total = calculations.total_spending(expense_list)
+                remain = calculations.difference(total, amount)
 
                 amount = cf.money_format(amount)
                 remain = cf.money_format(remain)
@@ -324,8 +322,8 @@ def overall_progress(term):
         for expense in expenses_list:
             expense_list.append(float(expense[3]))
 
-        total = calcs.total_spending(expense_list)
-        remain = calcs.difference(total, budget_goal)
+        total = calculations.total_spending(expense_list)
+        remain = calculations.difference(total, budget_goal)
 
         budget_goal = cf.money_format(budget_goal)
         remain = cf.money_format(remain)

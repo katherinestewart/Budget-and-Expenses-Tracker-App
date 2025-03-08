@@ -32,12 +32,8 @@ def main_menu():
 
     :return: None
     """
+    dc.create_tables()
 
-    # Create tables in database if they don't exist and, if it is the
-    # first time they have been created, populate tables for testing.
-    dc.create_and_populate_tables()
-
-    # Print a welcome message
     display_message(WELCOME)
 
     # ********* Menu Selection *********

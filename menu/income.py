@@ -100,13 +100,13 @@ class Income:
         """
         return (self.date, self.source, self.amount)
 
-    def enter_income(self):
+    def insert_income(self):
         """This method enters a new income into the 'income' table.
 
         :param self: Income object
         :return: None
         """
-        dc.enter_income(self.get_all_att())
+        dc.insert_data(dc.INSERT_INCOME, self.get_all_att())
 
 
 def get_income():
@@ -265,7 +265,7 @@ def income_menu():
             # Get income object
             new_income = get_income()
 
-            new_income.enter_income()
+            new_income.insert_income()
             cf.clear()
             print(COLUMNS_INCOME)
             n = new_income
