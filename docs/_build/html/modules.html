@@ -152,9 +152,9 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">menu</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="menu.html">menu package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="maths.html">maths package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="functions.html">functions package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="database.html">database package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html">functions package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maths.html">maths package</a></li>
 </ul>
 </details></li>
 </ul>
@@ -416,23 +416,39 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="menu.html#module-menu">Module contents</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="maths.html">maths package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="maths.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="maths.html#module-maths.calculations">maths.calculations module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="maths.html#maths.calculations.annual_from_monthly"><code class="docutils literal notranslate"><span class="pre">annual_from_monthly()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="maths.html#maths.calculations.annual_from_weekly"><code class="docutils literal notranslate"><span class="pre">annual_from_weekly()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="maths.html#maths.calculations.difference"><code class="docutils literal notranslate"><span class="pre">difference()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="maths.html#maths.calculations.get_mean"><code class="docutils literal notranslate"><span class="pre">get_mean()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="maths.html#maths.calculations.get_month_from_year"><code class="docutils literal notranslate"><span class="pre">get_month_from_year()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="maths.html#maths.calculations.get_week_from_year"><code class="docutils literal notranslate"><span class="pre">get_week_from_year()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="maths.html#maths.calculations.total_spending"><code class="docutils literal notranslate"><span class="pre">total_spending()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="database.html">database package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="database.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html#module-database.database_commands">database.database_commands module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.create_tables"><code class="docutils literal notranslate"><span class="pre">create_tables()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.enter_budget"><code class="docutils literal notranslate"><span class="pre">enter_budget()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.enter_category"><code class="docutils literal notranslate"><span class="pre">enter_category()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.enter_goal"><code class="docutils literal notranslate"><span class="pre">enter_goal()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.fetch_all"><code class="docutils literal notranslate"><span class="pre">fetch_all()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.fetch_all_with_args"><code class="docutils literal notranslate"><span class="pre">fetch_all_with_args()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.fetch_one"><code class="docutils literal notranslate"><span class="pre">fetch_one()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.fetch_one_with_args"><code class="docutils literal notranslate"><span class="pre">fetch_one_with_args()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.get_category_from_budget"><code class="docutils literal notranslate"><span class="pre">get_category_from_budget()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.get_category_from_id"><code class="docutils literal notranslate"><span class="pre">get_category_from_id()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.get_cursor"><code class="docutils literal notranslate"><span class="pre">get_cursor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.get_expenses_by_date"><code class="docutils literal notranslate"><span class="pre">get_expenses_by_date()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.get_expenses_date_amount"><code class="docutils literal notranslate"><span class="pre">get_expenses_date_amount()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.get_goal"><code class="docutils literal notranslate"><span class="pre">get_goal()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.get_income_by_date"><code class="docutils literal notranslate"><span class="pre">get_income_by_date()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.get_joined_rows"><code class="docutils literal notranslate"><span class="pre">get_joined_rows()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.get_row_list"><code class="docutils literal notranslate"><span class="pre">get_row_list()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.get_rows"><code class="docutils literal notranslate"><span class="pre">get_rows()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.insert_budget"><code class="docutils literal notranslate"><span class="pre">insert_budget()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.insert_data"><code class="docutils literal notranslate"><span class="pre">insert_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.insert_many"><code class="docutils literal notranslate"><span class="pre">insert_many()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.populate_tables"><code class="docutils literal notranslate"><span class="pre">populate_tables()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.update_category"><code class="docutils literal notranslate"><span class="pre">update_category()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="maths.html#module-maths.graphs">maths.graphs module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="maths.html#maths.graphs.make_plot"><code class="docutils literal notranslate"><span class="pre">make_plot()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html#module-database.populate_finances_db">database.populate_finances_db module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="database.html#database.populate_finances_db.populate_tables"><code class="docutils literal notranslate"><span class="pre">populate_tables()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="maths.html#module-maths">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html#module-database">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="functions.html">functions package</a><ul>
@@ -467,39 +483,23 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="functions.html#module-functions">Module contents</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="database.html">database package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="database.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="database.html#module-database.database_commands">database.database_commands module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.create_tables"><code class="docutils literal notranslate"><span class="pre">create_tables()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.enter_budget"><code class="docutils literal notranslate"><span class="pre">enter_budget()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.enter_category"><code class="docutils literal notranslate"><span class="pre">enter_category()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.enter_goal"><code class="docutils literal notranslate"><span class="pre">enter_goal()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.fetch_all"><code class="docutils literal notranslate"><span class="pre">fetch_all()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.fetch_all_with_args"><code class="docutils literal notranslate"><span class="pre">fetch_all_with_args()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.fetch_one"><code class="docutils literal notranslate"><span class="pre">fetch_one()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.fetch_one_with_args"><code class="docutils literal notranslate"><span class="pre">fetch_one_with_args()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.get_category_from_budget"><code class="docutils literal notranslate"><span class="pre">get_category_from_budget()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.get_category_from_id"><code class="docutils literal notranslate"><span class="pre">get_category_from_id()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.get_cursor"><code class="docutils literal notranslate"><span class="pre">get_cursor()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.get_expenses_by_date"><code class="docutils literal notranslate"><span class="pre">get_expenses_by_date()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.get_expenses_date_amount"><code class="docutils literal notranslate"><span class="pre">get_expenses_date_amount()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.get_goal"><code class="docutils literal notranslate"><span class="pre">get_goal()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.get_income_by_date"><code class="docutils literal notranslate"><span class="pre">get_income_by_date()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.get_joined_rows"><code class="docutils literal notranslate"><span class="pre">get_joined_rows()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.get_row_list"><code class="docutils literal notranslate"><span class="pre">get_row_list()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.get_rows"><code class="docutils literal notranslate"><span class="pre">get_rows()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.insert_budget"><code class="docutils literal notranslate"><span class="pre">insert_budget()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.insert_data"><code class="docutils literal notranslate"><span class="pre">insert_data()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.insert_many"><code class="docutils literal notranslate"><span class="pre">insert_many()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.populate_tables"><code class="docutils literal notranslate"><span class="pre">populate_tables()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="database.html#database.database_commands.update_category"><code class="docutils literal notranslate"><span class="pre">update_category()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="maths.html">maths package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="maths.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maths.html#module-maths.calculations">maths.calculations module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="maths.html#maths.calculations.annual_from_monthly"><code class="docutils literal notranslate"><span class="pre">annual_from_monthly()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="maths.html#maths.calculations.annual_from_weekly"><code class="docutils literal notranslate"><span class="pre">annual_from_weekly()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="maths.html#maths.calculations.difference"><code class="docutils literal notranslate"><span class="pre">difference()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="maths.html#maths.calculations.get_mean"><code class="docutils literal notranslate"><span class="pre">get_mean()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="maths.html#maths.calculations.get_month_from_year"><code class="docutils literal notranslate"><span class="pre">get_month_from_year()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="maths.html#maths.calculations.get_week_from_year"><code class="docutils literal notranslate"><span class="pre">get_week_from_year()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="maths.html#maths.calculations.total_spending"><code class="docutils literal notranslate"><span class="pre">total_spending()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="database.html#module-database.populate_finances_db">database.populate_finances_db module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="database.html#database.populate_finances_db.populate_tables"><code class="docutils literal notranslate"><span class="pre">populate_tables()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="maths.html#module-maths.graphs">maths.graphs module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="maths.html#maths.graphs.make_plot"><code class="docutils literal notranslate"><span class="pre">make_plot()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="database.html#module-database">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maths.html#module-maths">Module contents</a></li>
 </ul>
 </li>
 </ul>

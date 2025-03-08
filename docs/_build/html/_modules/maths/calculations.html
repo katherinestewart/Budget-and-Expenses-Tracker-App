@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>maths.calcs &#8212; Budget and Expenses Tracker App Version 1 documentation</title>
+    <title>maths.calculations &#8212; Budget and Expenses Tracker App Version 1 documentation</title>
   
   
   
@@ -39,7 +39,7 @@
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/maths/calcs';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/maths/calculations';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -151,9 +151,9 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">menu</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../menu.html">menu package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../maths.html">maths package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../functions.html">functions package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../database.html">database package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../functions.html">functions package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maths.html">maths package</a></li>
 </ul>
 </details></li>
 </ul>
@@ -258,7 +258,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <h1>Source code for maths.calcs</h1><div class="highlight"><pre>
+  <h1>Source code for maths.calculations</h1><div class="highlight"><pre>
 <span></span><span class="sd">&quot;&quot;&quot;This module contains functions with the logic for all mathematical</span>
 <span class="sd">calculations used in the programme. All functions take in floats and</span>
 <span class="sd">return floats rounded to 2 decimal places.</span>
@@ -266,7 +266,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="total_spending">
-<a class="viewcode-back" href="../../maths.html#maths.calcs.total_spending">[docs]</a>
+<a class="viewcode-back" href="../../maths.html#maths.calculations.total_spending">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">total_spending</span><span class="p">(</span><span class="n">amount_list</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;This function calculates the total from a list of amounts</span>
 
@@ -284,7 +284,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="difference">
-<a class="viewcode-back" href="../../maths.html#maths.calcs.difference">[docs]</a>
+<a class="viewcode-back" href="../../maths.html#maths.calculations.difference">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">difference</span><span class="p">(</span><span class="n">small_num</span><span class="p">,</span> <span class="n">big_num</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;This function calculates the difference between two values</span>
 
@@ -299,7 +299,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="annual_from_weekly">
-<a class="viewcode-back" href="../../maths.html#maths.calcs.annual_from_weekly">[docs]</a>
+<a class="viewcode-back" href="../../maths.html#maths.calculations.annual_from_weekly">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">annual_from_weekly</span><span class="p">(</span><span class="n">weekly_amount</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;This function calculates an annual amount from a weekly amount</span>
 
@@ -313,7 +313,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="annual_from_monthly">
-<a class="viewcode-back" href="../../maths.html#maths.calcs.annual_from_monthly">[docs]</a>
+<a class="viewcode-back" href="../../maths.html#maths.calculations.annual_from_monthly">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">annual_from_monthly</span><span class="p">(</span><span class="n">monthly_amount</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;This function calculates a monthly amount over a year</span>
 
@@ -327,7 +327,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="get_mean">
-<a class="viewcode-back" href="../../maths.html#maths.calcs.get_mean">[docs]</a>
+<a class="viewcode-back" href="../../maths.html#maths.calculations.get_mean">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">get_mean</span><span class="p">(</span><span class="n">numbers_list</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;This function calculates the mean from a list of numbers</span>
 
@@ -344,31 +344,8 @@ document.write(`
 
 
 
-<div class="viewcode-block" id="get_average_amount">
-<a class="viewcode-back" href="../../maths.html#maths.calcs.get_average_amount">[docs]</a>
-<span class="k">def</span><span class="w"> </span><span class="nf">get_average_amount</span><span class="p">(</span><span class="n">spending_list</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function takes in a list of values. It appends the first</span>
-<span class="sd">    number in the list to a new list. It then calculates the mean of</span>
-<span class="sd">    the first two numbers, then first three and so on. It then returns</span>
-<span class="sd">    the list of cumulative averages.</span>
-
-<span class="sd">    :param spending_list: list of floats</span>
-<span class="sd">    :return: cumulative averages for each item in list</span>
-<span class="sd">    :rtype: list</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">average_list</span> <span class="o">=</span> <span class="p">[]</span>
-
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">spending_list</span><span class="p">):</span>
-        <span class="n">number</span> <span class="o">=</span> <span class="n">get_mean</span><span class="p">(</span><span class="n">spending_list</span><span class="p">[:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
-        <span class="n">number</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-        <span class="n">average_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">average_list</span></div>
-
-
-
 <div class="viewcode-block" id="get_week_from_year">
-<a class="viewcode-back" href="../../maths.html#maths.calcs.get_week_from_year">[docs]</a>
+<a class="viewcode-back" href="../../maths.html#maths.calculations.get_week_from_year">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">get_week_from_year</span><span class="p">(</span><span class="n">amount</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;This function takes in an amount over an annual term and returns</span>
 <span class="sd">    the amount for one week</span>
@@ -383,7 +360,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="get_month_from_year">
-<a class="viewcode-back" href="../../maths.html#maths.calcs.get_month_from_year">[docs]</a>
+<a class="viewcode-back" href="../../maths.html#maths.calculations.get_month_from_year">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">get_month_from_year</span><span class="p">(</span><span class="n">amount</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;This function takes in an amount over an annual term and returns</span>
 <span class="sd">    the amount for one month</span>

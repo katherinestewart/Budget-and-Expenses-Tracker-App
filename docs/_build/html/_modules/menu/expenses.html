@@ -151,9 +151,9 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">menu</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../menu.html">menu package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../maths.html">maths package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../functions.html">functions package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../database.html">database package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../functions.html">functions package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maths.html">maths package</a></li>
 </ul>
 </details></li>
 </ul>
@@ -304,12 +304,13 @@ document.write(`
 <span class="n">SEARCH_MORE_EXPENSES</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span><span class="se">\n</span><span class="s2">Enter &#39;r&#39; to return to main menu,</span>
 <span class="s2">or anything else to continue viewing expenses: &quot;&quot;&quot;</span>
 <span class="n">TABLE</span> <span class="o">=</span> <span class="s2">&quot;expenses&quot;</span>
-<span class="n">VIEW_SHORT</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\t\t\t</span><span class="si">{}</span><span class="se">\t\t</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[90m_</span><span class="se">\033</span><span class="s2">[0m&quot;</span> <span class="o">*</span> <span class="mi">70</span>
-<span class="n">VIEW_SHORT_</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\t\t\t</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[90m_</span><span class="se">\033</span><span class="s2">[0m&quot;</span> <span class="o">*</span> <span class="mi">70</span>
-<span class="n">VIEW_LONG</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\t\t</span><span class="si">{}</span><span class="se">\t\t</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[90m_</span><span class="se">\033</span><span class="s2">[0m&quot;</span> <span class="o">*</span> <span class="mi">70</span>
-<span class="n">VIEW_LONG_</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\t\t</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[90m_</span><span class="se">\033</span><span class="s2">[0m&quot;</span> <span class="o">*</span> <span class="mi">70</span>
-<span class="n">VIEW_LONG_X</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\t\t</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[90m_</span><span class="se">\033</span><span class="s2">[0m&quot;</span> <span class="o">*</span> <span class="mi">70</span>
-<span class="n">VIEW_LONG_X_</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[90m_</span><span class="se">\033</span><span class="s2">[0m&quot;</span> <span class="o">*</span> <span class="mi">70</span>
+<span class="n">PRINT_LINE</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[90m_</span><span class="se">\033</span><span class="s2">[0m&quot;</span> <span class="o">*</span> <span class="mi">70</span>
+<span class="n">VIEW_SHORT</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\t\t\t</span><span class="si">{}</span><span class="se">\t\t</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">PRINT_LINE</span>
+<span class="n">VIEW_SHORT_</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\t\t\t</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">PRINT_LINE</span>
+<span class="n">VIEW_LONG</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\t\t</span><span class="si">{}</span><span class="se">\t\t</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">PRINT_LINE</span>
+<span class="n">VIEW_LONG_</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\t\t</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">PRINT_LINE</span>
+<span class="n">VIEW_LONG_X</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\t\t</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">PRINT_LINE</span>
+<span class="n">VIEW_LONG_X_</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\t</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">PRINT_LINE</span>
 
 
 <div class="viewcode-block" id="Expense">
@@ -332,7 +333,7 @@ document.write(`
 <span class="sd">    ----------</span>
 <span class="sd">    get_all_att:</span>
 <span class="sd">        returns attributes of expense</span>
-<span class="sd">    enter_new_expense:</span>
+<span class="sd">    insert_expense:</span>
 <span class="sd">        enters new expense into expenses table</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -375,16 +376,34 @@ document.write(`
         <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">expense</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">amount</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">category</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="Expense.enter_object">
-<a class="viewcode-back" href="../../menu.html#menu.expenses.Expense.enter_object">[docs]</a>
-    <span class="k">def</span><span class="w"> </span><span class="nf">enter_object</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Expense.insert_expense">
+<a class="viewcode-back" href="../../menu.html#menu.expenses.Expense.insert_expense">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">insert_expense</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;This method enters a new expense into the &#39;expenses&#39; table.</span>
 
 <span class="sd">        :param self: Expense object</span>
 <span class="sd">        :return: None</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">dc</span><span class="o">.</span><span class="n">enter_expense</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_all_att</span><span class="p">())</span></div>
+        <span class="n">dc</span><span class="o">.</span><span class="n">insert_data</span><span class="p">(</span><span class="n">dc</span><span class="o">.</span><span class="n">INSERT_EXPENSE</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_all_att</span><span class="p">())</span></div>
 </div>
+
+
+
+<div class="viewcode-block" id="get_expense_description">
+<a class="viewcode-back" href="../../menu.html#menu.expenses.get_expense_description">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_expense_description</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function gets a description of a new expense.</span>
+
+<span class="sd">    :return: new expense description</span>
+<span class="sd">    :rtype: str</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">new_expense</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Enter expense description: &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">cf</span><span class="o">.</span><span class="n">description_check</span><span class="p">(</span><span class="n">new_expense</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">new_expense</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="n">cf</span><span class="o">.</span><span class="n">INVALID_INPUT</span><span class="p">)</span></div>
 
 
 
@@ -397,11 +416,7 @@ document.write(`
 <span class="sd">    :rtype: tuple</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
-    <span class="n">new_expense</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Enter expense description: &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-
-    <span class="k">while</span> <span class="ow">not</span> <span class="n">cf</span><span class="o">.</span><span class="n">description_check</span><span class="p">(</span><span class="n">new_expense</span><span class="p">):</span>
-        <span class="n">new_expense</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Enter expense description: &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-
+    <span class="n">new_expense</span> <span class="o">=</span> <span class="n">get_expense_description</span><span class="p">()</span>
     <span class="n">new_amount</span> <span class="o">=</span> <span class="n">cf</span><span class="o">.</span><span class="n">get_amount</span><span class="p">()</span>
     <span class="n">cat_choice_id</span> <span class="o">=</span> <span class="n">cf</span><span class="o">.</span><span class="n">select_category</span><span class="p">(</span><span class="s2">&quot;categories&quot;</span><span class="p">)</span>
     <span class="n">exp_obj</span> <span class="o">=</span> <span class="n">Expense</span><span class="p">(</span><span class="n">today</span><span class="p">,</span> <span class="n">new_expense</span><span class="p">,</span> <span class="n">new_amount</span><span class="p">,</span> <span class="n">cat_choice_id</span><span class="p">)</span>
@@ -560,6 +575,26 @@ document.write(`
 
 
 
+<div class="viewcode-block" id="add_expense">
+<a class="viewcode-back" href="../../menu.html#menu.expenses.add_expense">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">add_expense</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function calls functions to insert expense into table and</span>
+<span class="sd">    prints a message to user.</span>
+
+<span class="sd">    :return: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">new_expense</span> <span class="o">=</span> <span class="n">get_expense</span><span class="p">()</span>
+    <span class="n">new_expense</span><span class="o">.</span><span class="n">insert_expense</span><span class="p">()</span>
+    <span class="n">cf</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">COLUMNS</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">new_expense</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Expense has been added </span><span class="se">\U00002705\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span></div>
+
+
+
 <div class="viewcode-block" id="expense_menu">
 <a class="viewcode-back" href="../../menu.html#menu.expenses.expense_menu">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">expense_menu</span><span class="p">():</span>
@@ -576,16 +611,7 @@ document.write(`
         <span class="k">if</span> <span class="n">menu</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
             <span class="n">cf</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
             <span class="nb">print</span><span class="p">(</span><span class="n">SELECT_1</span><span class="p">)</span>
-
-            <span class="n">new_expense</span> <span class="o">=</span> <span class="n">get_expense</span><span class="p">()</span>
-            <span class="n">new_expense</span><span class="o">.</span><span class="n">enter_object</span><span class="p">()</span>
-            <span class="n">cf</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-
-            <span class="nb">print</span><span class="p">(</span><span class="n">COLUMNS</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">new_expense</span><span class="p">)</span>
-            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Expense has been added </span><span class="se">\U00002705\n</span><span class="s2">&quot;</span><span class="p">)</span>
-            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span>
+            <span class="n">add_expense</span><span class="p">()</span>
 
         <span class="c1"># ****** View expenses ******</span>
         <span class="k">elif</span> <span class="n">menu</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>

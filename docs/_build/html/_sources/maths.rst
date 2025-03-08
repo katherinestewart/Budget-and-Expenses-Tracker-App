@@ -4,10 +4,10 @@ maths package
 Submodules
 ----------
 
-maths.calcs module
-------------------
+maths.calculations module
+-------------------------
 
-.. automodule:: maths.calcs
+.. automodule:: maths.calculations
    :members:
    :show-inheritance:
    :undoc-members:

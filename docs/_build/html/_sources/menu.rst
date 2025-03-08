@@ -12,6 +12,14 @@ menu.budget module
    :show-inheritance:
    :undoc-members:
 
+menu.create\_graph module
+-------------------------
+
+.. automodule:: menu.create_graph
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 menu.expenses module
 --------------------
 
