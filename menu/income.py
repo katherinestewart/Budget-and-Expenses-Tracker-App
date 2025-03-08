@@ -45,9 +45,10 @@ or anything else to continue viewing income by category: """
 INVALID_INPUT = "\nYou entered an invalid input.  Please try again."
 SRC_DESCRIBE = "\nEnter new income source: "
 TABLE = "income"
-VIEW_INCOME = "\n{}\t{}\t\t\t{}\n" + "\033[90m_\033[0m" * 60
-VIEW_INCOME_L = "\n{}\t{}\t\t{}\n" + "\033[90m_\033[0m" * 60
-VIEW_INCOME_XL = "\n{}\t{}\t{}\n" + "\033[90m_\033[0m" * 60
+PRINT_LINE = "\033[90m_\033[0m" * 60
+VIEW_INCOME = "\n{}\t{}\t\t\t{}\n" + PRINT_LINE
+VIEW_INCOME_L = "\n{}\t{}\t\t{}\n" + PRINT_LINE
+VIEW_INCOME_XL = "\n{}\t{}\t{}\n" + PRINT_LINE
 
 
 class Income:
