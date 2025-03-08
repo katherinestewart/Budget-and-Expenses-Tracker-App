@@ -295,6 +295,15 @@ def add_expense():
     sleep(0.6)
 
 
+def view_expenses():
+    """This function
+    """
+    expenses_list = expenses_by_date()
+    cf.clear()
+    print_row_list(expenses_list)
+    sleep(0.6)
+
+
 def expense_menu():
     """This function manages the user selection from the expense menu
     calls the relevant functions according to the menu selection
@@ -315,10 +324,7 @@ def expense_menu():
         elif menu == "2":
             cf.clear()
             print(SELECT_2)
-            expenses_list = expenses_by_date()
-            cf.clear()
-            print_row_list(expenses_list)
-            sleep(0.6)
+            view_expenses()
 
         # ****** View expenses by category ******
         elif menu == "3":
