@@ -5,7 +5,7 @@ also contains all relevant functions to get the required returns for
 each selection.
 """
 
-import time
+from time import sleep
 import datetime
 from functions import common_functions as cf
 from database import database_commands as dc
@@ -273,7 +273,7 @@ def income_menu():
             n.source = dc.get_category_from_id(n.source, "sources")
             print(new_income)
             print("\nIncome has been added \U00002705\n\n")
-            time.sleep(0.6)
+            sleep(0.6)
 
         # ****** View income ******
         elif menu == "2":

@@ -4,7 +4,7 @@ categories or return to main menu. It also contains all relevant
 functions to get the required returns for each selection.
 """
 
-import time
+from time import sleep
 import datetime
 from database import database_commands as dc
 from functions import common_functions as cf
@@ -208,7 +208,7 @@ def expenses_by_category():
 
     cf.clear()
     print_row_list(expenses_in_category)
-    time.sleep(0.6)
+    sleep(0.6)
 
 
 def get_new_category():
@@ -233,7 +233,7 @@ def view_categories():
     category_list = dc.get_row_list(CATEGORIES)
     cf.clear()
     cf.print_categories(category_list)
-    time.sleep(0.6)
+    sleep(0.6)
 
 
 def categories_menu():
@@ -257,7 +257,7 @@ def categories_menu():
             cat_update = get_new_category()
             dc.update_category(CATEGORIES, cat_id, cat_update)
             print("\nCategory has been updated \U00002705")
-            time.sleep(1)
+            sleep(1)
             cf.clear()
 
         # ****** Add category ******
@@ -266,7 +266,7 @@ def categories_menu():
             dc.enter_category(new_cat, CATEGORIES)
             view_categories()
             print("\nCategory added \U00002705")
-            time.sleep(1)
+            sleep(1)
             cf.clear()
 
         # ****** Return to main menu ******
@@ -290,9 +290,9 @@ def add_expense():
 
     print(COLUMNS)
     print(new_expense)
-    time.sleep(0.6)
+    sleep(0.6)
     print("\nExpense has been added \U00002705\n")
-    time.sleep(0.6)
+    sleep(0.6)
 
 
 def expense_menu():
@@ -318,7 +318,7 @@ def expense_menu():
             expenses_list = expenses_by_date()
             cf.clear()
             print_row_list(expenses_list)
-            time.sleep(0.6)
+            sleep(0.6)
 
         # ****** View expenses by category ******
         elif menu == "3":
