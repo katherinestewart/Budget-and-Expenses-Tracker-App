@@ -4,8 +4,10 @@ database. There are six tables; expenses, income, categories, sources,
 budget and goals.
 """
 
+from contextlib import contextmanager
 import sqlite3
-from database import populate_finances_db
+from database import populate_finances_db as pf
+
 
 CREATE_EXPENSES_TABLE = """CREATE TABLE IF NOT EXISTS expenses
 (id INTEGER PRIMARY KEY AUTOINCREMENT, date TEXT, expense TEXT,
@@ -21,10 +23,19 @@ CREATE_BUDGET_TABLE = """CREATE TABLE IF NOT EXISTS budget
 (id INTEGER PRIMARY KEY AUTOINCREMENT, amount FLOAT, term TEXT)"""
 CREATE_GOALS_TABLE = """CREATE TABLE IF NOT EXISTS goals
 (id INTEGER PRIMARY KEY AUTOINCREMENT, goal TEXT, amount FLOAT, term TEXT)"""
-CREATE_INCOME_SOURCE_TABLE = """CREATE TABLE IF NOT EXISTS sources
+CREATE_SOURCES_TABLE = """CREATE TABLE IF NOT EXISTS sources
 (id INTEGER PRIMARY KEY AUTOINCREMENT, source TEXT)"""
-ENTER_EXPENSE = """INSERT INTO expenses(date, expense, amount, categoryID)
+MAX_BUDGET_ID = """SELECT MAX(id) FROM budget"""
+INSERT_EXPENSE = """INSERT INTO expenses(date, expense, amount, categoryID)
 VALUES(?,?,?,?)"""
+INSERT_INCOME = """INSERT INTO income(date, sourceID, amount) VALUES(?,?,?)"""
+INSERT_CATEGORY = """INSERT INTO categories(category) VALUES(?)"""
+INSERT_BUDGET = """INSERT INTO budget(amount, term) VALUES(?,?)"""
+INSERT_GOAL = """INSERT INTO goals(goal, amount, term) VALUES(?,?,?)"""
+INSERT_SOURCE = """INSERT INTO sources(source) VALUES(?)"""
+UPDATE_CATEGORY = """UPDATE categories SET budgetID = ? WHERE id = ?"""
+LAST_INSERTED_ID = """SELECT last_insert_rowid()"""
+
 SELECT_CATEGORIES = """SELECT * FROM categories INNER JOIN budget ON
 categories.budgetID=budget.id"""
 SELECT_EXPENSES = """SELECT * FROM expenses INNER JOIN categories ON
@@ -35,10 +46,7 @@ CAT_UPDATE = """UPDATE categories SET category = ? WHERE id = ?"""
 DELETE_BUDGET = """DELETE FROM budget WHERE id = ?"""
 DEL_GOAL = """DELETE FROM goals WHERE id = ?"""
 DELETE_GOAL = """DELETE FROM goals WHERE goal = ? AND term = ?"""
-ENTER_BUDGET = """INSERT INTO budget(amount, term) VALUES(?,?)"""
 ENTER_CAT = """INSERT INTO categories(category) VALUES(?)"""
-ENTER_GOAL = """INSERT INTO goals(goal, amount, term) VALUES(?,?,?)"""
-ENTER_INCOME = """INSERT INTO income(date, sourceID, amount) VALUES(?,?,?)"""
 ENTER_SRC = """INSERT INTO sources(source) VALUES(?)"""
 MAX_BUDGET_ID = """SELECT MAX(id) FROM budget"""
 SEL_CAT_FROM_BUDG = """SELECT category FROM categories WHERE budgetID = ?"""
@@ -52,109 +60,185 @@ SELECT_INC_CAT = """SELECT source FROM sources WHERE id = ?"""
 SRC_UPDATE = """UPDATE sources SET source = ? WHERE id = ?"""
 TABLE_EXISTS = """SELECT name FROM sqlite_master WHERE type='table'"""
 UPDATE_CAT_BUDGET = """UPDATE categories SET budgetID = ? WHERE id = ?"""
+SELECT_FIRST_EXPENSE = """SELECT * FROM expenses WHERE id = 1"""
 
 
-def connect_db():
-    """Establishes a connection to the SQLite database and returns the
-    connection and cursor.
+@contextmanager
+def get_cursor():
+    """This function catches any errors when connecting to the database
+    and creates a cursor.
 
-    :return: connection and cursor
+    :return: cursor
+    :rtype: cursor
     """
     try:
-        conn = sqlite3.connect("finances.db")
-        cursor_ = conn.cursor()
-        return conn, cursor_
+        db = sqlite3.connect("finances.db")
+        cursor = db.cursor()
+        yield cursor
     except sqlite3.Error as e:
-        print(f"Error connecting to database: {e}")
-        return None, None
+        db.rollback()
+        raise e
+    else:
+        db.commit()
+    finally:
+        db.close()
 
 
-def create_and_populate_tables():
+def insert_data(string, args):
+    """This function inserts data into the database.
+
+    :param string: SQLite command
+    :param args: tuple with arguments for command
+    :return: None
+    """
+    with get_cursor() as cursor:
+        cursor.execute(string, args)
+
+
+def insert_many(command):
+    """This function inserts a list of data into the database.
+
+    :param command: tuple containing (str, list)
+    :return: None
+    """
+    with get_cursor() as cursor:
+        cursor.executemany(*command)
+
+
+def fetch_one(command):
+    """This function fetches data from one row in the database.
+
+    :param input: SQLite command
+    :param args: arguments for SQLite command
+    :return: data from one row
+    :rtype: tuple
+    """
+    with get_cursor() as cursor:
+        cursor.execute(command)
+        data = cursor.fetchone()
+
+    return data
+
+
+def fetch_one_with_args(string, args):
+    """This function fetches data from one row in the database by
+    selected arguments.
+
+    :param input: SQLite command
+    :param args: arguments for SQLite command
+    :return: data from one row
+    :rtype: tuple
+    """
+    with get_cursor() as cursor:
+        cursor.execute(string, args)
+        data = cursor.fetchone()
+
+    return data
+
+
+def fetch_all(command):
+    """This function fetches data from one or more rows in the
+    database.
+
+    :param input: SQLite command
+    :param args: arguments for SQLite command
+    :return: data from one or more rows
+    :rtype: List of tuples
+    """
+    with get_cursor() as cursor:
+        cursor.execute(command)
+        data = cursor.fetchall()
+
+    return data
+
+
+def fetch_all_with_args(string, args):
+    """This function fetches data from one or more rows in the
+    database which match selected arguments.
+
+    :param input: SQLite command
+    :param args: arguments for SQLite command
+    :return: data from one or more rows
+    :rtype: List of tuples
+    """
+    with get_cursor() as cursor:
+        cursor.execute(string, args)
+        data = cursor.fetchall()
+
+    return data
+
+
+def create_tables():
     """This function creates all tables in the database if they don't
-    exist.  If it is the first time they have been created, then it
-    populates the table with dummy data.
+    exist and calls function to populate tables.
 
     :return: None
     """
-    db, cursor = connect_db()
-    # Check if any tables exist in the database
-    result = cursor.execute(TABLE_EXISTS).fetchone()
+    commands = [
+        CREATE_EXPENSES_TABLE,
+        CREATE_CATEGORY_TABLE,
+        CREATE_INCOME_TABLE,
+        CREATE_SOURCES_TABLE,
+        CREATE_BUDGET_TABLE,
+        CREATE_GOALS_TABLE,
+    ]
 
-    cursor.execute(CREATE_EXPENSES_TABLE)
-    cursor.execute(CREATE_CATEGORY_TABLE)
-    cursor.execute(CREATE_INCOME_TABLE)
-    cursor.execute(CREATE_INCOME_SOURCE_TABLE)
-    cursor.execute(CREATE_BUDGET_TABLE)
-    cursor.execute(CREATE_GOALS_TABLE)
-    db.commit()
+    for command in commands:
+        with get_cursor() as cursor:
+            cursor.execute(command)
 
-    # If no tables existed in the database at start up, then populate
-    # tables with dummy data.
-    if result is None:
-        populate_finances_db.populate_tables()
-        populate_finances_db.enter_budgets_goals()
-
-    db.close()
+    populate_tables()
 
 
-def enter_expense(expense_tuple):
-    """This function enters an expense into the expenses table.
+def populate_tables():
+    """This function checks if there is any data in the expenses table
+    and if not it populates all tables with dummy data for testing.
 
-    :param expense_tuple: tuple with date, expense, amount, categoryID
     :return: None
     """
-    db, cursor = connect_db()
-    cursor.execute(ENTER_EXPENSE, (*expense_tuple,))
-    db.commit()
-    db.close()
+    if not fetch_one(SELECT_FIRST_EXPENSE):
+        pf.populate_tables()
 
 
-def enter_income(income_tuple):
-    """This function enters an income into the income table.
+def insert_budget(category_id, budget):
+    """This function enters a new budget assigned to a category.
 
-    :param income_tuple: tuple with date, source, amount
+    :param category_id: primary key in categories table
+    :param budget: tuple containing (amount, term)
     :return: None
     """
-    db, cursor = connect_db()
-    cursor.execute(ENTER_INCOME, (*income_tuple,))
-    db.commit()
-    db.close()
+    insert_data(INSERT_BUDGET, budget)
+    budget_id = fetch_one(MAX_BUDGET_ID)
+    insert_data(UPDATE_CATEGORY, (*budget_id, category_id))
 
 
 def enter_category(new_cat, table):
-    """This function enters a new category in a table
+    """This function enters a new category in a table.
 
     :param new_cat: new expense category or income source
     :param table: expenses or sources table in database
     :return: None
     """
-    db, cursor = connect_db()
 
     if table == "categories":
-        cursor.execute(ENTER_CAT, (new_cat,))
+        insert_data(ENTER_CAT, (new_cat,))
     else:
-        cursor.execute(ENTER_SRC, (new_cat,))
-
-    db.commit()
-    db.close()
+        insert_data(ENTER_SRC, (new_cat,))
 
 
 def get_row_list(table):
-    """This function gets a list of all the rows in a table
+    """This function gets a list of all the rows in a table.
 
     :param table: table in database
     :return: all rows
     :rtype: list
     """
-    db, cursor = connect_db()
-    cursor.execute(SELECT_ROWS.format(table))
-    rows = cursor.fetchall()
-    db.close()
+    rows = fetch_all(SELECT_ROWS.format(table))
     return rows
 
 
 def get_rows(year_month, table):
-    """This function gets all rows from a table, appends all rows to a
+    """This function gets all rows from a table and appends rows to a
     list where the date they were entered matches a selected month.
 
     :param year_month: YYYY-MM
@@ -175,24 +259,21 @@ def get_joined_rows(table):
     """This function gets all rows from a joined table.
 
     :param table: table name
-    :return: all rows from table
+    :return: all rows from joined table
     :rtype: list of tuples
     """
-    db, cursor = connect_db()
+    table_dict = {
+        "expenses": SELECT_EXPENSES,
+        "income": SELECT_INCOME,
+        "categories": SELECT_CATEGORIES,
+    }
 
-    if table == "expenses":
-        cursor.execute(SELECT_EXPENSES)
-    if table == "income":
-        cursor.execute(SELECT_INCOME)
-    if table == "categories":
-        cursor.execute(SELECT_CATEGORIES)
+    rows_list = fetch_all(table_dict[table])
 
-    rows_list = cursor.fetchall()
-    db.close()
     return rows_list
 
 
-def get_category_from_id(category_id, table):
+def get_category_from_id(id_, table):
     """This function gets the description of an expenses category or
     income source from its id number
 
@@ -201,15 +282,9 @@ def get_category_from_id(category_id, table):
     :return: category
     :rtype: str
     """
-    db, cursor = connect_db()
+    table_dict = {"categories": SELECT_CATEGORY, "sources": SELECT_INC_CAT}
 
-    if table == "categories":
-        cursor.execute(SELECT_CATEGORY, (category_id,))
-    if table == "sources":
-        cursor.execute(SELECT_INC_CAT, (category_id,))
-
-    category = cursor.fetchone()
-    db.close()
+    category = fetch_one_with_args(table_dict[table], (id_,))
     return category[0]
 
 
@@ -217,108 +292,79 @@ def get_category_from_budget(budget_id):
     """This function gets the category description, for a budget set by
     category, from its budget id number
 
-    :param budget_id: budget primary key, category foreign key
+    :param budget_id: budget primary key which is category foreign key
     :return: category description or None
     :rtype: str or None
     """
-    db, cursor = connect_db()
-    cursor.execute(SEL_CAT_FROM_BUDG, (budget_id,))
-    category = cursor.fetchone()
+    category = fetch_one_with_args(SEL_CAT_FROM_BUDG, (budget_id,))
 
     if category:
         return category[0]
 
-    db.close()
     return None
 
 
-def get_max_budget_id():
-    """This function gets the maximum value for primary key in budget
-    table
-
-    :return: max_id
-    :rtype: int
-    """
-    db, cursor = connect_db()
-    cursor.execute(MAX_BUDGET_ID)
-    max_id = cursor.fetchone()
-    db.close()
-    return max_id
-
-
-def update_category(table, cat_id, update):
+def update_category(table, id_, update):
     """This function updates a description for an expense category or
-    an income source
+    an income source.
 
     :param table: 'categories' or 'sources'
     :param cat_id: primary key id number
     :return: None
     """
-    db, cursor = connect_db()
-
-    if table == "categories":
-        cursor.execute(CAT_UPDATE, (update, cat_id))
-    if table == "sources":
-        cursor.execute(SRC_UPDATE, (update, cat_id))
-
-    db.commit()
-    db.close()
+    table_dict = {
+        "categories": CAT_UPDATE,
+        "sources": SRC_UPDATE,
+    }
+    insert_data(table_dict[table], (update, id_))
 
 
-def enter_budget(cat_id, amount, term):
+def enter_budget(category_id, amount, term):
     """This function enters a new budget assigned to a category
 
-    :param cat_id: primary key in categories table
+    :param category_id: primary key in categories table
     :param amount: new budget amount
     :param term: "weekly", "monthly", or "annual"
     :return: None
     """
-    db, cursor = connect_db()
     cat_rows = get_row_list("categories")
 
     for row in cat_rows:
-        if row[0] == cat_id:
-            cursor.execute(DELETE_BUDGET, (row[2],))
+        if row[0] == category_id:
+            insert_data(DELETE_BUDGET, (row[2],))
 
-    cursor.execute(ENTER_BUDGET, (amount, term))
-    budget_id = get_max_budget_id()
-    cursor.execute(UPDATE_CAT_BUDGET, (*budget_id, cat_id))
-    db.commit()
-    db.close()
+    insert_data(INSERT_BUDGET, (amount, term))
+    budget_id = fetch_one(MAX_BUDGET_ID)
+    insert_data(UPDATE_CAT_BUDGET, (*budget_id, category_id))
 
 
-def get_expenses_date_amount(cat_id):
+def get_expenses_date_amount(category_id):
     """This function gets the date and amount of expenses from a chosen
-    category
+    category.
 
-    :param cat_id: foreign key in expenses table, primary in categories
+    :param category_id: foreign key in expenses table
     :return: date and amount of expenses
     :rtype: list of tuples
     """
-    db, cursor = connect_db()
-    cursor.execute(SELECT_DATE_AMOUNT, (cat_id,))
-    date_amount = cursor.fetchall()
-    db.close()
+    date_amount = fetch_one_with_args(SELECT_DATE_AMOUNT, (category_id,))
+
     return date_amount
 
 
 def get_expenses_by_date(days_list):
-    """This function gets expenses for each day in a list
+    """This function gets expenses for each day in a list.
 
-    :param days_list: list of days
+    :param days_list: list of dates
     :return: list of rows from expenses table
     :rtype: list of tuples
     """
-    db, cursor = connect_db()
     expenses_list = []
 
     for day in days_list:
-        cursor.execute(SELECT_EXPS_BY_DATE, (day,))
-        rows = cursor.fetchall()
+        rows = fetch_all_with_args(SELECT_EXPS_BY_DATE, (day,))
         for row in rows:
             expenses_list.append(row)
 
-    db.close()
     return expenses_list
 
 
@@ -329,16 +375,14 @@ def get_income_by_date(days_list):
     :return: list of rows from income table
     :rtype: list of tuples
     """
-    db, cursor = connect_db()
     income_list = []
 
     for day in days_list:
-        cursor.execute(SELECT_INC_BY_DATE, (day,))
-        rows = cursor.fetchall()
-        for row in rows:
-            income_list.append(row)
+        rows = fetch_all_with_args(SELECT_INC_BY_DATE, (day,))
+        if rows:
+            for row in rows:
+                income_list.append(row)
 
-    db.close()
     return income_list
 
 
@@ -350,23 +394,19 @@ def enter_goal(goal, amount, term):
     :param term: 'weekly', 'monthly' or 'annual'
     :return: None
     """
-    db, cursor = connect_db()
-
     if goal in ("net income", "gross income"):
         goals_list = get_row_list("goals")
         for row in goals_list:
 
             # Delete goal if one already exists
             if row[1] == goal:
-                cursor.execute(DEL_GOAL, (row[0],))
+                insert_data(DEL_GOAL, (row[0],))
 
     # Delete goal if one already exists
     if goal == "budget":
-        cursor.execute(DELETE_GOAL, (goal, term))
+        insert_data(DELETE_GOAL, (goal, term))
 
-    cursor.execute(ENTER_GOAL, (goal, amount, term))
-    db.commit()
-    db.close()
+    insert_data(INSERT_GOAL, (goal, amount, term))
 
 
 def get_goal(goal, term):
@@ -378,12 +418,9 @@ def get_goal(goal, term):
     :return: goal amount or None
     :rtype: float or None
     """
-    db, cursor = connect_db()
-    cursor.execute(SELECT_GOAL, (goal, term))
-    row = cursor.fetchone()
+    row = fetch_one_with_args(SELECT_GOAL, (goal, term))
 
     if row:
         return row[2]
 
-    db.close()
     return None
