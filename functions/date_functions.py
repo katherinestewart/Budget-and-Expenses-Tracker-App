@@ -28,13 +28,12 @@ def get_days_list(term):
     :return: list of dates
     :rtype: list of str
     """
-    if term == "weekly":
-        days_list = get_week_dates()
-    elif term == "monthly":
-        days_list = get_month_dates()
-    else:
-        days_list = get_year_dates()
-    return days_list
+    term_dict = {
+        "weekly": get_week_dates(),
+        "monthly": get_month_dates(),
+        "annual": get_year_dates(),
+    }
+    return term_dict[term]
 
 
 def get_week_dates():
@@ -108,10 +107,10 @@ def get_dates_for_goals():
     """
     term = common_functions.get_term(YEAR_MENU)
     if term == "annual":
-        get_year_weeks()
+        get_date_of_first_day_each_week_this_year()
 
 
-def get_year_weeks():
+def get_date_of_first_day_each_week_this_year():
     """This function gets the first day of each week in the current
     year starting from 1st Jan up until today's date.
 
@@ -130,9 +129,9 @@ def get_year_weeks():
     return dates_list
 
 
-def get_dates_in_week(date):
+def all_dates_in_week(date):
     """This function takes in a date and returns that date plus the
-    next six days
+    next six days.
 
     :param date: a date
     :return: dates for week
@@ -141,9 +140,11 @@ def get_dates_in_week(date):
     day = datetime.date.today()
     dates_for_week = [date]
     i = 0
+
     for i in range(6):
         date = date + datetime.timedelta(days=1)
         if date <= day:
             dates_for_week.append(date)
         i += 1
+
     return dates_for_week

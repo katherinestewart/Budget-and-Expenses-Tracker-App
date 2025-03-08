@@ -24,7 +24,7 @@ SELECT_2 = f"{SEL_}Set Budget by Category{END_}"
 
 
 def clear():
-    os.system('cls||clear')
+    os.system("cls||clear")
 
 
 def get_term(string):
