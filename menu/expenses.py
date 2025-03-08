@@ -43,12 +43,13 @@ CATEGORIES_MENU = f"""{SELECT_4}
 SEARCH_MORE_EXPENSES = """\nEnter 'r' to return to main menu,
 or anything else to continue viewing expenses: """
 TABLE = "expenses"
-VIEW_SHORT = "\n{}\t{}\t\t\t{}\t\t{}\n" + "\033[90m_\033[0m" * 70
-VIEW_SHORT_ = "\n{}\t{}\t\t\t{}\t{}\n" + "\033[90m_\033[0m" * 70
-VIEW_LONG = "\n{}\t{}\t\t{}\t\t{}\n" + "\033[90m_\033[0m" * 70
-VIEW_LONG_ = "\n{}\t{}\t\t{}\t{}\n" + "\033[90m_\033[0m" * 70
-VIEW_LONG_X = "\n{}\t{}\t{}\t\t{}\n" + "\033[90m_\033[0m" * 70
-VIEW_LONG_X_ = "\n{}\t{}\t{}\t{}\n" + "\033[90m_\033[0m" * 70
+PRINT_LINE = "\033[90m_\033[0m" * 70
+VIEW_SHORT = "\n{}\t{}\t\t\t{}\t\t{}\n" + PRINT_LINE
+VIEW_SHORT_ = "\n{}\t{}\t\t\t{}\t{}\n" + PRINT_LINE
+VIEW_LONG = "\n{}\t{}\t\t{}\t\t{}\n" + PRINT_LINE
+VIEW_LONG_ = "\n{}\t{}\t\t{}\t{}\n" + PRINT_LINE
+VIEW_LONG_X = "\n{}\t{}\t{}\t\t{}\n" + PRINT_LINE
+VIEW_LONG_X_ = "\n{}\t{}\t{}\t{}\n" + PRINT_LINE
 
 
 class Expense:

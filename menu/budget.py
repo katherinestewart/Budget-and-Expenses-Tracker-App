@@ -48,9 +48,9 @@ SELECT_3 = f"{SEL_}View Budgets{END_}"
 SELECT_4 = f"{SEL_}View Budget Progress{END_}"
 OVERSPENT = "\033[91m\U000026a0\033[0m"
 OVERALL_PRINT = "_" * 50
-PROGRESS_PRINT = "\033[90m_\033[0m" * 50
-VIEW_BUDGET = "\n{}\t{}\t\t{}\n" + "\033[90m_\033[0m" * 50
-VIEW_BUDGET_L = "\n{}\t\t{}\t\t{}\n" + "\033[90m_\033[0m" * 50
+PRINT_LINE = "\033[90m_\033[0m" * 50
+VIEW_BUDGET = "\n{}\t{}\t\t{}\n" + PRINT_LINE 
+VIEW_BUDGET_L = "\n{}\t\t{}\t\t{}\n" + PRINT_LINE 
 
 
 class Budget:
@@ -332,7 +332,7 @@ def overall_progress(term):
         print(OVERALL_PRINT)
         return print_overall(budget_goal, total, remain, term)
 
-    print(PROGRESS_PRINT)
+    print(PRINT_LINE)
     return None
 
 
@@ -365,7 +365,7 @@ def print_progress(progress_list):
     :return: None
     """
     if progress_list:
-        print(PROGRESS_PRINT)
+        print(PRINT_LINE)
 
         for item in progress_list:
             print(f"\n\033[1m{item[2].upper()}\033[0m")
@@ -376,7 +376,7 @@ def print_progress(progress_list):
             else:
                 print(f"{OVERSPENT} {item[4][0] + item[4][2:]} overspent")
             if item != progress_list[-1]:
-                print(PROGRESS_PRINT)
+                print(PRINT_LINE)
             time.sleep(0.5)
 
     else:

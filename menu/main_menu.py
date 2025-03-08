@@ -14,7 +14,7 @@ from functions import common_functions as cf
 
 INVALID_INPUT = "\nYou entered an invalid input.  Please try again."
 MAIN_MENU = """\U0001f3e0 \033[1m\033[96m============ \033[0m\033[1m\
-MAIN MENU\033[36m ============\033[0m\033[0m
+MAIN MENU\033[36m ============\033[0m
 \nPlease choose from the following options:
 \n1.  Expenses
 2.  Income
