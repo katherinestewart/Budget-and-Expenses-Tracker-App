@@ -282,6 +282,10 @@ document.write(`
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="menu.html#menu.expenses.add_expense">add_expense() (in module menu.expenses)</a>
+</li>
+      <li><a href="functions.html#functions.date_functions.all_dates_in_week">all_dates_in_week() (in module functions.date_functions)</a>
+</li>
       <li><a href="menu.html#menu.budget.Budget.amount">amount (menu.budget.Budget attribute)</a>
 
       <ul>
@@ -294,9 +298,9 @@ document.write(`
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="functions.html#functions.common_functions.amount_check">amount_check() (in module functions.common_functions)</a>
 </li>
-      <li><a href="maths.html#maths.calcs.annual_from_monthly">annual_from_monthly() (in module maths.calcs)</a>
+      <li><a href="maths.html#maths.calculations.annual_from_monthly">annual_from_monthly() (in module maths.calculations)</a>
 </li>
-      <li><a href="maths.html#maths.calcs.annual_from_weekly">annual_from_weekly() (in module maths.calcs)</a>
+      <li><a href="maths.html#maths.calculations.annual_from_weekly">annual_from_weekly() (in module maths.calculations)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -320,13 +324,17 @@ document.write(`
 </li>
       <li><a href="menu.html#menu.expenses.Expense.category">category (menu.expenses.Expense attribute)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="functions.html#functions.common_functions.clear">clear() (in module functions.common_functions)</a>
 </li>
-      <li><a href="database.html#database.database_commands.connect_db">connect_db() (in module database.database_commands)</a>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="menu.html#menu.create_graph.create_budget_graph">create_budget_graph() (in module menu.create_graph)</a>
 </li>
-      <li><a href="database.html#database.database_commands.create_and_populate_tables">create_and_populate_tables() (in module database.database_commands)</a>
+      <li><a href="menu.html#menu.create_graph.create_gross_income_graph">create_gross_income_graph() (in module menu.create_graph)</a>
+</li>
+      <li><a href="menu.html#menu.create_graph.create_net_income_graph">create_net_income_graph() (in module menu.create_graph)</a>
+</li>
+      <li><a href="database.html#database.database_commands.create_tables">create_tables() (in module database.database_commands)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -365,7 +373,7 @@ document.write(`
       </ul></li>
       <li><a href="functions.html#functions.common_functions.description_check">description_check() (in module functions.common_functions)</a>
 </li>
-      <li><a href="maths.html#maths.calcs.difference">difference() (in module maths.calcs)</a>
+      <li><a href="maths.html#maths.calculations.difference">difference() (in module maths.calculations)</a>
 </li>
       <li><a href="menu.html#menu.main_menu.display_message">display_message() (in module menu.main_menu)</a>
 </li>
@@ -377,26 +385,14 @@ document.write(`
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="database.html#database.database_commands.enter_budget">enter_budget() (in module database.database_commands)</a>
 </li>
-      <li><a href="database.html#database.populate_finances_db.enter_budgets_goals">enter_budgets_goals() (in module database.populate_finances_db)</a>
-</li>
       <li><a href="database.html#database.database_commands.enter_category">enter_category() (in module database.database_commands)</a>
-</li>
-      <li><a href="database.html#database.database_commands.enter_expense">enter_expense() (in module database.database_commands)</a>
 </li>
       <li><a href="database.html#database.database_commands.enter_goal">enter_goal() (in module database.database_commands)</a>
 </li>
-      <li><a href="database.html#database.database_commands.enter_income">enter_income() (in module database.database_commands)</a>
-
-      <ul>
-        <li><a href="menu.html#menu.income.Income.enter_income">(menu.income.Income method)</a>
-</li>
-      </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="menu.html#menu.expenses.Expense.enter_object">enter_object() (menu.expenses.Expense method)</a>
-</li>
       <li><a href="menu.html#menu.expenses.Expense">Expense (class in menu.expenses)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="menu.html#menu.expenses.Expense.expense">expense (menu.expenses.Expense attribute)</a>
 </li>
       <li><a href="menu.html#menu.expenses.expense_menu">expense_menu() (in module menu.expenses)</a>
@@ -411,6 +407,14 @@ document.write(`
 <h2 id="F">F</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="database.html#database.database_commands.fetch_all">fetch_all() (in module database.database_commands)</a>
+</li>
+      <li><a href="database.html#database.database_commands.fetch_all_with_args">fetch_all_with_args() (in module database.database_commands)</a>
+</li>
+      <li><a href="database.html#database.database_commands.fetch_one">fetch_one() (in module database.database_commands)</a>
+</li>
+      <li><a href="database.html#database.database_commands.fetch_one_with_args">fetch_one_with_args() (in module database.database_commands)</a>
+</li>
       <li>
     functions
 
@@ -418,6 +422,8 @@ document.write(`
         <li><a href="functions.html#module-functions">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     functions.common_functions
 
@@ -425,8 +431,6 @@ document.write(`
         <li><a href="functions.html#module-functions.common_functions">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     functions.date_functions
 
@@ -450,13 +454,13 @@ document.write(`
       </ul></li>
       <li><a href="functions.html#functions.common_functions.get_amount">get_amount() (in module functions.common_functions)</a>
 </li>
-      <li><a href="menu.html#menu.goals.get_amount_from_rows">get_amount_from_rows() (in module menu.goals)</a>
+      <li><a href="menu.html#menu.create_graph.get_amount_from_rows">get_amount_from_rows() (in module menu.create_graph)</a>
 </li>
       <li><a href="menu.html#menu.goals.get_annual">get_annual() (in module menu.goals)</a>
 </li>
-      <li><a href="maths.html#maths.calcs.get_average_amount">get_average_amount() (in module maths.calcs)</a>
+      <li><a href="menu.html#menu.create_graph.get_average_so_far_for_each_week_in_year">get_average_so_far_for_each_week_in_year() (in module menu.create_graph)</a>
 </li>
-      <li><a href="menu.html#menu.goals.get_budget_args">get_budget_args() (in module menu.goals)</a>
+      <li><a href="menu.html#menu.create_graph.get_budget_args">get_budget_args() (in module menu.create_graph)</a>
 </li>
       <li><a href="menu.html#menu.budget.get_budgets">get_budgets() (in module menu.budget)</a>
 </li>
@@ -468,19 +472,23 @@ document.write(`
 </li>
       <li><a href="database.html#database.database_commands.get_category_from_id">get_category_from_id() (in module database.database_commands)</a>
 </li>
-      <li><a href="menu.html#menu.goals.get_common_args">get_common_args() (in module menu.goals)</a>
+      <li><a href="menu.html#menu.create_graph.get_common_args">get_common_args() (in module menu.create_graph)</a>
+</li>
+      <li><a href="database.html#database.database_commands.get_cursor">get_cursor() (in module database.database_commands)</a>
+</li>
+      <li><a href="functions.html#functions.date_functions.get_date_of_first_day_each_week_this_year">get_date_of_first_day_each_week_this_year() (in module functions.date_functions)</a>
 </li>
       <li><a href="functions.html#functions.date_functions.get_dates">get_dates() (in module functions.date_functions)</a>
 </li>
       <li><a href="functions.html#functions.date_functions.get_dates_for_goals">get_dates_for_goals() (in module functions.date_functions)</a>
-</li>
-      <li><a href="functions.html#functions.date_functions.get_dates_in_week">get_dates_in_week() (in module functions.date_functions)</a>
 </li>
       <li><a href="functions.html#functions.date_functions.get_days_list">get_days_list() (in module functions.date_functions)</a>
 </li>
       <li><a href="menu.html#menu.budget.get_existing_gross">get_existing_gross() (in module menu.budget)</a>
 </li>
       <li><a href="menu.html#menu.expenses.get_expense">get_expense() (in module menu.expenses)</a>
+</li>
+      <li><a href="menu.html#menu.expenses.get_expense_description">get_expense_description() (in module menu.expenses)</a>
 </li>
       <li><a href="database.html#database.database_commands.get_expenses_by_date">get_expenses_by_date() (in module database.database_commands)</a>
 
@@ -492,35 +500,31 @@ document.write(`
 </li>
       <li><a href="database.html#database.database_commands.get_goal">get_goal() (in module database.database_commands)</a>
 </li>
-      <li><a href="menu.html#menu.goals.get_graph">get_graph() (in module menu.goals)</a>
-</li>
-      <li><a href="menu.html#menu.goals.get_gross_args">get_gross_args() (in module menu.goals)</a>
-</li>
-      <li><a href="menu.html#menu.goals.get_gross_or_net">get_gross_or_net() (in module menu.goals)</a>
+      <li><a href="menu.html#menu.create_graph.get_gross_args">get_gross_args() (in module menu.create_graph)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="menu.html#menu.goals.get_gross_or_net">get_gross_or_net() (in module menu.goals)</a>
+</li>
       <li><a href="menu.html#menu.income.get_income">get_income() (in module menu.income)</a>
 </li>
       <li><a href="database.html#database.database_commands.get_income_by_date">get_income_by_date() (in module database.database_commands)</a>
 </li>
-      <li><a href="menu.html#menu.goals.get_income_for_week">get_income_for_week() (in module menu.goals)</a>
+      <li><a href="menu.html#menu.create_graph.get_income_for_week">get_income_for_week() (in module menu.create_graph)</a>
 </li>
       <li><a href="database.html#database.database_commands.get_joined_rows">get_joined_rows() (in module database.database_commands)</a>
 </li>
-      <li><a href="menu.html#menu.goals.get_labels">get_labels() (in module menu.goals)</a>
+      <li><a href="menu.html#menu.create_graph.get_labels">get_labels() (in module menu.create_graph)</a>
 </li>
       <li><a href="menu.html#menu.budget.get_list_expenses_in_dates">get_list_expenses_in_dates() (in module menu.budget)</a>
 </li>
-      <li><a href="database.html#database.database_commands.get_max_budget_id">get_max_budget_id() (in module database.database_commands)</a>
-</li>
-      <li><a href="maths.html#maths.calcs.get_mean">get_mean() (in module maths.calcs)</a>
+      <li><a href="maths.html#maths.calculations.get_mean">get_mean() (in module maths.calculations)</a>
 </li>
       <li><a href="functions.html#functions.date_functions.get_month_dates">get_month_dates() (in module functions.date_functions)</a>
 </li>
-      <li><a href="maths.html#maths.calcs.get_month_from_year">get_month_from_year() (in module maths.calcs)</a>
+      <li><a href="maths.html#maths.calculations.get_month_from_year">get_month_from_year() (in module maths.calculations)</a>
 </li>
-      <li><a href="menu.html#menu.goals.get_net_args">get_net_args() (in module menu.goals)</a>
+      <li><a href="menu.html#menu.create_graph.get_net_args">get_net_args() (in module menu.create_graph)</a>
 </li>
       <li><a href="menu.html#menu.expenses.get_new_category">get_new_category() (in module menu.expenses)</a>
 </li>
@@ -542,19 +546,17 @@ document.write(`
 </li>
       <li><a href="functions.html#functions.common_functions.get_rows_from_dates">get_rows_from_dates() (in module functions.common_functions)</a>
 </li>
-      <li><a href="menu.html#menu.goals.get_spending_for_week">get_spending_for_week() (in module menu.goals)</a>
+      <li><a href="menu.html#menu.create_graph.get_spending_for_week">get_spending_for_week() (in module menu.create_graph)</a>
 </li>
       <li><a href="functions.html#functions.common_functions.get_term">get_term() (in module functions.common_functions)</a>
 </li>
       <li><a href="functions.html#functions.date_functions.get_week_dates">get_week_dates() (in module functions.date_functions)</a>
 </li>
-      <li><a href="maths.html#maths.calcs.get_week_from_year">get_week_from_year() (in module maths.calcs)</a>
+      <li><a href="maths.html#maths.calculations.get_week_from_year">get_week_from_year() (in module maths.calculations)</a>
 </li>
-      <li><a href="menu.html#menu.goals.get_x_coords">get_x_coords() (in module menu.goals)</a>
+      <li><a href="menu.html#menu.create_graph.get_x_coordinates">get_x_coordinates() (in module menu.create_graph)</a>
 </li>
       <li><a href="functions.html#functions.date_functions.get_year_dates">get_year_dates() (in module functions.date_functions)</a>
-</li>
-      <li><a href="functions.html#functions.date_functions.get_year_weeks">get_year_weeks() (in module functions.date_functions)</a>
 </li>
       <li><a href="menu.html#menu.goals.goals_menu">goals_menu() (in module menu.goals)</a>
 </li>
@@ -568,11 +570,21 @@ document.write(`
 </li>
       <li><a href="menu.html#menu.income.income_by_date">income_by_date() (in module menu.income)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="menu.html#menu.income.income_by_source">income_by_source() (in module menu.income)</a>
 </li>
       <li><a href="menu.html#menu.income.income_menu">income_menu() (in module menu.income)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="database.html#database.database_commands.insert_budget">insert_budget() (in module database.database_commands)</a>
+</li>
+      <li><a href="database.html#database.database_commands.insert_data">insert_data() (in module database.database_commands)</a>
+</li>
+      <li><a href="menu.html#menu.expenses.Expense.insert_expense">insert_expense() (menu.expenses.Expense method)</a>
+</li>
+      <li><a href="menu.html#menu.income.Income.insert_income">insert_income() (menu.income.Income method)</a>
+</li>
+      <li><a href="database.html#database.database_commands.insert_many">insert_many() (in module database.database_commands)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -592,10 +604,10 @@ document.write(`
 </li>
       </ul></li>
       <li>
-    maths.calcs
+    maths.calculations
 
       <ul>
-        <li><a href="maths.html#module-maths.calcs">module</a>
+        <li><a href="maths.html#module-maths.calculations">module</a>
 </li>
       </ul></li>
       <li>
@@ -617,6 +629,13 @@ document.write(`
 
       <ul>
         <li><a href="menu.html#module-menu.budget">module</a>
+</li>
+      </ul></li>
+      <li>
+    menu.create_graph
+
+      <ul>
+        <li><a href="menu.html#module-menu.create_graph">module</a>
 </li>
       </ul></li>
       <li>
@@ -667,13 +686,15 @@ document.write(`
 </li>
         <li><a href="maths.html#module-maths">maths</a>
 </li>
-        <li><a href="maths.html#module-maths.calcs">maths.calcs</a>
+        <li><a href="maths.html#module-maths.calculations">maths.calculations</a>
 </li>
         <li><a href="maths.html#module-maths.graphs">maths.graphs</a>
 </li>
         <li><a href="menu.html#module-menu">menu</a>
 </li>
         <li><a href="menu.html#module-menu.budget">menu.budget</a>
+</li>
+        <li><a href="menu.html#module-menu.create_graph">menu.create_graph</a>
 </li>
         <li><a href="menu.html#module-menu.expenses">menu.expenses</a>
 </li>
@@ -700,8 +721,12 @@ document.write(`
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="database.html#database.populate_finances_db.populate_tables">populate_tables() (in module database.populate_finances_db)</a>
+      <li><a href="database.html#database.database_commands.populate_tables">populate_tables() (in module database.database_commands)</a>
+
+      <ul>
+        <li><a href="database.html#database.populate_finances_db.populate_tables">(in module database.populate_finances_db)</a>
 </li>
+      </ul></li>
       <li><a href="menu.html#menu.budget.print_budgets">print_budgets() (in module menu.budget)</a>
 </li>
       <li><a href="functions.html#functions.common_functions.print_categories">print_categories() (in module functions.common_functions)</a>
@@ -748,17 +773,13 @@ document.write(`
 <h2 id="T">T</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="menu.html#menu.budget.Budget.table">table (menu.budget.Budget attribute)</a>
-
-      <ul>
-        <li><a href="menu.html#menu.income.Income.table">(menu.income.Income attribute)</a>
+      <li><a href="menu.html#menu.income.Income.table">table (menu.income.Income attribute)</a>
 </li>
-      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="menu.html#menu.budget.Budget.term">term (menu.budget.Budget attribute)</a>
 </li>
-      <li><a href="maths.html#maths.calcs.total_spending">total_spending() (in module maths.calcs)</a>
+      <li><a href="maths.html#maths.calculations.total_spending">total_spending() (in module maths.calculations)</a>
 </li>
   </ul></td>
 </tr></table>

@@ -323,14 +323,14 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-functions.date_functions">functions.date_functions module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.all_dates_in_week"><code class="docutils literal notranslate"><span class="pre">all_dates_in_week()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.get_date_of_first_day_each_week_this_year"><code class="docutils literal notranslate"><span class="pre">get_date_of_first_day_each_week_this_year()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.get_dates"><code class="docutils literal notranslate"><span class="pre">get_dates()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.get_dates_for_goals"><code class="docutils literal notranslate"><span class="pre">get_dates_for_goals()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.get_dates_in_week"><code class="docutils literal notranslate"><span class="pre">get_dates_in_week()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.get_days_list"><code class="docutils literal notranslate"><span class="pre">get_days_list()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.get_month_dates"><code class="docutils literal notranslate"><span class="pre">get_month_dates()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.get_week_dates"><code class="docutils literal notranslate"><span class="pre">get_week_dates()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.get_year_dates"><code class="docutils literal notranslate"><span class="pre">get_year_dates()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.get_year_weeks"><code class="docutils literal notranslate"><span class="pre">get_year_weeks()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-functions">Module contents</a></li>
@@ -570,6 +570,39 @@ ranges from user input.</p>
 <p>[1] Tutorials Point (for function get_week_dates)
 <a class="reference external" href="https://www.tutorialspoint.com/How-to-find-only-Monday-s-date-with-Python#:~:text=the%20dateutil%20module.-,Use%20the%20today()%20function%20(gets%20the%20current%20local%20date,Print%20the%20last%20Monday%20date">https://www.tutorialspoint.com/How-to-find-only-Monday-s-date-with-Python#:~:text=the%20dateutil%20module.-,Use%20the%20today()%20function%20(gets%20the%20current%20local%20date,Print%20the%20last%20Monday%20date</a>.  # noqa</p>
 <dl class="py function">
+<dt class="sig sig-object py" id="functions.date_functions.all_dates_in_week">
+<span class="sig-prename descclassname"><span class="pre">functions.date_functions.</span></span><span class="sig-name descname"><span class="pre">all_dates_in_week</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/functions/date_functions.html#all_dates_in_week"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.date_functions.all_dates_in_week" title="Link to this definition">#</a></dt>
+<dd><p>This function takes in a date and returns that date plus the
+next six days.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>date</strong> – a date</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dates for week</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of dates</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.date_functions.get_date_of_first_day_each_week_this_year">
+<span class="sig-prename descclassname"><span class="pre">functions.date_functions.</span></span><span class="sig-name descname"><span class="pre">get_date_of_first_day_each_week_this_year</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/functions/date_functions.html#get_date_of_first_day_each_week_this_year"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.date_functions.get_date_of_first_day_each_week_this_year" title="Link to this definition">#</a></dt>
+<dd><p>This function gets the first day of each week in the current
+year starting from 1st Jan up until today’s date.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of first day of week for this year</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="functions.date_functions.get_dates">
 <span class="sig-prename descclassname"><span class="pre">functions.date_functions.</span></span><span class="sig-name descname"><span class="pre">get_dates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">first_day</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">days_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/functions/date_functions.html#get_dates"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.date_functions.get_dates" title="Link to this definition">#</a></dt>
 <dd><p>This function gets dates for days that have passed since a given
@@ -595,24 +628,6 @@ function</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="functions.date_functions.get_dates_in_week">
-<span class="sig-prename descclassname"><span class="pre">functions.date_functions.</span></span><span class="sig-name descname"><span class="pre">get_dates_in_week</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/functions/date_functions.html#get_dates_in_week"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.date_functions.get_dates_in_week" title="Link to this definition">#</a></dt>
-<dd><p>This function takes in a date and returns that date plus the
-next six days</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>date</strong> – a date</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>dates for week</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>list of dates</p>
 </dd>
 </dl>
 </dd></dl>
@@ -677,21 +692,6 @@ function to get days between then and now</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>func</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="functions.date_functions.get_year_weeks">
-<span class="sig-prename descclassname"><span class="pre">functions.date_functions.</span></span><span class="sig-name descname"><span class="pre">get_year_weeks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/functions/date_functions.html#get_year_weeks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#functions.date_functions.get_year_weeks" title="Link to this definition">#</a></dt>
-<dd><p>This function gets the first day of each week in the current
-year starting from 1st Jan up until today’s date.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>list of first day of week for this year</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>list of str</p>
 </dd>
 </dl>
 </dd></dl>
@@ -765,14 +765,14 @@ year starting from 1st Jan up until today’s date.</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-functions.date_functions">functions.date_functions module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.all_dates_in_week"><code class="docutils literal notranslate"><span class="pre">all_dates_in_week()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.get_date_of_first_day_each_week_this_year"><code class="docutils literal notranslate"><span class="pre">get_date_of_first_day_each_week_this_year()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.get_dates"><code class="docutils literal notranslate"><span class="pre">get_dates()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.get_dates_for_goals"><code class="docutils literal notranslate"><span class="pre">get_dates_for_goals()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.get_dates_in_week"><code class="docutils literal notranslate"><span class="pre">get_dates_in_week()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.get_days_list"><code class="docutils literal notranslate"><span class="pre">get_days_list()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.get_month_dates"><code class="docutils literal notranslate"><span class="pre">get_month_dates()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.get_week_dates"><code class="docutils literal notranslate"><span class="pre">get_week_dates()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.get_year_dates"><code class="docutils literal notranslate"><span class="pre">get_year_dates()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions.date_functions.get_year_weeks"><code class="docutils literal notranslate"><span class="pre">get_year_weeks()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-functions">Module contents</a></li>
