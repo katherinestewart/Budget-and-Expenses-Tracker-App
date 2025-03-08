@@ -49,8 +49,8 @@ SELECT_4 = f"{SEL_}View Budget Progress{END_}"
 OVERSPENT = "\033[91m\U000026a0\033[0m"
 OVERALL_PRINT = "_" * 50
 PRINT_LINE = "\033[90m_\033[0m" * 50
-VIEW_BUDGET = "\n{}\t{}\t\t{}\n" + PRINT_LINE 
-VIEW_BUDGET_L = "\n{}\t\t{}\t\t{}\n" + PRINT_LINE 
+VIEW_BUDGET = "\n{}\t{}\t\t{}\n" + PRINT_LINE
+VIEW_BUDGET_L = "\n{}\t\t{}\t\t{}\n" + PRINT_LINE
 
 
 class Budget:
