@@ -24,19 +24,10 @@ display a graph with their progress for each week in the current year.
 * income.py: all logic for 'Income' menu
 * budget.py: all logic for 'Budget' menu
 * goals.py: all logic for 'Goals' menu
+* create_graphs.py: all logic for getting arguments to create graphs
 * common_functions.py: functions used across multiple menu options
 * date_functions.py: functions to get dates in specified ranges
 * database_commands.py: all logic to interact with database
 * populate_finances.py: adds dummy data for testing
 * calcs.py: all calculations
 * graphs.py: makes graphs
-
-## Imports
-
-* datetime
-* dateutil
-* matplotlib
-* numpy
-* os
-* sqlite3
-* time
