@@ -1,17 +1,9 @@
-"""This module adds dummy data to the tables in finances.db database
-for testing purposes.
-"""
+"""This module adds dummy data to the tables in the database for
+testing purposes."""
 
-import sqlite3
-from database import database_commands
+from database import database_commands as dc
 
-INSERT_CATEGORY = """INSERT INTO categories(category) VALUES(?)"""
-INSERT_EXPENSE = """INSERT INTO expenses(date, expense, amount, categoryID)
-VALUES(?,?,?,?)"""
-INSERT_INCOME = """INSERT INTO income(date, sourceID, amount) VALUES(?,?,?)"""
-INSERT_SOURCE = """INSERT INTO sources(source) VALUES(?)"""
-
-new_expenses = (
+expenses = [
     ("2024-01-01", "Home Insurance", 180.55, 3),
     ("2024-01-01", "Mortgage", 1000, 5),
     ("2024-01-01", "Internet", 60, 1),
@@ -307,8 +299,8 @@ new_expenses = (
     ("2025-03-02", "Pub", 32.40, 4),
     ("2025-03-02", "Weekend break", 200, 2),
     ("2025-03-03", "Tesco", 15.20, 2),
-)
-new_income = (
+]
+incomes = [
     ("2024-01-03", 3, 30),
     ("2024-01-12", 3, 60),
     ("2024-01-21", 3, 120),
@@ -391,65 +383,48 @@ new_income = (
     ("2025-02-28", 1, 3000),
     ("2025-03-24", 3, 60),
     ("2025-03-05", 2, 550),
-)
-new_categories = (
-    "Bills",
-    "Groceries",
-    "Insurance",
-    "Leisure",
-    "Mortgage",
-    "Other",
-    "Travel",
-)
-goals = (
+]
+categories = [
+    ("Bills",),
+    ("Groceries",),
+    ("Insurance",),
+    ("Leisure",),
+    ("Mortgage",),
+    ("Other",),
+    ("Travel",),
+]
+goals = [
     ("budget", 780, "weekly"),
     ("budget", 3380, "monthly"),
     ("budget", 32448, "annual"),
     ("net income", 40560, "annual"),
     ("gross income", 50000, "annual"),
-)
-budgets = (
+]
+budgets = [
     (500, "monthly"),
+    (200, "monthly"),
     (1000, "monthly"),
-    (200, "weekly"),
-    (200, "monthly")
-)
-sources = ("Salary", "Freelance", "Teaching", "Refund")
-cat_ids = (2, 5, 4, 7)
+    (200, "weekly")
+]
+budget_category_ids = [2, 4, 5, 7]
+sources = [("Salary",), ("Freelance",), ("Teaching",), ("Refund",)]
 
 
 def populate_tables():
-    """This function populates tables in database with dummy data
+    """This function populates tables in database with dummy data.
 
     :return: None
     """
-    db = sqlite3.connect("finances.db")
-    cursor = db.cursor()
+    commands = [
+        (dc.INSERT_EXPENSE, expenses),
+        (dc.INSERT_CATEGORY, categories),
+        (dc.INSERT_INCOME, incomes),
+        (dc.INSERT_SOURCE, sources),
+        (dc.INSERT_GOAL, goals),
+    ]
 
-    try:
-        for _, category in enumerate(new_categories):
-            cursor.execute(INSERT_CATEGORY, (category,))
-        for _, expense in enumerate(new_expenses):
-            cursor.execute(INSERT_EXPENSE, (*expense,))
-        for _, income in enumerate(new_income):
-            cursor.execute(INSERT_INCOME, (*income,))
-        for _, source in enumerate(sources):
-            cursor.execute(INSERT_SOURCE, (source,))
-        db.commit()
-    except sqlite3.OperationalError as e:
-        db.rollback()
-        raise e
-    finally:
-        db.close()
+    for _, command in enumerate(commands):
+        dc.insert_many(command)
 
-
-def enter_budgets_goals():
-    """This function enters goals and budgets dummy data into tables in
-    database
-
-    :return: None
-    """
-    for b, budget in enumerate(budgets):
-        database_commands.enter_budget(cat_ids[b - 1], *budget)
-    for goal in goals:
-        database_commands.enter_goal(*goal)
+    for index, budget in enumerate(budgets):
+        dc.insert_budget(budget_category_ids[index], budget)
