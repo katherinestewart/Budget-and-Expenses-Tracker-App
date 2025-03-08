@@ -4,7 +4,7 @@ week month or year, view budgets, view budget progress; for week month
 or year or return to main menu.
 """
 
-import time
+from time import sleep
 from functions import common_functions as cf, date_functions as df
 from database import database_commands
 from menu import expenses
@@ -355,7 +355,7 @@ def print_overall(budget_goal, total, remain, term):
         print(f"{OVERSPENT} {remain[0] + remain[2:]} overspent")
 
     print(OVERALL_PRINT)
-    time.sleep(0.5)
+    sleep(0.5)
 
 
 def print_progress(progress_list):
@@ -377,11 +377,11 @@ def print_progress(progress_list):
                 print(f"{OVERSPENT} {item[4][0] + item[4][2:]} overspent")
             if item != progress_list[-1]:
                 print(PRINT_LINE)
-            time.sleep(0.5)
+            sleep(0.5)
 
     else:
         print("\nNo budgets set by category for this term.")
-        time.sleep(0.5)
+        sleep(0.5)
 
 
 def view_budgets():
@@ -400,7 +400,7 @@ def view_budgets():
         print_budgets(budget_list)
     else:
         print("\nNo budgets found.")
-    time.sleep(0.5)
+    sleep(0.5)
 
 
 def budget_menu():
