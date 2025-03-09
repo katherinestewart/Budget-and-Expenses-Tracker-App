@@ -2,6 +2,7 @@
 across multiple modules: expenses.py, income.py, budget.py and goals.py.
 """
 
+from time import sleep
 import os
 import datetime
 from database import database_commands
@@ -17,7 +18,7 @@ SEL_DATES = """\n\U0001f5d3  Please choose from the following time periods:\n
 """
 INVALID_INPUT = "You entered an invalid input.  Please try again.\n"
 NO_RESULTS = "\nNo results found for your search."
-SEL_ = "\n\U00002714\033[0;34m\033[1m --- \033[0m\033[1m"
+SEL_ = "\U00002714\033[0;34m\033[1m --- \033[0m\033[1m"
 END_ = "\033[0;34m\033[1m ---\033[0m"
 SELECT_1 = f"{SEL_}Set Budget{END_}"
 SELECT_2 = f"{SEL_}Set Budget by Category{END_}"
@@ -29,6 +30,16 @@ def clear():
     :return: None
     """
     os.system("cls||clear")
+
+
+def finish_viewing():
+    """This function gets user input once they have finished viewing
+    printed information.
+
+    :return: None
+    """
+    sleep(0.6)
+    input("\n\nPress enter to return to previous menu: ")
 
 
 def get_term(string):
@@ -165,33 +176,6 @@ def get_range_for_search(selection):
         num_months = range(11)
 
     return num_months
-
-
-def select_category(table):
-    """This function gets an id number from a table from its
-    description.
-
-    :param table: str table name in database
-    :return: id number
-    :rtype: int
-    """
-    category_list = database_commands.get_row_list(table)
-    print_categories(category_list)
-
-    # dict keys: user selection, values: category id number
-    category_dict = get_category_dict(category_list)
-
-    # Get user selection
-    category_select = input("\nEnter selection: ")
-
-    while category_select not in category_dict:
-        print(INVALID_INPUT)
-        category_select = input("\nEnter selection: ")
-
-    # Get category id number
-    category_choice = int(category_dict.get(category_select))
-
-    return category_choice
 
 
 def get_category_dict(category_list):

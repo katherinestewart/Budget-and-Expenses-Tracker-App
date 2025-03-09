@@ -45,8 +45,6 @@ CAT_UPDATE = """UPDATE categories SET category = ? WHERE id = ?"""
 DELETE_BUDGET = """DELETE FROM budget WHERE id = ?"""
 DEL_GOAL = """DELETE FROM goals WHERE id = ?"""
 DELETE_GOAL = """DELETE FROM goals WHERE goal = ? AND term = ?"""
-ENTER_CAT = """INSERT INTO categories(category) VALUES(?)"""
-ENTER_SRC = """INSERT INTO sources(source) VALUES(?)"""
 MAX_BUDGET_ID = """SELECT MAX(id) FROM budget"""
 SEL_CAT_FROM_BUDG = """SELECT category FROM categories WHERE budgetID = ?"""
 SELECT_DATE_AMOUNT = """SELECT date, amount FROM expenses WHERE catID = ?"""
@@ -63,10 +61,11 @@ SELECT_FIRST_EXPENSE = """SELECT * FROM expenses WHERE id = 1"""
 
 
 @contextmanager
-def get_cursor():
+def get_cursor(commit_changes=False):
     """This function catches any errors when connecting to the database
     and creates a cursor.
 
+    :param commit_changes: If changes should be committed (default = False)
     :return: cursor
     :rtype: cursor
     """
@@ -78,7 +77,8 @@ def get_cursor():
         db.rollback()
         raise e
     else:
-        db.commit()
+        if commit_changes:
+            db.commit()
     finally:
         db.close()
 
@@ -90,7 +90,7 @@ def insert_data(string, args):
     :param args: tuple with arguments for command
     :return: None
     """
-    with get_cursor() as cursor:
+    with get_cursor(True) as cursor:
         cursor.execute(string, args)
 
 
@@ -100,7 +100,7 @@ def insert_many(command):
     :param command: tuple containing (str, list)
     :return: None
     """
-    with get_cursor() as cursor:
+    with get_cursor(True) as cursor:
         cursor.executemany(*command)
 
 
@@ -211,20 +211,6 @@ def insert_budget(category_id, budget):
     insert_data(UPDATE_CATEGORY, (*budget_id, category_id))
 
 
-def enter_category(new_cat, table):
-    """This function enters a new category in a table.
-
-    :param new_cat: new expense category or income source
-    :param table: expenses or sources table in database
-    :return: None
-    """
-
-    if table == "categories":
-        insert_data(ENTER_CAT, (new_cat,))
-    else:
-        insert_data(ENTER_SRC, (new_cat,))
-
-
 def get_row_list(table):
     """This function gets a list of all the rows in a table.
 
@@ -234,6 +220,20 @@ def get_row_list(table):
     """
     rows = fetch_all(SELECT_ROWS.format(table))
     return rows
+
+
+def enter_category(new_cat, table):
+    """This function enters a new category in a table.
+
+    :param new_cat: new expense category or income source
+    :param table: expenses or sources table in database
+    :return: None
+    """
+
+    if table == "categories":
+        insert_data(INSERT_CATEGORY, (new_cat,))
+    else:
+        insert_data(INSERT_SOURCE, (new_cat,))
 
 
 def get_rows(year_month, table):
