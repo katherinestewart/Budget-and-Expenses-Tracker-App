@@ -9,8 +9,8 @@ from time import sleep
 import datetime
 from functions import common_functions as cf
 from database import database_commands as dc
+from menu import sources as src
 
-SOURCES = "sources"
 COLUMNS_INCOME = f"""{"\033[1m_\033[0m" * 60}\033[1m\n\nDate\t\tSource\t\t\t\
 Amount\n{"\033[1m_\033[0m" * 60}\
 """
@@ -31,15 +31,6 @@ END_ = "\033[0;34m\033[1m ----------\033[0m"
 SELECT_1 = f"{SEL_}Add Income{END_}"
 SELECT_2 = f"{SEL_}View Income{END_}"
 SELECT_3 = f"{SEL_}View Income by Source{END_}"
-SELECT_4 = f"{SEL_}Manage Income Sources{END_}"
-SOURCES_MENU = f"""{SELECT_4}
-\nPlease choose from the following options:
-\n1.  View sources of income
-2.  Edit income source
-3.  Add new income source
-0.  Cancel
-\nEnter your selection: \
-"""
 SEARCH_INCOME = """\nEnter 'r' to return to main menu,
 or anything else to continue viewing income by category: """
 INVALID_INPUT = "\nYou entered an invalid input.  Please try again."
@@ -117,10 +108,10 @@ def get_income():
     :rtype: tuple
     """
     today = datetime.date.today()
-    id_choice = cf.select_category("sources")
+    category = src.select_source()
     new_amount = cf.get_amount()
 
-    inc_object = Income(today, id_choice, new_amount)
+    inc_object = Income(today, category.id_, new_amount)
 
     return inc_object
 
@@ -170,84 +161,27 @@ def income_by_source():
 
     :return: None
     """
-    source_choice_id = cf.select_category(SOURCES)
+    source = src.select_source()
     income_rows = income_by_date()
     income_from_source = []
 
     # If income matches source selection, append to new list
     for income in income_rows:
-        if income[2] == int(source_choice_id):
+        if income[2] == int(source.id_):
             income_from_source.append(income)
 
     cf.clear()
     print_row_list(income_from_source)
-    print("\n\n")
+    cf.finish_viewing()
 
 
-def get_new_source():
-    """This function gets a new income source from the user
-
-    :return: income source description
-    :rtype: str
+def view_income():
+    """This function
     """
-    while True:
-        src = input(SRC_DESCRIBE).strip()
-
-        if cf.description_check(src):
-            return src
-
-        print(INVALID_INPUT)
-
-
-def view_sources():
-    """This function prints income sources for the user to select from
-
-    :return: None
-    """
-    source_list = dc.get_row_list(SOURCES)
-    cf.print_categories(source_list)
-
-
-def sources_menu():
-    """This function manages user selection for income sources and
-    calls relevant functions according to this selection
-
-    :return: None
-    """
-    while True:
-        src_menu = input(SOURCES_MENU).strip().replace(".", "")
-
-        # ****** View sources of income ******
-        if src_menu == "1":
-            cf.clear()
-            view_sources()
-            print()
-
-        # ****** Edit income source ******
-        elif src_menu == "2":
-            cf.clear()
-            src_id = cf.select_category(SOURCES)
-            src_update = get_new_source()
-            dc.update_category(SOURCES, src_id, src_update)
-            view_sources()
-            print("\nIncome source has been updated \U00002705\n")
-
-        # ****** Add new income source ******
-        elif src_menu == "3":
-            cf.clear()
-            new_cat = get_new_source()
-            dc.enter_category(new_cat, SOURCES)
-            view_sources()
-            print("\nIncome source added \U00002705\n")
-
-        # ****** Cancel ******
-        elif src_menu == "0":
-            cf.clear()
-            break
-
-        else:
-            print(cf.INVALID_INPUT)
+    income_list = income_by_date()
     cf.clear()
+    print_row_list(income_list)
+    cf.finish_viewing()
 
 
 def income_menu():
@@ -257,6 +191,7 @@ def income_menu():
     :return: None
     """
     while True:
+        cf.clear()
         menu = input(INCOME_MENU).strip().replace(".", "")
         # ****** Add income ******
         if menu == "1":
@@ -272,18 +207,14 @@ def income_menu():
             n = new_income
             n.source = dc.get_category_from_id(n.source, "sources")
             print(new_income)
-            print("\nIncome has been added \U00002705\n\n")
-            sleep(0.6)
+            print("\nIncome has been added \U00002705")
+            cf.finish_viewing()
 
         # ****** View income ******
         elif menu == "2":
             cf.clear()
             print(SELECT_2)
-            income_list = income_by_date()
-
-            cf.clear()
-            print_row_list(income_list)
-            print("\n\n")
+            view_income()
 
         # ****** View income by source ******
         elif menu == "3":
@@ -294,7 +225,7 @@ def income_menu():
         # ****** Manage income sources ******
         elif menu == "4":
             cf.clear()
-            sources_menu()
+            src.sources_menu()
 
         # ****** Return to main menu ******
         elif menu == "0":

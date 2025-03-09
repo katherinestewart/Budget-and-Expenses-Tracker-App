@@ -8,9 +8,8 @@ from time import sleep
 import datetime
 from database import database_commands as dc
 from functions import common_functions as cf
+from menu import categories as cat
 
-CAT_DESCRIBE = "\nEnter new category description: "
-CATEGORIES = "categories"
 COLUMNS = f"""{"\033[1m_\033[0m" * 70}\033[1m\n\nDate\t\tExpense\t\t\t\
 Amount\t\tCategory\033[0m\n{"\033[1m_\033[0m" * 70}\
 """
@@ -31,15 +30,6 @@ SEL_ = f"{cf.SEL_}"
 SELECT_1 = f"{SEL_}Add Expense{END_}"
 SELECT_2 = f"{SEL_}View expenses{END_}"
 SELECT_3 = f"{SEL_}View expenses by category{END_}"
-SELECT_4 = f"{SEL_}Manage categories{END_}"
-CATEGORIES_MENU = f"""{SELECT_4}
-\nPlease choose from the following options:
-\n1.  View categories
-2.  Edit category
-3.  Add category
-0.  Cancel
-\nEnter your selection: \
-"""
 SEARCH_MORE_EXPENSES = """\nEnter 'r' to return to main menu,
 or anything else to continue viewing expenses: """
 TABLE = "expenses"
@@ -143,8 +133,11 @@ def get_expense():
     today = datetime.date.today()
     new_expense = get_expense_description()
     new_amount = cf.get_amount()
-    cat_choice_id = cf.select_category("categories")
-    exp_obj = Expense(today, new_expense, new_amount, cat_choice_id)
+    category = cat.select_category()
+    print(type(category))
+    print(category)
+
+    exp_obj = Expense(today, new_expense, new_amount, category.id_)
 
     return exp_obj
 
@@ -174,7 +167,6 @@ def print_row_list(list_of_rows):
             print(item)
     else:
         print(cf.NO_RESULTS)
-    print("\n\n")
 
 
 def expenses_by_date():
@@ -190,92 +182,23 @@ def expenses_by_date():
     return rows
 
 
-def expenses_by_category():
+def view_expenses_by_category():
     """This function prints a list of expenses in a selected category
 
     :return: None
     """
-    cat_choice_id = cf.select_category(CATEGORIES)
-    cf.clear()
-
+    category_choice = cat.select_category()
     expense_rows = expenses_by_date()
     expenses_in_category = []
 
     # If expense matches category selection, append to new list
     for expense in expense_rows:
-        if expense[4] == cat_choice_id:
+        if expense[4] == category_choice.id_:
             expenses_in_category.append(expense)
 
     cf.clear()
     print_row_list(expenses_in_category)
-    sleep(0.6)
-
-
-def get_new_category():
-    """This function gets a new category description from the user
-
-    :return: category description
-    :rtype: str
-    """
-    cat = input(CAT_DESCRIBE).strip()
-
-    while not cf.description_check(cat):
-        cat = input(CAT_DESCRIBE).strip()
-
-    return cat
-
-
-def view_categories():
-    """This function prints all categories for the user to select from
-
-    :return: None
-    """
-    category_list = dc.get_row_list(CATEGORIES)
-    cf.clear()
-    cf.print_categories(category_list)
-    sleep(0.6)
-
-
-def categories_menu():
-    """This function presents the user with options to manage expense
-    categories and calls relevant functions according to user selection
-
-    :return: None
-    """
-    while True:
-        cat_menu = input(CATEGORIES_MENU).strip().replace(".", "")
-
-        # ****** View categories ******
-        if cat_menu == "1":
-            cf.clear()
-            view_categories()
-
-        # ****** Edit category ******
-        elif cat_menu == "2":
-            cf.clear()
-            cat_id = cf.select_category(CATEGORIES)
-            cat_update = get_new_category()
-            dc.update_category(CATEGORIES, cat_id, cat_update)
-            print("\nCategory has been updated \U00002705")
-            sleep(1)
-            cf.clear()
-
-        # ****** Add category ******
-        elif cat_menu == "3":
-            new_cat = get_new_category()
-            dc.enter_category(new_cat, CATEGORIES)
-            view_categories()
-            print("\nCategory added \U00002705")
-            sleep(1)
-            cf.clear()
-
-        # ****** Return to main menu ******
-        elif cat_menu == "0":
-            cf.clear()
-            break
-
-        else:
-            print(cf.INVALID_INPUT)
+    cf.finish_viewing()
 
 
 def add_expense():
@@ -291,8 +214,9 @@ def add_expense():
     print(COLUMNS)
     print(new_expense)
     sleep(0.6)
-    print("\nExpense has been added \U00002705\n")
+    print("\nExpense has been added \U00002705")
     sleep(0.6)
+    cf.finish_viewing()
 
 
 def view_expenses():
@@ -301,7 +225,7 @@ def view_expenses():
     expenses_list = expenses_by_date()
     cf.clear()
     print_row_list(expenses_list)
-    sleep(0.6)
+    cf.finish_viewing()
 
 
 def expense_menu():
@@ -312,6 +236,7 @@ def expense_menu():
     """
 
     while True:
+        cf.clear()
         menu = input(EXPENSES_MENU).strip().replace(".", "")
 
         # ****** Add expense ******
@@ -330,12 +255,12 @@ def expense_menu():
         elif menu == "3":
             cf.clear()
             print(SELECT_3)
-            expenses_by_category()
+            view_expenses_by_category()
 
         # ****** Manage Categories ******
         elif menu == "4":
             cf.clear()
-            categories_menu()
+            cat.categories_menu()
 
         # ****** Return to main menu ******
         elif menu == "0":

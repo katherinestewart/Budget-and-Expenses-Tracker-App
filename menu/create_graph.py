@@ -67,14 +67,14 @@ def get_net_args():
 
     # Get net income for each week
     y_coordinates = []
-    for i, _ in enumerate(gross_y_coordinates):
-        amount = diff(budget_y_coordinates[i], gross_y_coordinates[i])
+    for i, y_coordinate in enumerate(gross_y_coordinates):
+        amount = diff(budget_y_coordinates[i], y_coordinate)
         y_coordinates.append(amount)
 
     # Get average income for year so far for each week
     averages = []
-    for i, _ in enumerate(budget_averages):
-        average = diff(budget_averages[i], gross_averages[i])
+    for i, budget_average in enumerate(budget_averages):
+        average = diff(budget_average, gross_averages[i])
         averages.append(average)
 
     return net_target, y_coordinates, averages

@@ -38,6 +38,7 @@ def main_menu():
 
     # ********* Menu Selection *********
     while True:
+        cf.clear()
         menu = input(MAIN_MENU).strip().replace(".", "")
 
         # ****** Expenses ******
